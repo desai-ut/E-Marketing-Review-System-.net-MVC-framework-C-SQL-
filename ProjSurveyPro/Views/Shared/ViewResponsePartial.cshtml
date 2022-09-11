@@ -1,0 +1,70 @@
+﻿<table class="table table-bordered table-striped mb-none" id="datatable-default">
+    <thead>
+        <tr>
+            <th class="center hidden-phone" width="100px">User Image</th>
+            <th class="center hidden-phone" width="100px">User Name</th>
+            <th class="center hidden-phone" width="160px">No of Attempted  Survey Ques</th>
+            <th class="center hidden-phone" width="160px">No of Attempted Reviews Ques</th>
+            <th class="center hidden-phone">Action</th>
+        </tr>
+    </thead>
+    <tbody id="State">
+        @foreach (var item in ViewBag.Grid)
+        {
+            <tr class="gradeX">
+                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                    <img src="@Url.Content(item.UserImage)" height="50" width="50"/>
+                </td>
+                <td style="padding-top: 3.5mm;">
+                    @item.UserName
+                </td>
+                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                     @item.NoOfAttemptedSurveyQues of @item.SQuestion
+                </td>
+                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                    @item.NoOfAttemptedReviewQues of @item.RQuestion
+                </td>
+                @if (Session["Area"] == "Client")
+                {
+                    <td style="text-align: center">
+                        <a href="@Url.Action("ShowSurvey", "Home", new { area = "Client", UID = item.UserID, SID = Session["SurveyID"] })" 
+                            id="btnSubmit" class="mb-xs mt-xs mr-xs modal-basic btn btn-warning" style="text-align: center;">Show Survey Ans</a>
+                        <a href="@Url.Action("ShowReview", "Home", new { area = "Client", UID = item.UserID, SID = Session["SurveyID"] })"
+                             id="btnSubmit" class="mb-xs mt-xs mr-xs modal-basic btn btn-warning" style="text-align: center;">Show Review Ans</a>
+                        @{ var ActiveStatus = item.IsApproved;
+                           if (ActiveStatus == true)
+                           {
+                            <a href="#" class="mb-xs mt-xs btn btn-success">Done</a>
+                           }
+                           else
+                           {
+                            <a href="#" class="mb-xs mt-xs btn btn-danger">Approve</a>
+                           }
+                        }
+                    </td>
+                }
+                else
+                {
+                    <td style="text-align: center">
+                        <a href="@Url.Action("ShowSurvey", "Home", new { area = "Employee", UID = item.UserID, SID = Session["SurveyID"] })" 
+                            id="btnSubmit" class="mb-xs mt-xs mr-xs modal-basic btn btn-warning" style="text-align: center;">Show Survey Ans</a>
+                        <a href="@Url.Action("ShowReview", "Home", new { area = "Employee", UID = item.UserID, SID = Session["SurveyID"] })"
+                             id="btnSubmit" class="mb-xs mt-xs mr-xs modal-basic btn btn-warning" style="text-align: center;">Show Review Ans</a>
+                        @{ var ActiveStatus = item.IsApproved;
+                           if (ActiveStatus == true)
+                           {
+                            <a href="#" class="mb-xs mt-xs btn btn-success">Done</a>
+                           }
+                           else
+                           {
+                            <a href="@Url.Action("ApproveSurvey", "Home",
+                                        new { UID = item.UserID, SID = Session["SurveyID"], area = "Employee", Status = true })"
+                                 class="mb-xs mt-xs btn btn-danger">Approve</a>
+                           }
+                        }
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

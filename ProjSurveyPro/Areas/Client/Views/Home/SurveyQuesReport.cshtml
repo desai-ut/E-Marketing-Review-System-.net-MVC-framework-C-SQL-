@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "SurveyQuesReport";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Attempt Survey</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <div class="panel-body">
+                <div class="invoice">
+                    <header class="clearfix">
+                        <div class="row">
+                            <div class="col-sm-6 mt-md">
+                                <h2 class="h2 mt-none mb-sm text-dark text-bold">@ViewBag.ProductName</h2>
+                                <h4 class="h4 m-none text-dark text-bold">@ViewBag.ModelName</h4>
+                            </div>
+                            <div class="col-sm-6 text-right mt-md mb-md">
+                                <address class="ib mr-xlg">
+                                    @ViewBag.CompName
+                                    @*@ViewBag.UserId*@
+                                    <br />
+                                    @ViewBag.OwnerName
+                                    <br />
+                                    @ViewBag.ContactNo
+                                    <br />
+                                    @ViewBag.EmailID
+                                </address>
+                                <div class="ib">
+                                    <img src="@Url.Content(ViewBag.CompanyLogo)" alt="CompanyLogo" width="100" style="height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <h3 align="center" style="margin-bottom: 25px"><span class="text-dark">Survey Questions</span></h3>
+                    @if (ViewBag.SurveyQuesGrid != null)
+                    {
+                        foreach (var item in ViewBag.SurveyQuesGrid)
+                        {
+                        <div class="form-group">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-none">
+                                    <tr>
+                                        <td class="actions-hover actions-fade">
+                                            <div class="col-md-12">
+                                                <p style="font-size: large; color: red; text-align: center;">Question</p>
+                                                @Html.Raw(item.Question)
+                                                <br />
+                                                <p style="font-size: large;">Question Type:&nbsp;@item.CategoryDisc</p>
+                                            </div>
+                                            <div style="margin: auto;" align="right">
+                                                <a href="@Url.Action("SurveyQuesGridReport", "Home", new { area = "Client", QID = item.QuestionID, SID = item.SurveyID, CID = item.CategoryID })"
+                                                    class="mb-xs mt-xs mr-xs btn btn-default"><i class="fa fa-table"></i></a>
+                                                <a href="@Url.Action("SurveyQuesPieChartReport", "Home", new { area = "Client", QID = item.QuestionID, SID = item.SurveyID, CID = item.CategoryID })"
+                                                    class="mb-xs mt-xs mr-xs btn btn-default"><i class="fa fa-adjust"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <table class="table table-hover mb-none">
+                                <tr>
+                                    <td class="actions-hover actions-fade">
+                                        <div class="col-md-12">
+                                            <h6 style="color: red; text-align: center">No Reviewed Question Available.</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    }
+                </div>
+                <hr />
+                <div class="text-center mr-lg" style="margin-left: 40px;">
+                    <div class="text-Center mr-lg">
+                        <a href="@Url.Action("SurveyReport", "Home", new { area = "Client" })" id="btnSubmit"
+                            class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="header-logo">
+                            <div style="text-align: center;">
+                                <p>Powered By</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <img src="~/Contents/appimg/FullLogo.png"
+                                    width="120" height="80"
+                                    alt="Survey Pro" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

@@ -1,0 +1,140 @@
+﻿@model IEnumerable<ProjSurveyPro.ReviewQue>
+@{
+    ViewBag.Title = "GiveReview";
+    Layout = "~/Views/Master/UserLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Attempt Survey</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <div class="panel-body">
+                <div class="invoice">
+                    <header class="clearfix">
+                        <div class="row">
+                            <div class="col-sm-6 mt-md">
+                                <h2 class="h2 mt-none mb-sm text-dark text-bold">@ViewBag.ProductName</h2>
+                                <h4 class="h4 m-none text-dark text-bold">@ViewBag.ModelName</h4>
+                            </div>
+                            <div class="col-sm-6 text-right mt-md mb-md">
+                                <address class="ib mr-xlg">
+                                    @ViewBag.CompName
+                                    @ViewBag.SurveyId
+                                    @*@ViewBag.UserId*@
+                                    <br />
+                                    @ViewBag.OwnerName
+                                    <br />
+                                    @ViewBag.ContactNo
+                                    <br />
+                                    @ViewBag.EmailID
+                                </address>
+                                <div class="ib">
+                                    <img src="@Url.Content(@ViewBag.CompanyLogo)" alt="CompanyLogo" width="100" style="height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    @if (Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            using (Html.BeginForm("GiveReview", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            { 
+                            
+                        @Html.Hidden("CategoryID", item.CategoryID)
+                        @Html.Hidden("QuestionID", item.QuestionID)
+                        <div class="form-group">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-none">
+                                    <tr>
+                                        <td class="actions-hover actions-fade">
+                                            <div class="col-md-12">
+                                                <p style="font-size: large; color: red; text-align: center;">Question</p>
+                                                @*@Html.Hidden(""item.AnswerCategory)*@
+                                                @Html.Raw(item.Question)
+                                                <br />
+                                                <div class="col-md-10">
+                                                    @Html.TextArea("Description",
+                                                 new
+                                                 {
+                                                     id = "TextArea1",
+                                                     @class = "form-control",
+                                                     maxlength = "5000",
+                                                     rows = "5",
+                                                     placeholder = "Type Here"
+                                                 })
+                                                </div>
+                                            </div>
+                                            <div style="margin: auto;" align="right">
+                                                <a>
+                                                    @Html.TextBox("Submit", "Done",
+                                                                new
+                                                                {
+                                                                    type = "Submit",
+                                                                    @class = "mb-xs mt-xs mr-xs btn btn-danger"
+                                                                })
+                                                </a>
+                                            </div>
+                                            @*<a href="@Url.Action("AddSurveyUser", "Home", new {SurveyId=item.SurveyId,QuestionId=item.QuestionId })" class="mb-xs mt-xs mr-xs btn btn-success">Done</a>*@
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>                                      
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <table class="table table-hover mb-none">
+                                <tr>
+                                    <td class="actions-hover actions-fade">
+                                        <div class="col-md-12">
+                                            <h6 style="color: red; text-align: center">No Review Question Available.</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    }
+                </div>
+                <hr />
+                <div style="margin-left: 300px;">
+                    <a class="mb-xs mt-xs mr-xs modal-basic btn btn-warning" href="@Url.Action("GiveSurvey", "Home", new { area = "User", SID = @ViewBag.SurveyID, PID = @ViewBag.ProductID, CID = @ViewBag.ClientID })">Give Survey</a>
+                </div>
+                <div style="margin-left: 440px; margin-top: -33px;">
+                    <div class="checkbox-custom checkbox-default">
+                        <input type="checkbox" id="Chk1" value="option1">
+                        <label for="checkboxExample3">Accept Term & Condition for Submit Survey</label>
+                    </div>
+                </div>
+                <hr />
+                <div class="text-center mr-lg" style="margin-left: 40px;">
+                    <div class="text-Center mr-lg">
+                        <a href="@Url.Action("ShowReviewUser", "Home", new { area = "User" })" id="btnSubmit" class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Show Review</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="header-logo">
+                            <div style="text-align: center;">
+                                <p>Powered By</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <img src="~/Contents/appimg/FullLogo.png"
+                                    width="120" height="80"
+                                    alt="Survey Pro" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

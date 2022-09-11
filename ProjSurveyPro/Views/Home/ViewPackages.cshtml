@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ProjSurveyPro.PackageMst>
+@{
+    ViewBag.Title = "ViewPackages";
+    Layout = "~/Views/Master/IndexLayout.cshtml";
+}
+<div role="main" class="main">
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li class="active">Packages</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Packages</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="pricing-table princig-table-flat spaced no-borders">
+                @if (Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="plan">
+                            <h3>@Html.DisplayFor(modelItem => item.PackageTitle)
+                                <span>₹@Html.DisplayFor(modelItem => item.Price)</span>
+                            </h3>
+                            <ul>
+                                <li><strong>@Html.DisplayFor(modelItem => item.Duration)</strong> Months</li>
+                                <li><strong>@Html.DisplayFor(modelItem => item.NoOfProduct)</strong> Products</li>
+                                <li><strong>@Html.DisplayFor(modelItem => item.NoOfSurveyQues)</strong> Survey Questions</li>
+                                <li><strong>@Html.DisplayFor(modelItem => item.NoOfReviewQues)</strong> Review Questions</li>
+                                <li><strong>@Html.DisplayFor(modelItem => item.NoOfResponse)</strong> Responses</li>
+                                <a class="btn btn-lg btn-primary" href="@Url.Action("CompanySignUp", "Home")">Buy Now</a>
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-md-12">
+                        <h6 style="color: red; text-align: center">No Package Available Currently.</h6>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

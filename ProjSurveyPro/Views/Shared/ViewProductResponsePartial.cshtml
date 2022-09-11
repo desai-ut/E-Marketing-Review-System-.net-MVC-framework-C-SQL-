@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ProjSurveyPro.SurveyMst>
+
+<table class="table table-bordered table-striped mb-none" id="datatable-default">
+    <thead>
+        <tr>
+            <th class="center hidden-phone" width="100px">Product Image</th>
+            <th class="center hidden-phone" width="100px">Product Name</th>
+            <th class="center hidden-phone" width="150px">Survey Amount</th>
+            <th class="center hidden-phone" width="150px">No of Surveys</th>
+            <th class="center hidden-phone">Action</th>
+        </tr>
+    </thead>
+    <tbody id="State">
+        @foreach (var item in Model)
+        {
+            <tr class="gradeX">
+                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                    <img src="@Url.Content(item.ProductMst.ProductImage1)" height="50" width="50"/>
+                </td>
+                <td style="padding-top: 3.5mm;">
+                    @Html.DisplayFor(modelItem => item.ProductMst.ProductName)
+                </td>
+                <td style="padding-top: 3.5mm;" class="center hidden-phone">@Html.DisplayFor(modelItem => item.ProductMst.SurveyPerAmount)</td>
+                <td style="padding-top: 3.5mm;" class="center hidden-phone">@Html.DisplayFor(modelItem => item.SurveyCnt)</td>
+                @if (Session["Area"] == "Client")
+                {
+                    <td style="text-align: center">
+                        <a href="@Url.Action("ViewResponse", "Home", new { SID = item.SurveyID, area = "Client" })"
+                            class="btn btn-default">View Responses</a>
+                    </td>
+                }
+                else
+                {
+                    <td style="text-align: center">
+                        <a href="@Url.Action("ViewResponse", "Home", new { SID = item.SurveyID, area = "Employee" })"
+                            class="btn btn-default">View Responses</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

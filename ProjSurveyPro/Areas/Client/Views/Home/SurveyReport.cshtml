@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "SurveyReport";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Product Survey Report</h2>
+    </header>
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Survey Report</h2>
+            </header>
+            <div class="panel-body">
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                    <thead>
+                        <tr>
+                            <th width="140px">Product Name</th>
+                            <th width="140px">Model Name</th>
+                            <th width="140px" class="center hidden-phone">Product Surveyed Date</th>
+                            <th width="100px" class="center hidden-phone">No Of Survey</th>
+                            <th class="center hidden-phone">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in ViewBag.SurveyGrid)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;">
+                                    @item.ProductName
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.ModelName
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @item.SurveyDt
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @item.SurveyCnt
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    <a href="@Url.Action("SurveyQuesReport", "Home", new { SID = item.SurveyID, area = "Client" })"
+                                        class="btn btn-default">SurveyQues Report</a>
+                                    <a href="@Url.Action("ReviewQuesReport", "Home", new { SID = item.SurveyID, area = "Client" })"
+                                        class="btn btn-default">ReviewQues Report</a>
+                                    <a href="@Url.Action("SurveyPieChartReport", "Home", new { SID = item.SurveyID, area = "Client" })"
+                                        class="btn btn-default"><i class="fa fa-adjust"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

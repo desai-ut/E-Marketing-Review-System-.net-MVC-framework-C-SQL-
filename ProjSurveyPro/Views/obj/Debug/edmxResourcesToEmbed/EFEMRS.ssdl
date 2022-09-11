@@ -1,0 +1,1078 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbEMRSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="dbEMRSModelStoreContainer">
+    <EntitySet Name="CategoryMst" EntityType="dbEMRSModel.Store.CategoryMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CityMst" EntityType="dbEMRSModel.Store.CityMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClientMst" EntityType="dbEMRSModel.Store.ClientMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeMst" EntityType="dbEMRSModel.Store.EmployeeMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EwalletMst" EntityType="dbEMRSModel.Store.EwalletMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FeedbackMst" EntityType="dbEMRSModel.Store.FeedbackMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HelpingQues" EntityType="dbEMRSModel.Store.HelpingQues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PackageMst" EntityType="dbEMRSModel.Store.PackageMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductMst" EntityType="dbEMRSModel.Store.ProductMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PurchasePackage" EntityType="dbEMRSModel.Store.PurchasePackage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QueryMst" EntityType="dbEMRSModel.Store.QueryMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReviewAns" EntityType="dbEMRSModel.Store.ReviewAns" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReviewQues" EntityType="dbEMRSModel.Store.ReviewQues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StateMst" EntityType="dbEMRSModel.Store.StateMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SurveyAns" EntityType="dbEMRSModel.Store.SurveyAns" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SurveyMst" EntityType="dbEMRSModel.Store.SurveyMst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SurveyPayment" EntityType="dbEMRSModel.Store.SurveyPayment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SurveyQues" EntityType="dbEMRSModel.Store.SurveyQues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TransferAmount" EntityType="dbEMRSModel.Store.TransferAmount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserMst" EntityType="dbEMRSModel.Store.UserMst" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__CityMst__StateID__1DE57479" Association="dbEMRSModel.Store.FK__CityMst__StateID__1DE57479">
+      <End Role="StateMst" EntitySet="StateMst" />
+      <End Role="CityMst" EntitySet="CityMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientMst__Appro__1B0907CE" Association="dbEMRSModel.Store.FK__ClientMst__Appro__1B0907CE">
+      <End Role="EmployeeMst" EntitySet="EmployeeMst" />
+      <End Role="ClientMst" EntitySet="ClientMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EwalletMs__Surve__656C112C" Association="dbEMRSModel.Store.FK__EwalletMs__Surve__656C112C">
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+      <End Role="EwalletMst" EntitySet="EwalletMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EwalletMs__UserI__66603565" Association="dbEMRSModel.Store.FK__EwalletMs__UserI__66603565">
+      <End Role="UserMst" EntitySet="UserMst" />
+      <End Role="EwalletMst" EntitySet="EwalletMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FeedbackM__Surve__4E88ABD4" Association="dbEMRSModel.Store.FK__FeedbackM__Surve__4E88ABD4">
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+      <End Role="FeedbackMst" EntitySet="FeedbackMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HelpingQu__Categ__5165187F" Association="dbEMRSModel.Store.FK__HelpingQu__Categ__5165187F">
+      <End Role="CategoryMst" EntitySet="CategoryMst" />
+      <End Role="HelpingQues" EntitySet="HelpingQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PackageMs__EmpID__20C1E124" Association="dbEMRSModel.Store.FK__PackageMs__EmpID__20C1E124">
+      <End Role="EmployeeMst" EntitySet="EmployeeMst" />
+      <End Role="PackageMst" EntitySet="PackageMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductMs__Clien__276EDEB3" Association="dbEMRSModel.Store.FK__ProductMs__Clien__276EDEB3">
+      <End Role="ClientMst" EntitySet="ClientMst" />
+      <End Role="ProductMst" EntitySet="ProductMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PurchaseP__Clien__24927208" Association="dbEMRSModel.Store.FK__PurchaseP__Clien__24927208">
+      <End Role="ClientMst" EntitySet="ClientMst" />
+      <End Role="PurchasePackage" EntitySet="PurchasePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PurchaseP__Packa__239E4DCF" Association="dbEMRSModel.Store.FK__PurchaseP__Packa__239E4DCF">
+      <End Role="PackageMst" EntitySet="PackageMst" />
+      <End Role="PurchasePackage" EntitySet="PurchasePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__4316F928" Association="dbEMRSModel.Store.FK__ReviewAns__4316F928">
+      <End Role="ReviewQues" EntitySet="ReviewQues" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__Categ__412EB0B6" Association="dbEMRSModel.Store.FK__ReviewAns__Categ__412EB0B6">
+      <End Role="CategoryMst" EntitySet="CategoryMst" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__Surve__403A8C7D" Association="dbEMRSModel.Store.FK__ReviewAns__Surve__403A8C7D">
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__UserI__4222D4EF" Association="dbEMRSModel.Store.FK__ReviewAns__UserI__4222D4EF">
+      <End Role="UserMst" EntitySet="UserMst" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewQue__Categ__32E0915F" Association="dbEMRSModel.Store.FK__ReviewQue__Categ__32E0915F">
+      <End Role="CategoryMst" EntitySet="CategoryMst" />
+      <End Role="ReviewQues" EntitySet="ReviewQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewQue__Surve__31EC6D26" Association="dbEMRSModel.Store.FK__ReviewQue__Surve__31EC6D26">
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+      <End Role="ReviewQues" EntitySet="ReviewQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__3D5E1FD2" Association="dbEMRSModel.Store.FK__SurveyAns__3D5E1FD2">
+      <End Role="SurveyQues" EntitySet="SurveyQues" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__Categ__3B75D760" Association="dbEMRSModel.Store.FK__SurveyAns__Categ__3B75D760">
+      <End Role="CategoryMst" EntitySet="CategoryMst" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__Surve__3A81B327" Association="dbEMRSModel.Store.FK__SurveyAns__Surve__3A81B327">
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__UserI__3C69FB99" Association="dbEMRSModel.Store.FK__SurveyAns__UserI__3C69FB99">
+      <End Role="UserMst" EntitySet="UserMst" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyMst__2B3F6F97" Association="dbEMRSModel.Store.FK__SurveyMst__2B3F6F97">
+      <End Role="ProductMst" EntitySet="ProductMst" />
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyMst__Clien__2A4B4B5E" Association="dbEMRSModel.Store.FK__SurveyMst__Clien__2A4B4B5E">
+      <End Role="ClientMst" EntitySet="ClientMst" />
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyPay__Surve__4BAC3F29" Association="dbEMRSModel.Store.FK__SurveyPay__Surve__4BAC3F29">
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+      <End Role="SurveyPayment" EntitySet="SurveyPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyQue__Categ__2F10007B" Association="dbEMRSModel.Store.FK__SurveyQue__Categ__2F10007B">
+      <End Role="CategoryMst" EntitySet="CategoryMst" />
+      <End Role="SurveyQues" EntitySet="SurveyQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyQue__Surve__2E1BDC42" Association="dbEMRSModel.Store.FK__SurveyQue__Surve__2E1BDC42">
+      <End Role="SurveyMst" EntitySet="SurveyMst" />
+      <End Role="SurveyQues" EntitySet="SurveyQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TransferA__UserI__48CFD27E" Association="dbEMRSModel.Store.FK__TransferA__UserI__48CFD27E">
+      <End Role="UserMst" EntitySet="UserMst" />
+      <End Role="TransferAmount" EntitySet="TransferAmount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserMst__37A5467C" Association="dbEMRSModel.Store.FK__UserMst__37A5467C">
+      <End Role="CityMst" EntitySet="CityMst" />
+      <End Role="UserMst" EntitySet="UserMst" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserMst__StateID__36B12243" Association="dbEMRSModel.Store.FK__UserMst__StateID__36B12243">
+      <End Role="StateMst" EntitySet="StateMst" />
+      <End Role="UserMst" EntitySet="UserMst" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CategoryMst">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryDisc" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CityMst">
+    <Key>
+      <PropertyRef Name="StateID" />
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="StateID" Type="tinyint" Nullable="false" />
+    <Property Name="CityID" Type="tinyint" Nullable="false" />
+    <Property Name="CityName" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ClientMst">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompAddress" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="OwnerName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyLogo" Type="varchar" MaxLength="60" />
+    <Property Name="ContactNo" Type="varchar" Nullable="false" MaxLength="12" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="13" />
+    <Property Name="GSTNo" Type="varchar" MaxLength="50" />
+    <Property Name="WebsiteName" Type="varchar" MaxLength="50" />
+    <Property Name="EmailID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="JoiningDate" Type="date" Nullable="false" />
+    <Property Name="Passwd" Type="binary" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="ActiveLeaveDt" Type="date" />
+    <Property Name="LastLoginDt" Type="date" />
+    <Property Name="ApprovedEmpID" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="EmployeeMst">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmpName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="EmpAddress" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="MobileNo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="EmailID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DtBirth" Type="date" />
+    <Property Name="JoiningDate" Type="date" Nullable="false" />
+    <Property Name="Designation" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Passwd" Type="binary" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="ActiveLeaveDt" Type="date" />
+    <Property Name="EmpImage" Type="varchar" MaxLength="60" />
+    <Property Name="LastLoginDt" Type="date" />
+  </EntityType>
+  <EntityType Name="EwalletMst">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="SurveyID" Type="smallint" Nullable="false" />
+    <Property Name="UserID" Type="smallint" Nullable="false" />
+    <Property Name="NoOfAttemptedSurveyQues" Type="tinyint" />
+    <Property Name="NoOfAttemptedReviewQues" Type="tinyint" />
+    <Property Name="IsApproved" Type="bit" />
+    <Property Name="RewardPoint" Type="smallint" />
+  </EntityType>
+  <EntityType Name="FeedbackMst">
+    <Key>
+      <PropertyRef Name="FeedbackID" />
+    </Key>
+    <Property Name="FeedbackID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SurveyID" Type="smallint" />
+    <Property Name="FeedbackDisc" Type="varchar" MaxLength="5000" />
+    <Property Name="Ratings" Type="tinyint" Nullable="false" />
+    <Property Name="UserEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserContactNo" Type="varchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="HelpingQues">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="CategoryID" Type="tinyint" Nullable="false" />
+    <Property Name="QuestionID" Type="smallint" Nullable="false" />
+    <Property Name="Question" Type="varchar" Nullable="false" MaxLength="5000" />
+    <Property Name="Answer1" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer2" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer3" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer4" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer5" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer6" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer7" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="PackageMst">
+    <Key>
+      <PropertyRef Name="PackageID" />
+    </Key>
+    <Property Name="PackageID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PackageTitle" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Discription" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Price" Type="smallmoney" Nullable="false" />
+    <Property Name="Duration" Type="tinyint" Nullable="false" />
+    <Property Name="NoOfProduct" Type="tinyint" Nullable="false" />
+    <Property Name="NoOfSurveyQues" Type="tinyint" />
+    <Property Name="NoOfReviewQues" Type="tinyint" />
+    <Property Name="NoOfResponse" Type="smallint" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="EmpID" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="ProductMst">
+    <Key>
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ClientID" Type="smallint" Nullable="false" />
+    <Property Name="ProductID" Type="smallint" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCompany" Type="varchar" MaxLength="50" />
+    <Property Name="ModelName" Type="varchar" MaxLength="20" />
+    <Property Name="ShortDiscription" Type="varchar" MaxLength="1500" />
+    <Property Name="BriefDiscription" Type="varchar" MaxLength="6000" />
+    <Property Name="Facility" Type="varchar" />
+    <Property Name="Price" Type="smallmoney" />
+    <Property Name="ProductImage1" Type="varchar" MaxLength="60" />
+    <Property Name="ProductImage2" Type="varchar" MaxLength="60" />
+    <Property Name="ProductImage3" Type="varchar" MaxLength="60" />
+    <Property Name="ProductImage4" Type="varchar" MaxLength="60" />
+    <Property Name="Video" Type="varchar" MaxLength="70" />
+    <Property Name="TotalSurveyAmt" Type="smallmoney" />
+    <Property Name="SurveyPerAmount" Type="smallmoney" />
+    <Property Name="NoOfSurvey" Type="smallint" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="SurveyRewardPoint" Type="smallint" />
+    <Property Name="IsPaid" Type="bit" />
+  </EntityType>
+  <EntityType Name="PurchasePackage">
+    <Key>
+      <PropertyRef Name="PurchaseID" />
+    </Key>
+    <Property Name="PackageID" Type="tinyint" />
+    <Property Name="ClientID" Type="smallint" />
+    <Property Name="PurchaseID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="smallmoney" Nullable="false" />
+    <Property Name="StartingDate" Type="date" />
+    <Property Name="EndingDate" Type="date" />
+    <Property Name="PaidStatus" Type="bit" />
+    <Property Name="RefNo" Type="varchar" MaxLength="20" />
+    <Property Name="PaidDate" Type="date" />
+  </EntityType>
+  <EntityType Name="QueryMst">
+    <Key>
+      <PropertyRef Name="QueryID" />
+    </Key>
+    <Property Name="QueryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QueryDisc" Type="varchar" MaxLength="5000" />
+    <Property Name="EmailID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReplyStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="ReviewAns">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="SurveyID" Type="smallint" Nullable="false" />
+    <Property Name="CategoryID" Type="tinyint" Nullable="false" />
+    <Property Name="QuestionID" Type="smallint" Nullable="false" />
+    <Property Name="UserID" Type="smallint" Nullable="false" />
+    <Property Name="Answer" Type="varchar" Nullable="false" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="ReviewQues">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="SurveyID" Type="smallint" Nullable="false" />
+    <Property Name="CategoryID" Type="tinyint" Nullable="false" />
+    <Property Name="QuestionID" Type="smallint" Nullable="false" />
+    <Property Name="Question" Type="varchar" Nullable="false" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="StateMst">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SurveyAns">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="SurveyID" Type="smallint" Nullable="false" />
+    <Property Name="CategoryID" Type="tinyint" Nullable="false" />
+    <Property Name="QuestionID" Type="smallint" Nullable="false" />
+    <Property Name="UserID" Type="smallint" Nullable="false" />
+    <Property Name="Answer" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SurveyMst">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+    </Key>
+    <Property Name="ClientID" Type="smallint" />
+    <Property Name="ProductID" Type="smallint" />
+    <Property Name="SurveyID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SurveyDt" Type="date" />
+    <Property Name="SurveyCnt" Type="smallint" />
+    <Property Name="IsPublished" Type="bit" />
+  </EntityType>
+  <EntityType Name="SurveyPayment">
+    <Key>
+      <PropertyRef Name="SPID" />
+    </Key>
+    <Property Name="SPID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SPDate" Type="date" />
+    <Property Name="SurveyID" Type="smallint" />
+    <Property Name="TotalAmt" Type="smallint" />
+    <Property Name="RefNo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SurveyQues">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="SurveyID" Type="smallint" Nullable="false" />
+    <Property Name="CategoryID" Type="tinyint" Nullable="false" />
+    <Property Name="QuestionID" Type="smallint" Nullable="false" />
+    <Property Name="Question" Type="varchar" Nullable="false" MaxLength="5000" />
+    <Property Name="Answer1" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer2" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer3" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer4" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer5" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer6" Type="varchar" MaxLength="2000" />
+    <Property Name="Answer7" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="TransferAmount">
+    <Key>
+      <PropertyRef Name="TAID" />
+    </Key>
+    <Property Name="UserID" Type="smallint" />
+    <Property Name="TAID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TADate" Type="date" />
+    <Property Name="TotalTransferRewardPoint" Type="smallint" />
+    <Property Name="TotalTransferAmount" Type="smallint" />
+    <Property Name="TransferTo" Type="varchar" MaxLength="20" />
+    <Property Name="TransferToUserName" Type="varchar" MaxLength="50" />
+    <Property Name="RefNo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="UserMst">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="UserAddress" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="CityID" Type="tinyint" />
+    <Property Name="StateID" Type="tinyint" />
+    <Property Name="MobNo" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="EmailID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DtBirth" Type="date" />
+    <Property Name="JoiningDate" Type="date" Nullable="false" />
+    <Property Name="Passwd" Type="binary" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="ActiveLeaveDate" Type="date" />
+    <Property Name="UserImage" Type="varchar" MaxLength="50" />
+    <Property Name="LastLoginDt" Type="date" />
+    <Property Name="RedeemRewardPoint" Type="smallint" />
+    <Property Name="ApprovedEmpID" Type="tinyint" />
+  </EntityType>
+  <Association Name="FK__CityMst__StateID__1DE57479">
+    <End Role="StateMst" Type="dbEMRSModel.Store.StateMst" Multiplicity="1" />
+    <End Role="CityMst" Type="dbEMRSModel.Store.CityMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMst">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="CityMst">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientMst__Appro__1B0907CE">
+    <End Role="EmployeeMst" Type="dbEMRSModel.Store.EmployeeMst" Multiplicity="0..1" />
+    <End Role="ClientMst" Type="dbEMRSModel.Store.ClientMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeMst">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="ClientMst">
+        <PropertyRef Name="ApprovedEmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EwalletMs__Surve__656C112C">
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="1" />
+    <End Role="EwalletMst" Type="dbEMRSModel.Store.EwalletMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="EwalletMst">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EwalletMs__UserI__66603565">
+    <End Role="UserMst" Type="dbEMRSModel.Store.UserMst" Multiplicity="1" />
+    <End Role="EwalletMst" Type="dbEMRSModel.Store.EwalletMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="EwalletMst">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FeedbackM__Surve__4E88ABD4">
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="0..1" />
+    <End Role="FeedbackMst" Type="dbEMRSModel.Store.FeedbackMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="FeedbackMst">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HelpingQu__Categ__5165187F">
+    <End Role="CategoryMst" Type="dbEMRSModel.Store.CategoryMst" Multiplicity="1" />
+    <End Role="HelpingQues" Type="dbEMRSModel.Store.HelpingQues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="HelpingQues">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PackageMs__EmpID__20C1E124">
+    <End Role="EmployeeMst" Type="dbEMRSModel.Store.EmployeeMst" Multiplicity="0..1" />
+    <End Role="PackageMst" Type="dbEMRSModel.Store.PackageMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeMst">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="PackageMst">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductMs__Clien__276EDEB3">
+    <End Role="ClientMst" Type="dbEMRSModel.Store.ClientMst" Multiplicity="1" />
+    <End Role="ProductMst" Type="dbEMRSModel.Store.ProductMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientMst">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="ProductMst">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PurchaseP__Clien__24927208">
+    <End Role="ClientMst" Type="dbEMRSModel.Store.ClientMst" Multiplicity="0..1" />
+    <End Role="PurchasePackage" Type="dbEMRSModel.Store.PurchasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientMst">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="PurchasePackage">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PurchaseP__Packa__239E4DCF">
+    <End Role="PackageMst" Type="dbEMRSModel.Store.PackageMst" Multiplicity="0..1" />
+    <End Role="PurchasePackage" Type="dbEMRSModel.Store.PurchasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PackageMst">
+        <PropertyRef Name="PackageID" />
+      </Principal>
+      <Dependent Role="PurchasePackage">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__4316F928">
+    <End Role="ReviewQues" Type="dbEMRSModel.Store.ReviewQues" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.Store.ReviewAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewQues">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__Categ__412EB0B6">
+    <End Role="CategoryMst" Type="dbEMRSModel.Store.CategoryMst" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.Store.ReviewAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__Surve__403A8C7D">
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.Store.ReviewAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__UserI__4222D4EF">
+    <End Role="UserMst" Type="dbEMRSModel.Store.UserMst" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.Store.ReviewAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewQue__Categ__32E0915F">
+    <End Role="CategoryMst" Type="dbEMRSModel.Store.CategoryMst" Multiplicity="1" />
+    <End Role="ReviewQues" Type="dbEMRSModel.Store.ReviewQues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ReviewQues">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewQue__Surve__31EC6D26">
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="1" />
+    <End Role="ReviewQues" Type="dbEMRSModel.Store.ReviewQues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="ReviewQues">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__3D5E1FD2">
+    <End Role="SurveyQues" Type="dbEMRSModel.Store.SurveyQues" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.Store.SurveyAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyQues">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__Categ__3B75D760">
+    <End Role="CategoryMst" Type="dbEMRSModel.Store.CategoryMst" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.Store.SurveyAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__Surve__3A81B327">
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.Store.SurveyAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__UserI__3C69FB99">
+    <End Role="UserMst" Type="dbEMRSModel.Store.UserMst" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.Store.SurveyAns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyMst__2B3F6F97">
+    <End Role="ProductMst" Type="dbEMRSModel.Store.ProductMst" Multiplicity="0..1" />
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMst">
+        <PropertyRef Name="ClientID" />
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="SurveyMst">
+        <PropertyRef Name="ClientID" />
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyMst__Clien__2A4B4B5E">
+    <End Role="ClientMst" Type="dbEMRSModel.Store.ClientMst" Multiplicity="0..1" />
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientMst">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="SurveyMst">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyPay__Surve__4BAC3F29">
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="0..1" />
+    <End Role="SurveyPayment" Type="dbEMRSModel.Store.SurveyPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="SurveyPayment">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyQue__Categ__2F10007B">
+    <End Role="CategoryMst" Type="dbEMRSModel.Store.CategoryMst" Multiplicity="1" />
+    <End Role="SurveyQues" Type="dbEMRSModel.Store.SurveyQues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SurveyQues">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyQue__Surve__2E1BDC42">
+    <End Role="SurveyMst" Type="dbEMRSModel.Store.SurveyMst" Multiplicity="1" />
+    <End Role="SurveyQues" Type="dbEMRSModel.Store.SurveyQues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="SurveyQues">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TransferA__UserI__48CFD27E">
+    <End Role="UserMst" Type="dbEMRSModel.Store.UserMst" Multiplicity="0..1" />
+    <End Role="TransferAmount" Type="dbEMRSModel.Store.TransferAmount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="TransferAmount">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserMst__37A5467C">
+    <End Role="CityMst" Type="dbEMRSModel.Store.CityMst" Multiplicity="0..1" />
+    <End Role="UserMst" Type="dbEMRSModel.Store.UserMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CityMst">
+        <PropertyRef Name="StateID" />
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="UserMst">
+        <PropertyRef Name="StateID" />
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserMst__StateID__36B12243">
+    <End Role="StateMst" Type="dbEMRSModel.Store.StateMst" Multiplicity="0..1" />
+    <End Role="UserMst" Type="dbEMRSModel.Store.UserMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMst">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="UserMst">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspCheckPackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetActiveProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Client" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Emp" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="uspGetHelpingQues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetPackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Package" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="uspGetProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Product" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetProductResponse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetPublishProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetPurchasePackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PurchasePackage" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetResponse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetReviewAnsForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User" Type="smallint" Mode="In" />
+    <Parameter Name="Survey" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetReviewQues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Client" Type="smallint" Mode="In" />
+    <Parameter Name="Product" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetReviewQuesForAns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Survey" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetSurveyAnsForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User" Type="smallint" Mode="In" />
+    <Parameter Name="Survey" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetSurveyProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetSurveyQues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Client" Type="smallint" Mode="In" />
+    <Parameter Name="Product" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetSurveyQuesForAns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Survey" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspGetUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspSaveActiveProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="ProductID" Type="smallint" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="SurveyRewardPoint" Type="smallint" Mode="In" />
+    <Parameter Name="IsPaid" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSaveApprovedClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="ApprovedEmpID" Type="tinyint" Mode="In" />
+    <Parameter Name="ActiveLeaveDt" Type="date" Mode="In" />
+  </Function>
+  <Function Name="uspSaveApprovedEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpID" Type="tinyint" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="ActiveLeaveDt" Type="date" Mode="In" />
+  </Function>
+  <Function Name="uspSaveApprovedPackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PackageID" Type="tinyint" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSaveApprovedPurchasePackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PurchaseID" Type="smallint" Mode="In" />
+    <Parameter Name="StartingDate" Type="date" Mode="In" />
+    <Parameter Name="EndingDate" Type="date" Mode="In" />
+    <Parameter Name="PaidStatus" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSaveApprovedSurveyMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="SurveyDt" Type="date" Mode="In" />
+    <Parameter Name="IsPublished" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSaveApprovedUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="ActiveLeaveDate" Type="date" Mode="In" />
+    <Parameter Name="ApprovedEmpID" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="uspSaveChangePasswdClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="Pass" Type="varchar" Mode="In" />
+    <Parameter Name="Passwd" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveChangePasswdEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpID" Type="tinyint" Mode="In" />
+    <Parameter Name="Pass" Type="varchar" Mode="In" />
+    <Parameter Name="Passwd" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveChangePasswdUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+    <Parameter Name="Pass" Type="varchar" Mode="In" />
+    <Parameter Name="Passwd" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveCityMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StateID" Type="tinyint" Mode="In" />
+    <Parameter Name="CityID" Type="tinyint" Mode="In" />
+    <Parameter Name="cityName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveClientMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="CompName" Type="varchar" Mode="In" />
+    <Parameter Name="CompAddress" Type="varchar" Mode="In" />
+    <Parameter Name="OwnerName" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyLogo" Type="varchar" Mode="In" />
+    <Parameter Name="ContactNo" Type="varchar" Mode="In" />
+    <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+    <Parameter Name="GSTNo" Type="varchar" Mode="In" />
+    <Parameter Name="WebsiteName" Type="varchar" Mode="In" />
+    <Parameter Name="EmailID" Type="varchar" Mode="In" />
+    <Parameter Name="JoiningDate" Type="date" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSaveEmployeeMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpID" Type="tinyint" Mode="In" />
+    <Parameter Name="EmpName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="bit" Mode="In" />
+    <Parameter Name="EmpAddress" Type="varchar" Mode="In" />
+    <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+    <Parameter Name="EmailID" Type="varchar" Mode="In" />
+    <Parameter Name="DtBirth" Type="date" Mode="In" />
+    <Parameter Name="JoiningDate" Type="date" Mode="In" />
+    <Parameter Name="Designation" Type="varchar" Mode="In" />
+    <Parameter Name="EmpImage" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSaveEwalletMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspSaveHelpingQues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="tinyint" Mode="In" />
+    <Parameter Name="QuestionID" Type="smallint" Mode="In" />
+    <Parameter Name="Question" Type="varchar" Mode="In" />
+    <Parameter Name="Answer1" Type="varchar" Mode="In" />
+    <Parameter Name="Answer2" Type="varchar" Mode="In" />
+    <Parameter Name="Answer3" Type="varchar" Mode="In" />
+    <Parameter Name="Answer4" Type="varchar" Mode="In" />
+    <Parameter Name="Answer5" Type="varchar" Mode="In" />
+    <Parameter Name="Answer6" Type="varchar" Mode="In" />
+    <Parameter Name="Answer7" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSavePackageMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PackageID" Type="tinyint" Mode="In" />
+    <Parameter Name="PackageTitle" Type="varchar" Mode="In" />
+    <Parameter Name="Discription" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="smallmoney" Mode="In" />
+    <Parameter Name="Duration" Type="tinyint" Mode="In" />
+    <Parameter Name="NoOfProduct" Type="tinyint" Mode="In" />
+    <Parameter Name="NoOfSurveyQues" Type="tinyint" Mode="In" />
+    <Parameter Name="NoOfReviewQues" Type="tinyint" Mode="In" />
+    <Parameter Name="NoOfResponse" Type="smallint" Mode="In" />
+    <Parameter Name="EmpID" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="uspSaveProductMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="ProductID" Type="smallint" Mode="In" />
+    <Parameter Name="ProductName" Type="varchar" Mode="In" />
+    <Parameter Name="ProductCompany" Type="varchar" Mode="In" />
+    <Parameter Name="ModelName" Type="varchar" Mode="In" />
+    <Parameter Name="ShortDiscription" Type="varchar" Mode="In" />
+    <Parameter Name="BriefDiscription" Type="varchar" Mode="In" />
+    <Parameter Name="Facility" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="smallmoney" Mode="In" />
+    <Parameter Name="ProductImage1" Type="varchar" Mode="In" />
+    <Parameter Name="ProductImage2" Type="varchar" Mode="In" />
+    <Parameter Name="ProductImage3" Type="varchar" Mode="In" />
+    <Parameter Name="ProductImage4" Type="varchar" Mode="In" />
+    <Parameter Name="Video" Type="varchar" Mode="In" />
+    <Parameter Name="TotalSurveyAmt" Type="smallmoney" Mode="In" />
+    <Parameter Name="SurveyPerAmount" Type="smallmoney" Mode="In" />
+    <Parameter Name="NoOfSurvey" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspSavePurchasePackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PackageID" Type="tinyint" Mode="In" />
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="PurchaseID" Type="smallint" Mode="In" />
+    <Parameter Name="Price" Type="smallmoney" Mode="In" />
+    <Parameter Name="RefNo" Type="varchar" Mode="In" />
+    <Parameter Name="PaidDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="uspSaveReviewAns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="CategoryID" Type="tinyint" Mode="In" />
+    <Parameter Name="QuestionID" Type="smallint" Mode="In" />
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+    <Parameter Name="Answer" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveReviewQues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="CategoryID" Type="tinyint" Mode="In" />
+    <Parameter Name="QuestionID" Type="smallint" Mode="In" />
+    <Parameter Name="Question" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveSurveyAns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="CategoryID" Type="tinyint" Mode="In" />
+    <Parameter Name="QuestionID" Type="smallint" Mode="In" />
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+    <Parameter Name="Answer" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="uspSaveSurveyCntIncrement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspSaveSurveyMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="ProductID" Type="smallint" Mode="In" />
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="SurveyCnt" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="uspSaveSurveyPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SPID" Type="int" Mode="In" />
+    <Parameter Name="SPDate" Type="date" Mode="In" />
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="TotalAmt" Type="smallint" Mode="In" />
+    <Parameter Name="RefNo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveSurveyQues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SurveyID" Type="smallint" Mode="In" />
+    <Parameter Name="CategoryID" Type="tinyint" Mode="In" />
+    <Parameter Name="QuestionID" Type="smallint" Mode="In" />
+    <Parameter Name="Question" Type="varchar" Mode="In" />
+    <Parameter Name="Answer1" Type="varchar" Mode="In" />
+    <Parameter Name="Answer2" Type="varchar" Mode="In" />
+    <Parameter Name="Answer3" Type="varchar" Mode="In" />
+    <Parameter Name="Answer4" Type="varchar" Mode="In" />
+    <Parameter Name="Answer5" Type="varchar" Mode="In" />
+    <Parameter Name="Answer6" Type="varchar" Mode="In" />
+    <Parameter Name="Answer7" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveUpdateImageClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="CompanyLogo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveUpdateImageEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpID" Type="tinyint" Mode="In" />
+    <Parameter Name="EmpImage" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveUpdateImageProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientID" Type="smallint" Mode="In" />
+    <Parameter Name="ProductID" Type="smallint" Mode="In" />
+    <Parameter Name="ProductImage1" Type="varchar" Mode="In" />
+    <Parameter Name="ProductImage2" Type="varchar" Mode="In" />
+    <Parameter Name="ProductImage3" Type="varchar" Mode="In" />
+    <Parameter Name="ProductImage4" Type="varchar" Mode="In" />
+    <Parameter Name="Video" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveUpdateImageUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+    <Parameter Name="UserImage" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveUserMst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="smallint" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="bit" Mode="In" />
+    <Parameter Name="UserAddress" Type="varchar" Mode="In" />
+    <Parameter Name="CityID" Type="tinyint" Mode="In" />
+    <Parameter Name="StateID" Type="tinyint" Mode="In" />
+    <Parameter Name="MobNo" Type="varchar" Mode="In" />
+    <Parameter Name="EmailID" Type="varchar" Mode="In" />
+    <Parameter Name="DtBirth" Type="date" Mode="In" />
+    <Parameter Name="UserImage" Type="varchar" Mode="In" />
+    <Parameter Name="JoiningDate" Type="date" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+</Schema>

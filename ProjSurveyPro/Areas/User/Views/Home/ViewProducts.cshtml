@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ProjSurveyPro.ProductMst>
+@{
+    ViewBag.Title = "ViewProducts";
+    Layout = "~/Views/Master/UserLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>List of Products</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Products</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    @if (Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                        <div class="col-md-3">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title" align="center">@Html.Raw(item.ProductName)</h2>
+                                </header>
+                                <div class="panel">
+                                    <a class="thumb-image" href="@Url.Action("ProductDetails", "Home", new { area = "User", PID = item.ProductID, CID = item.ClientID })">
+                                        <div class="owl-carousel" data-plugin-carousel data-plugin-options='{ "autoPlay": 2000, "items": 1,  "navigation": false, "pagination": false }'>
+                                            <div class="item">
+                                                <img alt="" class="img-responsive" src="@Url.Content(item.ProductImage1)">
+                                            </div>
+                                            @if (item.ProductImage2 != null)
+                                            {
+                                                <div class="item">
+                                                    <img alt="" class="img-responsive" src="@Url.Content(item.ProductImage2)">
+                                                </div>
+                                            }
+                                            @if (item.ProductImage3 != null)
+                                            {
+                                                <div class="item">
+                                                    <img alt="" class="img-responsive" src="@Url.Content(item.ProductImage3)">
+                                                </div>
+                                            }
+                                            @if (item.ProductImage4 != null)
+                                            {
+                                                <div class="item">
+                                                    <img alt="" class="img-responsive" src="@Url.Content(item.ProductImage4)">
+                                                </div>
+                                            }
+                                        </div>
+                                    </a>
+                                </div>
+                            </section>
+                        </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-md-12">
+                            <h6 style="color: red; text-align: center">No Product Available Currently.</h6>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

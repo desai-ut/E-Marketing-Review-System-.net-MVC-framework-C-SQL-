@@ -1,0 +1,97 @@
+﻿@model ProjSurveyPro.ProductMst
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="owl-carousel owl-theme" data-plugin-options='{"items": 1, "margin": 10, "animateOut": "fadeOut", "autoplayTimeout": 3000}' style="margin-left: auto" align="center">
+            <div>
+                <span class="img-thumbnail">
+                    <img alt="" class="img-responsive" src="@Url.Content(Model.ProductImage1)" />
+                </span>
+            </div>
+            @if (Model.ProductImage2 != null)
+            {
+                <div>
+                    <span class="img-thumbnail">
+                        <img alt="" class="img-responsive" src="@Url.Content(Model.ProductImage2)" />
+                    </span>
+                </div>
+            }
+            @if (Model.ProductImage3 != null)
+            {
+                <div>
+                    <span class="img-thumbnail">
+                        <img alt="" class="img-responsive" src="@Url.Content(Model.ProductImage3)" />
+                    </span>
+                </div>
+            }
+            @if (Model.ProductImage4 != null)
+            {
+                <div>
+                    <span class="img-thumbnail">
+                        <img alt="" class="img-responsive" src="@Url.Content(Model.ProductImage4)" />
+                    </span>
+                </div>
+            }
+
+            @if (Model.Video != null)
+            {
+                <div class="embed-responsive embed-responsive-4by3">
+                    <iframe class="embed-responsive-item" src="@Url.Content(Model.Video)"></iframe>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="summary entry-summary">
+            <h1 class="mb-none"><strong>@Html.DisplayFor(model => model.ProductName)</strong></h1>
+            <p class="price">
+                <span class="amount">₹@Html.DisplayFor(model => model.Price)</span>
+            </p>
+            <p class="taller" align="justify">@Html.Raw(Model.ShortDiscription)</p>
+            <div class="product_meta">
+                @if (Session["SRP"] == "Static" || Session["SRP"] == "User" || Session["SRP"] == "Admin" || Session["SRP"] == "Employee")
+                {
+                    <span class="posted_in">Reward Points: @Html.DisplayFor(model => model.SurveyRewardPoint)</span>
+                }
+            </div>
+            @if (Session["Btn"] == "Static")
+            {
+                <a href="@Url.Action("SignIn", "Home")" 
+                            class="btn btn-primary btn-icon"><i class="fa fa-external-link"></i>Give Survey</a>
+                <span class="arrow hlb appear-animation" data-appear-animation="rotateInUpLeft" data-appear-animation-delay="800"></span>
+                <br />
+                <br />
+                        
+                <a href="@Url.Action("Feedback", "Home",
+                        new { PID = Model.ProductID, CID = Model.ClientID })" id="btnSubmit" 
+                            class="mb-xs mt-xs mr-xs modal-basic btn btn-warning" style="text-align: center;">Give Feedback</a>
+            }
+            @if (Session["Btn"] == "User")
+            {
+                <a href="@Url.Action("GiveSurvey", "Home", new { area = "User", SID = Model.SurveyMsts.SingleOrDefault().SurveyID, PID = Model.ProductID, CID = Model.ClientID })" class="btn btn-primary btn-icon"><i class="fa fa-external-link"></i>Give Survey</a> <span class="arrow hlb appear-animation" data-appear-animation="rotateInUpLeft" data-appear-animation-delay="800"></span>
+                if (Session["Error"] == "1")
+                {
+                <h6 style="color: red;">@ViewBag.Error</h6>
+                }
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabs tabs-product">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#ProductDescription" data-toggle="tab">Detail Information</a></li>
+                    <li><a href="#Facility" data-toggle="tab">Specification</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="ProductDescription">
+                        <p align="justify">@Html.Raw(Model.BriefDiscription)</p>
+                    </div>
+                    <div class="tab-pane" id="Facility">
+                        <p align="justify">@Html.Raw(Model.Facility)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

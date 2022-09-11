@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ProjSurveyPro.ClientMst>
+@{
+    ViewBag.Title = "Clients";
+    Layout = "~/Views/Master/AdminLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Approve Client</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Approve Client</h2>
+            </header>
+            <div class="panel-body">
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                    <thead>
+                        <tr>
+                            <th class="center hidden-phone" width="140px">Company Logo</th>
+                            <th>Company Name</th>
+                            <th>Owner Name</th>
+                            <th class="center hidden-phone" width="212px">Status</th>
+                            <th class="center hidden-phone" width="90px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in Model)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    <img src="@Url.Content(item.CompanyLogo)" height="70" width="70" />
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @Html.DisplayFor(modelItem => item.CompName)
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @Html.DisplayFor(modelItem => item.OwnerName)
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    <a href="#" class="mb-xs mt-xs btn btn-success">Active</a>
+                                </td>
+                                <td style="text-align: center">
+                                    <a href="@Url.Action("ClientDetails", "Home", new { id = item.ClientID, area = "Admin" })" 
+                                           class="btn btn-default"><i class="fa fa-eye"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>
+

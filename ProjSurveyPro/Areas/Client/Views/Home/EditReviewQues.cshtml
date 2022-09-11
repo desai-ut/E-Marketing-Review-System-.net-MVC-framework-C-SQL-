@@ -1,0 +1,90 @@
+﻿@model ProjSurveyPro.ReviewQue
+@{
+    ViewBag.Title = "EditReviewQues";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script lang="Javascript" type="text/javascript">
+    </script>
+</head>
+<body>
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Edit Review Question</h2>
+        </header>
+
+        <!-- start: page -->
+        <div data-appear-animation="fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel" style="border: double;">
+                        <header class="panel-heading">
+                            <h2 class="panel-title" align="center">Edit Review Question</h2>
+                        </header>
+                        <div class="panel-body">
+                            @using (Html.BeginForm("EditReviewQues", "Home", new { area = "Client" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.ValidationSummary(true)
+                            
+                                @Html.HiddenFor(model => model.QuestionID)
+                                @Html.HiddenFor(model => model.SurveyID) 
+                                <div class="form-group">
+                                    @Html.Label("Question", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        <div class="summernote" data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'>
+                                            @Html.TextAreaFor(model => model.Question,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                data_plugin_summernote = "Required"
+                                            }
+                                        )
+                                            @Html.ValidationMessageFor(model => model.Question, null, new { style = "color:red;" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Category", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-sm-6">
+                                        <div class="mb-md">
+                                            @Html.DropDownListFor(model => model.CategoryID, (SelectList)ViewBag.CList, "- Select Category -", new { @class = "form-control mb-md", id = "ddlCategory", onchange = "Apanal();" })
+                                            @Html.ValidationMessageFor(model => model.CategoryID, null, new { style = "color:red;" })
+                                        </div>
+                                        @if (Session["CError"] == "1")
+                                        {
+                                            <h6 style="color: red;">@ViewBag.Error</h6> 
+                                        }
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div style="text-align: center;">
+                                        <br />
+                                        @Html.TextBox("btnSubmit", "Submit", new { type = "submit", @class = "btn btn-primary btn-lg" })
+                                    </div>
+                                </div>
+                                <hr class="tell" />
+                                <div class="row">
+                                    <div class="header-logo">
+                                        <div style="text-align: center;">
+                                            <p>Powered By</p>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <img src="~/Contents/appimg/FullLogo.png"
+                                                width="120" height="80"
+                                                alt="Survey Pro" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

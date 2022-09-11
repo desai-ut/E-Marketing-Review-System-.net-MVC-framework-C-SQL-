@@ -1,0 +1,97 @@
+﻿@model IEnumerable<ProjSurveyPro.SurveyMst>
+@{
+    ViewBag.Title = "ActiveProduct";
+    Layout = "~/Views/Master/AdminLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Active Product</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Active Product</h2>
+            </header>
+            <div class="panel-body">
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                    <thead>
+                        <tr>
+                            <th class="center hidden-phone" width="150px">Product Image</th>
+                            <th width="170px">Product Name</th>
+                            <th width="140px">Company Name</th>
+                            <th class="center hidden-phone" width="150px">Total Survey Amount</th>
+                            <th class="center hidden-phone" width="190px">Status</th>
+                            <th class="center hidden-phone">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in Model)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    <img src="@Url.Content(item.ProductMst.ProductImage1)" height="50" width="50"/>
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @Html.Raw(item.ProductMst.ProductName)
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @Html.DisplayFor(modelItem => item.ProductMst.ProductCompany)
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @Html.DisplayFor(modelItem => item.ProductMst.TotalSurveyAmt)
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @{ var PaidStatus = item.ProductMst.IsPaid;
+                                       if (PaidStatus == true)
+                                       {
+                                        <a href="@Url.Action("Activate", "Home", new { area = "Admin", PID = item.ProductID, CID = item.ClientID, RP = item.ProductMst.SurveyPerAmount, Status = false })" class="mb-xs mt-xs btn btn-success">Paid</a>
+                                       }
+                                       else
+                                       {
+                                        <a href="@Url.Action("Activate", "Home", new { area = "Admin", PID = item.ProductID, CID = item.ClientID, RP = item.ProductMst.SurveyPerAmount, Status = true })" class="mb-xs mt-xs btn btn-danger">Not Paid</a>
+                                       }
+                                    }
+                                    @{ var ActiveStatus = item.ProductMst.IsActive;
+                                       if (ActiveStatus == true)
+                                       {
+                                        <a href="@Url.Action("Activate", "Home", new { area = "Admin", PID = item.ProductID, CID = item.ClientID, RP = item.ProductMst.SurveyPerAmount, Status = false })" class="mb-xs mt-xs btn btn-success">Active</a>
+                                       }
+                                       else
+                                       {
+                                        <a href="@Url.Action("Activate", "Home", new { area = "Admin", PID = item.ProductID, CID = item.ClientID, RP = item.ProductMst.SurveyPerAmount, Status = true })" class="mb-xs mt-xs btn btn-danger">Publish</a>
+                                       }
+                                    }
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    <a href="@Url.Action("SurveyQuesList", "Home", new { area = "Admin", PID = item.ProductID, CID = item.ClientID })" 
+                                           class="btn btn-default">SurveyQues List</a>
+                                    <a href="@Url.Action("ReviewQuesList", "Home", new { area = "Admin", PID = item.ProductID, CID = item.ClientID })" 
+                                           class="btn btn-default">ReviewQues List</a>
+                                    <a href="@Url.Action("ProductDetails", "Home", new { area = "Admin", PID = item.ProductID, CID = item.ClientID })" 
+                                           class="btn btn-default"><i class="fa fa-eye"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

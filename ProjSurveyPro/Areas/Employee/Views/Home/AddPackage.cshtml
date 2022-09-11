@@ -1,0 +1,179 @@
+﻿@model ProjSurveyPro.PackageMst
+@{
+    ViewBag.Title = "AddPackage";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>New Package</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel" style="border: double;">
+                <header class="panel-heading">
+                    <h2 class="panel-title" align="center">New Package</h2>
+                </header>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("AddPackage", "Home", new { area = "Employee" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {     
+                            @Html.ValidationSummary(true)
+                            if (Session["Status"] == "Edit")
+                            {
+                            @Html.HiddenFor(model => model.PackageID)
+                            @Html.HiddenFor(model => model.EmpID)
+                            }   
+                            <div class="form-group">
+                                @Html.Label("Package Name", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(model => model.PackageTitle,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Package Name"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.PackageTitle, null, new { style = "color:red;" })
+                                </div>
+                            </div>     
+                            <div class="form-group">
+                                @Html.Label("Description", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-6">
+                                    @Html.TextAreaFor(model => model.Discription,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Package Description",
+                                                rows = "3"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.Discription, null, new { style = "color:red;" })
+                                </div>
+                            </div>           
+                            <div class="form-group">
+                                @Html.Label("Package Price", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-3 .col-md-offset-3">
+                                    @Html.TextBoxFor(model => model.Price,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "Package Price",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.Price, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Package Duration", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-3 .col-md-offset-3">
+                                    @Html.TextBoxFor(model => model.Duration,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "Package Duration",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.Duration, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("No of Products", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-3 .col-md-offset-3">
+                                    @Html.TextBoxFor(model => model.NoOfProduct,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "No. of Products",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.NoOfProduct, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("No of Survey Questions", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-3 .col-md-offset-3">
+                                    @Html.TextBoxFor(model => model.NoOfSurveyQues,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "No. of Survey Ques",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.NoOfSurveyQues, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("No of Review Questions", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-3 .col-md-offset-3">
+                                    @Html.TextBoxFor(model => model.NoOfReviewQues,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "No. of Review Ques",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.NoOfReviewQues, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("No of Responses", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-3 .col-md-offset-3">
+                                    @Html.TextBoxFor(model => model.NoOfResponse,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "No. of Responses",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                    @Html.ValidationMessageFor(model => model.NoOfResponse, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div style="text-align: center;">
+                                    <br />
+                                    @Html.TextBox("btnSubmit", "Submit", new { type = "submit", @class = "btn btn-primary btn-lg" })
+                                    <a href="@Url.Action("Package", "Home", new { area = "Employee" })" class = "btn btn-primary btn-lg" }>Back</a>
+                                </div>
+                            </div>
+                            <hr class="tell" />
+                            <div class="row">
+                                <div class="header-logo">
+                                    <div style="text-align: center;">
+                                        <p>Powered By</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <img src="~/Contents/appimg/FullLogo.png"
+                                            width="120" height="80"
+                                            alt="Survey Pro" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

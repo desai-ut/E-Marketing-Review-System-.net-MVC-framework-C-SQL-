@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "SurveyPieChartReport";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Survey Approval Status</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <div class="panel-body">
+                <div class="invoice">
+                    <header class="clearfix">
+                        <div class="row">
+                            <div class="col-sm-6 mt-md">
+                                <h2 class="h2 mt-none mb-sm text-dark text-bold">@ViewBag.ProductName</h2>
+                                <h4 class="h4 m-none text-dark text-bold">@ViewBag.ModelName</h4>
+                            </div>
+                            <div class="col-sm-6 text-right mt-md mb-md">
+                                <address class="ib mr-xlg">
+                                    @ViewBag.CompName
+                                    <br />
+                                    @ViewBag.OwnerName
+                                    <br />
+                                    @ViewBag.ContactNo
+                                    <br />
+                                    @ViewBag.EmailID
+                                </address>
+                                <div class="ib">
+                                    <img src="@Url.Content(@ViewBag.CompanyLogo)" alt="CompanyLogo" width="100" style="height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <h3 align="center"><span class="text-dark">Survey Approval Status</span></h3>
+                    <hr />
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+                    <script type="text/javascript">
+                        google.charts.load('current', { packages: ['corechart', 'bar'] });
+                        google.charts.setOnLoadCallback(drawAnnotations);
+
+                        function drawAnnotations() {
+
+                            var data = google.visualization.arrayToDataTable([
+                              ['Task', 'Hours per Day'],
+                              ['Approved Survey',   @ViewBag.ApprovedSurvey],
+                              ['Not Approved Survey',   @ViewBag.NotApprovedSurvey]
+                            ]);
+
+                            var options = {
+                                title: 'SurveyPro Survey Count Chart',
+                                'is3D': true,
+                                'height': '400',
+                                'width': '600'
+                            };
+
+                            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                            chart.draw(data, options);
+                        }
+                    </script>
+                    <div id="chart_div" style="height: auto" align="center"></div>
+                </div>
+                <hr />
+                <div class="text-center mr-lg" style="margin-left: 40px;">
+                    <div class="text-Center mr-lg">
+                        <a href="@Url.Action("SurveyReport", "Home", new { area = "Client" })" id="btnSubmit"
+                            class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="header-logo">
+                            <div style="text-align: center;">
+                                <p>Powered By</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <img src="~/Contents/appimg/FullLogo.png"
+                                    width="120" height="80"
+                                    alt="Survey Pro" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

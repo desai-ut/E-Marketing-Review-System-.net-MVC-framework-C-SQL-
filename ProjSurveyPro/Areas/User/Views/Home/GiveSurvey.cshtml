@@ -1,0 +1,393 @@
+﻿@model IEnumerable<ProjSurveyPro.SurveyQue>
+@{
+    ViewBag.Title = "GiveSurvey";
+    Layout = "~/Views/Master/UserLayout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .item {
+        width: 30px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .label {
+        padding: 1px 3px 2px;
+        font-size: 9.75px;
+        font-weight: bold;
+        color: #ffffff;
+        text-transform: uppercase;
+        white-space: nowrap;
+        background-color: #bfbfbf;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-decoration: none;
+    }
+
+        .label.success {
+            background-color: #46a546;
+        }
+
+    .item a p.new-label span {
+        position: relative;
+        content: 'Done';
+    }
+
+    .item:hover a p.new-label span {
+        display: none;
+    }
+
+    .item:hover a p.new-label:after {
+        content: 'ADD';
+    }
+</style>
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Attempt Survey</h2>
+    </header>
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <div class="panel-body">
+                <div class="invoice">
+                    <header class="clearfix">
+                        <div class="row">
+                            <div class="col-sm-6 mt-md">
+                                <h2 class="h2 mt-none mb-sm text-dark text-bold">@ViewBag.ProductName</h2>
+                                <h4 class="h4 m-none text-dark text-bold">@ViewBag.ModelName</h4>
+                            </div>
+                            <div class="col-sm-6 text-right mt-md mb-md">
+                                <address class="ib mr-xlg">
+                                    @ViewBag.CompName
+                                    @ViewBag.SurveyId
+                                    @*@ViewBag.UserId*@
+                                    <br />
+                                    @ViewBag.OwnerName
+                                    <br />
+                                    @ViewBag.ContactNo
+                                    <br />
+                                    @ViewBag.EmailID
+                                </address>
+                                <div class="ib">
+                                    <img src="@Url.Content(@ViewBag.CompanyLogo)" alt="CompanyLogo" width="100" style="height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    @if (Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            using (Html.BeginForm("GiveSurvey", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                        @Html.Hidden("Category", item.CategoryMst.CategoryDisc)
+                        @Html.Hidden("CategoryID", item.CategoryID)
+                        @Html.Hidden("QuestionID", item.QuestionID)
+                        <div class="form-group">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-none">
+                                    <tr>
+                                        <td class="actions-hover actions-fade">
+                                            <div class="col-md-12">
+                                                <p style="font-size: large; color: red; text-align: center;">Question</p>
+                                                @Html.Raw(item.Question)
+                                                <br />
+                                                @if (item.CategoryMst.CategoryDisc == "MCQ")
+                                                {
+                                                    if (item.Answer1 != null)
+                                                    {
+                                                        if (item.Answer1 == "1")
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 1, true,
+                                                                                        new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer1)
+                                                    </div>
+                                                    <br />
+                                                        }
+                                                        else
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 1,
+                                                                                     new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer1)
+                                                    </div>
+                                                        }
+                                                    }
+                                                    <br />
+                                                    if (item.Answer2 != null)
+                                                    {
+                                                        if (item.Answer2 == "2")
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 2, true,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer2)
+                                                    </div>
+                                                        }
+                                                        else
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 2,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer2)
+                                                    </div>
+                                                        }
+                                                    }
+                                                    <br />
+                                                    if (item.Answer3 != null)
+                                                    {
+                                                        if (item.Answer3 == "3")
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 3, true,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer3)
+                                                    </div>
+                                                        }
+                                                        else
+                                                        {            
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 3,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer3)
+                                                    </div>
+                                                        }
+                                                    }
+                                                    if (item.Answer4 != null)
+                                                    {
+                                                        if (item.Answer4 == "4")
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 4, true,
+                                                                                      new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer4)
+                                                    </div>
+                                                        }
+                                                        else
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 4,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer4)
+                                                    </div>
+                                                        }
+                                                    }
+                                                    if (item.Answer5 != null)
+                                                    {
+                                                        if (item.Answer5 == "5")
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 5, true,
+                                                                                       new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer5)
+                                                    </div>
+                                                        }
+                                                        else
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 5,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer5)
+                                                    </div>
+                                                        }
+                                                    }
+                                                    if (item.Answer6 != null)
+                                                    {
+                                                        if (item.Answer6 == "6")
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 6, true,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer6)
+                                                    </div>
+                                                        }
+                                                        else
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 6,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer6)
+                                                    </div>
+                                                        }
+                                                    }
+                                                    if (item.Answer7 != null)
+                                                    {
+                                                        if (item.Answer7 == "7")
+                                                        {
+                                                    <div class="col-md-12">
+                                                        @Html.RadioButton("QuesRes", 7, true,
+                                                                                        new { @class = "radio-custom radio-primary" })
+                                                        @Html.DisplayFor(modelitem => item.Answer7)
+                                                    </div>
+                                                        }
+                                                        else
+                                                        {
+                                                    @Html.RadioButton("QuesRes", 7,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                    @Html.DisplayFor(modelitem => item.Answer7)
+                                                        }
+                                                    }
+                                                }
+                                                @if (item.CategoryMst.CategoryDisc == "Like-Dislike")
+                                                {
+                                                    <div class="col-md-12">
+                                                        @if (item.Answer1 == "Like")
+                                                        {
+                                                            @Html.RadioButton("QuesRes1", 1, true,
+                                                                                     new { @class = "radio-custom radio-primary" })
+                                                            <img src="~/Contents/appimg/Like.jpg" width="100px" />
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.RadioButton("QuesRes1", 1,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                            <img src="~/Contents/appimg/Like.jpg" width="100px" />
+                                                        }
+                                                        @if (item.Answer2 == "DisLike")
+                                                        {
+                                                            @Html.RadioButton("QuesRes1", 2, true,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                            <img src="~/Contents/appimg/DisLike.jpg" width="100px" />
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.RadioButton("QuesRes1", 2,
+                                                                                    new { @class = "radio-custom radio-primary" })
+                                                            <img src="~/Contents/appimg/DisLike.jpg" width="100px" />
+                                                        }
+                                                    </div>
+                                                }
+                                                @if (item.CategoryMst.CategoryDisc == "Rating")
+                                                {
+                                                    <fieldset class="starability-slot">
+                                                        @if (item.Answer1 == "5")
+                                                        {
+                                                            <input type="radio" id="rate5" name="Rating" value="5" />
+                                                            <label for="rate5">5 stars, amazing.</label>
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="radio" id="rate5" name="Rating" value="5" />
+                                                            <label for="rate5">5 stars, amazing.</label>
+                                                        }
+                                                        @if (item.Answer2 == "4")
+                                                        {
+                                                            <input type="radio" id="rate4" name="Rating" value="4" />
+                                                            <label for="rate4">4 stars, very good.</label>
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="radio" id="rate4" name="Rating" value="4" />
+                                                            <label for="rate4">4 stars, very good.</label>
+                                                        }
+                                                        @if (item.Answer3 == "3")
+                                                        {
+                                                            <input type="radio" id="rate3" name="Rating" value="3" />
+                                                            <label for="rate3">3 stars, average.</label>
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="radio" id="rate3" name="Rating" value="3" />
+                                                            <label for="rate3">3 stars, average.</label>
+                                                        }
+                                                        @if (item.Answer4 == "2")
+                                                        {
+                                                            <input type="radio" id="rate2" name="Rating" value="2" />
+                                                            <label for="rate2">2 stars, not good.</label>
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="radio" id="rate2" name="Rating" value="2" />
+                                                            <label for="rate2">2 stars, not good.</label>
+                                                        }
+                                                        @if (item.Answer5 == "1")
+                                                        {
+                                                            <input type="radio" id="rate1" name="Rating" value="1" />
+                                                            <label for="rate1">1 star, terrible.</label>
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="radio" id="rate1" name="Rating" value="1" />
+                                                            <label for="rate1">1 star, terrible.</label>
+                                                        }
+                                                    </fieldset>
+                                                }
+                                            </div>
+                                            <div style="margin: auto;" align="right">
+                                                <a>
+                                                    @Html.TextBox("Submit", "Done", new
+                                                                    {
+                                                                        id = "done",
+                                                                        type = "Submit",
+                                                                        @class = "mb-xs mt-xs mr-xs btn btn-danger"
+                                                                    })
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <table class="table table-hover mb-none">
+                                <tr>
+                                    <td class="actions-hover actions-fade">
+                                        <div class="col-md-12">
+                                            <h6 style="color: red; text-align: center">No Survevy Question Available.</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    }
+                </div>
+                <hr />
+
+                <div style="margin-left: 300px;">
+                    <a class="mb-xs mt-xs mr-xs modal-basic btn btn-warning" href="@Url.Action("GiveReview", "Home", 
+                    new { area = "User", SID = @ViewBag.SurveyID, PID = @ViewBag.ProductID, CID = @ViewBag.ClientID })">Give Review</a>
+                </div>
+                <div style="margin-left: 440px; margin-top: -33px;">
+                    <div class="checkbox-custom checkbox-default">
+                        <input type="checkbox" name="Chk1" value="option1">
+                        <label for="checkboxExample3">Accept Term & Condition for Submit Survey</label>
+                    </div>
+                </div>
+                <hr />
+                <div class="text-center mr-lg" style="margin-left: 40px;" id="divSubmit">
+                    @* <a href="@Url.Action("EWallet", "Home", new { SurveyId = Model.SurveyId })" class="mb-xs mt-xs btn btn-primary">Final Submit</a>*@
+                    @*<a href="@Url.Action("UserSurveyList", "Home", new { SurveyId = Model.SurveyId })" id="btnSubmit" class="mb-xs mt-xs btn btn-primary" style="text-align:center;">Show Survey</a>*@
+                    <a href="@Url.Action("ShowSurveyUser", "Home", new { area = "User" })" id="btnSubmit" class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Show Survey</a>
+                    @* <a href="pages-invoice-print.html" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i>Print</a>*@
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="header-logo">
+                            <div style="text-align: center;">
+                                <p>Powered By</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <img src="~/Contents/appimg/FullLogo.png"
+                                    width="120" height="80"
+                                    alt="Survey Pro" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

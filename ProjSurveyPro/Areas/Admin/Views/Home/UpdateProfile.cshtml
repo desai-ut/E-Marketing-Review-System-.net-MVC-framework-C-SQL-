@@ -1,0 +1,231 @@
+﻿@model ProjSurveyPro.EmployeeMst
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/Master/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html class="fixed">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" lang="javascript">
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#AdminImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Admin Profile</h2>
+        </header>
+        <!-- start: page -->
+        <div class="row">
+            <div class="col-md-4 col-lg-3">
+                <div data-appear-animation="fadeInLeft">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="panel panel-sign">
+                                @using (Html.BeginForm("UpdateImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    @Html.ValidationSummary(true)
+                                    <div class="form-group">
+                                        <div class="col-md-12" align="center">
+                                            <div class="thumb-info mb-md">
+                                                @if (Model.EmpImage != null)
+                                                {
+                                                    <img id="AdminImage" src="@Url.Content(Model.EmpImage)" alt="Admin Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+                                                }
+                                                else
+                                                {
+                                                    <img id="AdminImage" src="~/Contents/appimg/user.png" alt="Admin Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class=".col-md-12" align="center">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="input-append">
+                                                    <div class="uneditable-input">
+                                                        <i class="fa fa-file fileupload-exists"></i>
+                                                        <span class="fileupload-preview"></span>
+                                                    </div>
+                                                    <span class="btn btn-default btn-file">
+                                                        <span class="fileupload">Select</span>
+                                                        <input type="file" name="EmpImage" onchange="readURL(this);" />
+                                                    </span>
+                                                    @if (Session["Image"] == "1")
+                                                    {
+                                                        <h6 style="color: red;">@ViewBag.ImageType</h6>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-3" align="center">
+                                                @Html.TextBox("btnSubmit", "Submit", new { type = "submit", @class = "mb-xs mt-xs btn btn-primary" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-lg-6">
+                <div data-appear-animation="fadeInRight">
+                    <div class="tabs">
+                        <ul class="nav nav-tabs tabs-primary">
+                            <li class="active">
+                                <a href="#edit" data-toggle="tab">Edit</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="edit" class="tab-pane active">
+                                @using (Html.BeginForm("UpdateProfile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    @Html.ValidationSummary(true)  
+                                    <h4 class="mb-xlg">Personal Information</h4>
+                                    <fieldset>
+                                        @Html.HiddenFor(model => model.EmpImage)
+                                        @Html.HiddenFor(model => model.JoiningDate)
+                                        @Html.HiddenFor(model => model.Designation)
+                                        @Html.HiddenFor(model => model.IsActive)
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="profileAddress">Name</label>
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.EmpName,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            placeholder = "Enter Your Name"
+                                                                        }
+                                                                    )
+                                                @Html.ValidationMessageFor(model => model.EmpName, null, new { style = "color:red;" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="profileAddress">Gender</label>
+                                            <div class="col-md-6">
+                                                @Html.RadioButtonFor(model => model.Gender, true,
+                                                                        new
+                                                                        {
+                                                                            @class = "radio-custom radio-Primary",
+                                                                            @checked = true
+                                                                        }
+                                                                    ) &nbsp;Male&nbsp;&nbsp;
+                                                    @Html.RadioButtonFor(model => model.Gender, false,
+                                                                        new
+                                                                        {
+                                                                            @class = "radio-custom radio-Primary"
+                                                                        }
+                                                                    ) &nbsp;Female
+                                                    @Html.ValidationMessageFor(model => model.Gender, null, new { style = "color:red;" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="profileAddress">Date Of Birth</label>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                    @Html.TextBoxFor(model => model.DtBirth, "{0:dd-MM-yyyy}",
+                                                                  new
+                                                                  {
+                                                                      pattern = @"\d{1,2}-\d{1,2-\d{4}",
+                                                                      placeholder = "dd/MM/yyyy",
+                                                                      @class = "form-control"
+                                                                  }
+                                                            )
+                                                    @Html.ValidationMessageFor(model => model.DtBirth, null, new { style = "color:red;" })
+                                                    @if (Session["Date"] == "1")
+                                                    {
+                                                        <h6 style="color: red;">@ViewBag.Date</h6>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="profileAddress">Email-Id</label>
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.EmailID,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            placeholder = "Enter Your Email-Id",
+                                                                            pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z]{2,4}$"
+                                                                        }
+                                                                    )
+                                                @Html.ValidationMessageFor(model => model.EmailID, null, new { style = "color:red;" })
+                                                @if (Session["Email"] == "1")
+                                                {
+                                                    <h6 style="color: red;">@ViewBag.Email</h6>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="profileAddress">Mobile No.</label>
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.MobileNo,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            placeholder = "Enter Your Mobile No",
+                                                                            pattern = "^[0-9]*",
+                                                                            minlegth = 10
+                                                                        }
+                                                                    )
+                                                @Html.ValidationMessageFor(model => model.MobileNo, null, new { style = "color:red;" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="profileAddress">Address</label>
+                                            <div class="col-md-6">
+                                                @Html.TextAreaFor(model => model.EmpAddress,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            rows = "3"
+                                                                        }
+                                                                    )
+                                                @Html.ValidationMessageFor(model => model.EmpAddress, null, new { style = "color:red;" })
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-3" align="center">
+                                                @Html.TextBox("btnSubmit", "Submit", new { type = "submit", @class = "mb-xs mt-xs btn btn-primary" })
+                                                <a href="@Url.Action("Index", "Home", new { area = "Admin" })" id="btnSubmit" 
+                                                    class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end: page -->
+</body>
+</html>

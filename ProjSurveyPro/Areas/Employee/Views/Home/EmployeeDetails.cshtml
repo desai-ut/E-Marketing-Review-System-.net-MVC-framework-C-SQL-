@@ -1,0 +1,51 @@
+﻿@model ProjSurveyPro.EmployeeMst
+@{
+    ViewBag.Title = "EmployeeDetails";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>New Employee</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel" style="border: double;">
+                    <header class="panel-heading">
+                        <div class="panel-actions">
+                            <a href="#" class="fa fa-caret-down"></a>
+                            <a href="#" class="fa fa-times"></a>
+                        </div>
+                        <h2 class="panel-title" align="center">New Employee</h2>
+                    </header>
+                    <div class="panel-body">
+                        @Html.Partial("EmployeeDetailsPartial", Model);
+                        <div class="row">
+                            <div style="text-align: center;">
+                                <br />
+                                <a href="@Url.Action("Employee", "Home", new { area = "Employee" })"
+                                 class="mb-xs mt-xs btn btn-success" style="background-color:rgb(0, 148, 255)">Back</a>
+                            </div>
+                        </div>
+                        <hr class="tell" />
+                        <div class="row">
+                            <div class="header-logo">
+                                <div style="text-align: center;">
+                                    <p>Powered By</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <img src="~/Contents/appimg/FullLogo.png"
+                                        width="120" height="80"
+                                        alt="Survey Pro" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

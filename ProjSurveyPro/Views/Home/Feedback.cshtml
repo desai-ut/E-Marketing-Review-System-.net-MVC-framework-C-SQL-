@@ -1,0 +1,117 @@
+﻿@using CaptchaMvc.HtmlHelpers;
+@using ProjSurveyPro;
+@using CaptchaMvc;
+@model ProjSurveyPro.FeedbackMst
+@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Views/Master/IndexLayout.cshtml";
+}
+
+<div role="main" class="main">
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="active">FeedBack</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Add FeedBack</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <center>
+            <div class="col-md-6" style="border: groove; margin-left: 255px;">
+                @using (Html.BeginForm("Feedback", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.ValidationSummary(true)
+                    <div class="row">
+                        <div class="form-group">
+                            <h2 style="color: #86abf5; margin-left: 3px; margin-top: 24px;">FeedBack Here</h2>
+                            <div class="col-md-12">
+                                @Html.Label("Enter Your E-mail ID *")
+                                @Html.TextBoxFor(model => model.UserEmail,
+                                                new
+                                                {
+                                                    type = "text",
+                                                    @class = "form-control",
+                                                    placeholder = "Enter Your Email-Id",
+                                                    pattern = "^([a-zA-Z0-9_|-|.]+)@([a-zA-Z0-9_|-|.]+)|.([a-zA-Z]{2,5})$"
+                                                }
+                                            )
+                                @Html.ValidationMessageFor(model => model.UserEmail, null, new { style = "color:red;" })
+                            </div>
+                            <br /><br />
+                            <div class="col-md-12">
+                                @Html.Label("Enter Your Contact No *")
+                                @Html.TextBoxFor(model => model.UserContactNo,
+                                                new
+                                                {
+                                                    type = "text",
+                                                    @class = "form-control",
+                                                    placeholder = "Enter Your Mobile No",
+                                                    pattern = "^[0-9]*",
+                                                    minlegth = 10
+                                                }
+                                            )
+                                @Html.ValidationMessageFor(model => model.UserContactNo, null, new { style = "color:red;" })
+                            </div>
+                            <br /><br />
+                            <div class="col-md-12">
+                                @Html.Label("Enter Your Feedback *")
+                                @Html.TextAreaFor(model => model.FeedbackDisc,
+                                                new
+                                                {
+                                                    type = "text",
+                                                    @class = "form-control",
+                                                    placeholder = "FeedBack Here..."
+                                                })
+                            </div><br /><br /><br /><br /><br />
+                            <br /><br />
+                            <div class="col-md-9" style="margin-left: 60px;">
+                                <fieldset class="starability-slot">
+                                    <input type="radio" id="rate5" name="Rating" value="5" />
+                                    <label for="rate5">5 stars, amazing.</label>
+
+                                    <input type="radio" id="rate4" name="Rating" value="4" />
+                                    <label for="rate4">4 stars, very good.</label>
+
+                                    <input type="radio" id="rate3" name="Rating" value="3" />
+                                    <label for="rate3">3 stars, average.</label>
+
+                                    <input type="radio" id="rate2" name="Rating" value="2" />
+                                    <label for="rate2">2 stars, not good.</label>
+
+                                    <input type="radio" id="rate1" name="Rating" value="1" />
+                                    <label for="rate1">1 star, terrible.</label>
+                                </fieldset>
+                                @if (Session["Rating"] == "1")
+                                {
+                                    <h6 style="color: red;">@ViewBag.Rating</h6>   
+                                }
+                            </div>
+                            <div class="col-md-9" style="margin-left:60px">
+                                @Html.MathCaptcha()
+                                <h6 style="color: red;">@ViewBag.Error</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-right: 195px;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TextBox("Submit", "Send Message", new { type = "submit", @class = "btn btn-primary btn-lg pull-right" })
+                                <span class="arrow hlb hidden-xs hidden-sm hidden-md" data-appear-animation="rotateInUpLeft" style="top: -80px; margin-left: 340px; animation-iteration-count: infinite;"></span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </center>
+    </div>
+</div>

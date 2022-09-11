@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "ViewResponse";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>View User Responses</h2>
+    </header>
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">User Responses</h2>
+            </header>
+            <div class="panel-body">
+                @Html.Partial("ViewResponsePartial")
+                <div class="row">
+                    <div style="text-align: center;">
+                        <br />
+                        <a href="@Url.Action("ViewProductResponse", "Home", new { area = "Employee" })" id="btnSubmit" 
+                                class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                    </div>
+                </div>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

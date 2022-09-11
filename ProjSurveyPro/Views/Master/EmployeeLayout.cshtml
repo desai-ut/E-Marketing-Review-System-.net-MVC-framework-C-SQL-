@@ -1,0 +1,420 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="sidebar-light fixed">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Survey Pro</title>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Contents/appimg/NewSortLogo.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/Contents/appimg/NewSortLogo.png">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/morris/morris.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/select2/select2.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/dropzone/css/basic.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/dropzone/css/dropzone.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/summernote/summernote.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/summernote/summernote-bs3.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/codemirror/theme/monokai.css" />
+    <link rel="stylesheet" href="~/Contents/RatingCss/starability-minified/starability-all.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/stylesheets/theme.css" />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/stylesheets/theme-custom.css">
+
+    <!-- Head Libs -->
+    <script src="~/Contents/assets/vendor/modernizr/modernizr.js"></script>
+
+</head>
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="@Url.Action("Index", "Home", new { area = "Employee" })" class="logo pull-left">
+                    <img src="~/Contents/assets/images/Logo.png"
+                        width="110" height="46"
+                        alt="Survey Pro"
+                        class="appear-animation bounceIn appear-animation-visible"
+                        data-appear-animation="bounceIn"
+                        style="animation-iteration-count: 3;"
+                        data-sticky-width="115" data-sticky-height="56" data-sticky-top="33" />
+                </a>
+                <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                </div>
+            </div>
+
+            <!-- start: search & user box -->
+            <div class="header-right">
+
+                <span class="separator"></span>
+
+                <ul class="notifications">
+                    <li>Welcome to SurveyPro</li>
+                </ul>
+
+                <span class="separator"></span>
+
+                <div id="userbox" class="userbox">
+                    @if (Session["EmpID"] != null)
+                    {
+                        <a href="#" data-toggle="dropdown">
+                            <figure class="profile-picture">
+                                @if (Session["EmpImage"] != null)
+                                {
+                                    <img src="@Url.Content((string)Session["EmpImage"])" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
+                                }
+                                else
+                                {
+                                    <img src="~/Contents/appimg/user.png" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
+                                }
+                            </figure>
+                            <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                                @{
+                                string Designation = Session["Designation"].ToString();
+                                string Name = Session["Name"].ToString();
+                                    <span class="name">@Name</span>
+                                    <span class="role">@Designation</span>
+                                }
+                            </div>
+                            <i class="fa custom-caret"></i>
+                        </a>
+                    }
+                    else
+                    {
+                        Response.Redirect("~//Home/SignIn");
+                    }
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled">
+                            <li class="divider"></li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="@Url.Action("UpdateProfile", "Home", new { area = "Employee" })"><i class="fa fa-user"></i>My Profile</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="@Url.Action("ChangePassword", "Home", new { area = "Employee" })"><i class="fa fa-lock"></i>Change Password</a>
+                            </li>
+                            <li>
+                                @Html.ActionLink("Logout", "Index", new { area = "" })
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end: search & user box -->
+        </header>
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <aside id="sidebar-left" class="sidebar-left">
+
+                <div class="sidebar-header">
+                    <div class="sidebar-title">
+                        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;Employee Pannel
+                    </div>
+                    <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                        <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                    </div>
+                </div>
+
+                <div class="nano">
+                    <div class="nano-content">
+                        <nav id="menu" class="nav-main" role="navigation">
+                            <ul class="nav nav-main">
+                                <li class="nav-active">
+                                    <a href="@Url.Action("Index", "Home", new { area = "Employee" })">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-file text" aria-hidden="true"></i>
+                                        <span>Package Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="@Url.Action("Package", "Home", new { area = "Employee" })">View Pacakge</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                        <span>Master Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li class="nav-parent">
+                                            <a>Question Management</a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a href="@Url.Action("HelpingQue", "Home", new { area = "Employee" })">View Helping Question</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a>Category Management</a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a href="@Url.Action("Category", "Home", new { area = "Employee" })">View Category</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a>State And City Management</a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a href="@Url.Action("State", "Home", new { area = "Employee" })">View State</a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("City", "Home", new { area = "Employee" })">View City</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <span>Employee Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="@Url.Action("Employee", "Home", new { area = "Employee" })">View Employee
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-university" aria-hidden="true"></i>
+                                        <span>Client Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="@Url.Action("ApproveClient", "Home", new { area = "Employee" })">Approve Client
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                        <span>User Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="@Url.Action("ApproveUser", "Home", new { area = "Employee" })">Approve User
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-money" aria-hidden="true"></i>
+                                        <span>User Reward Point Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="@Url.Action("ViewProductResponse", "Home", new { area = "Employee" })">View Product Response
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-gears" aria-hidden="true"></i>
+                                        <span>Report Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li class="nav-parent">
+                                            <a>System Report</a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a href="@Url.Action("SystemKeyReport", "Home", new { area = "Employee" })">SurveyPro Key Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("EmployeeTaskReport", "Home", new { area = "Employee" })">Employee Task Report
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a>Client Wise Report</a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a href="@Url.Action("PackageReport", "Home", new { area = "Employee" })">Package Payment Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("SurveyPaymentReport", "Home", new { area = "Employee" })">Survey Payment Report
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a>Date Wise Report</a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a href="@Url.Action("DateWiseProductReport", "Home", new { area = "Employee" })">Product Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("DateWiseSurveyPaymentReport", "Home", new { area = "Employee" })">Survey Payment Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("DateWiseTransferAmountReport", "Home", new { area = "Employee" })">Transfer Reward Report
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a>Other Report</a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a href="@Url.Action("StateWiseUserReport", "Home", new { area = "Employee" })">State Wise User Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("CityWiseUserReport", "Home", new { area = "Employee" })">City Wise User Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="@Url.Action("SurveyStatusReport", "Home", new { area = "Employee" })">Survey Status Report
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </aside>
+            <!-- end: sidebar -->
+            @RenderBody()
+        </div>
+    </section>
+
+    <!-- Vendor -->
+    <script src="~/Contents/assets/vendor/jquery/jquery.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-cookie/jquery.cookie.js"></script>
+    <script src="~/Contents/assets/vendor/style-switcher/style.switcher.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="~/Contents/assets/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Contents/assets/vendor/magnific-popup/magnific-popup.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="~/Contents/assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-appear/jquery.appear.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.js"></script>
+    <script src="~/Contents/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.categories.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="~/Contents/assets/vendor/raphael/raphael.js"></script>
+    <script src="~/Contents/assets/vendor/morris/morris.js"></script>
+    <script src="~/Contents/assets/vendor/gauge/gauge.js"></script>
+    <script src="~/Contents/assets/vendor/snap-svg/snap.svg.js"></script>
+    <script src="~/Contents/assets/vendor/liquid-meter/liquid.meter.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/jquery.vmap.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+    <script src="~/Contents/assets/vendor/select2/select2.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="~/Contents/assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-markdown/js/markdown.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-markdown/js/to-markdown.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+    <script src="~/Contents/assets/vendor/codemirror/lib/codemirror.js"></script>
+    <script src="~/Contents/assets/vendor/codemirror/addon/selection/active-line.js"></script>
+    <script src="~/Contents/assets/vendor/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="~/Contents/assets/vendor/codemirror/mode/javascript/javascript.js"></script>
+    <script src="~/Contents/assets/vendor/codemirror/mode/xml/xml.js"></script>
+    <script src="~/Contents/assets/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="~/Contents/assets/vendor/codemirror/mode/css/css.js"></script>
+    <script src="~/Contents/assets/vendor/summernote/summernote.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/Contents/assets/javascripts/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/Contents/assets/javascripts/theme.custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/Contents/assets/javascripts/theme.init.js"></script>
+    <!-- Analytics to Track Preview Website -->
+    <script>
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '../../../www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-42715764-8', 'auto'); ga('send', 'pageview');
+    </script>
+
+    <!-- Examples -->
+    <script src="~/Contents/assets/javascripts/tables/examples.datatables.default.js"></script>
+    <script src="~/Contents/assets/javascripts/tables/examples.datatables.default.js"></script>
+    <script src="~/Contents/assets/javascripts/dashboard/examples.dashboard.js"></script>
+    <script src="~/Contents/assets/javascripts/tables/examples.datatables.tabletools.js"></script>
+    <script src="~/Contents/assets/javascripts/tables/examples.datatables.row.with.details.js"></script>
+    <script src="~/Contents/assets/javascripts/tables/examples.datatables.editable.js"></script>
+
+</body>
+</html>

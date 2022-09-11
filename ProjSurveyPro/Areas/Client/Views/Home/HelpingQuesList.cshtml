@@ -1,0 +1,201 @@
+﻿@model IEnumerable<ProjSurveyPro.HelpingQue>
+@{
+    ViewBag.Title = "HelpingQuesList";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .item {
+        width: 30px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .label {
+        padding: 1px 3px 2px;
+        font-size: 9.75px;
+        font-weight: bold;
+        color: #ffffff;
+        text-transform: uppercase;
+        white-space: nowrap;
+        background-color: #bfbfbf;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-decoration: none;
+    }
+
+        .label.success {
+            background-color: #46a546;
+        }
+
+    .item a p.new-label span {
+        position: relative;
+        content: 'Done';
+    }
+
+    .item:hover a p.new-label span {
+        display: none;
+    }
+
+    .item:hover a p.new-label:after {
+        content: 'ADD';
+    }
+</style>
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Helping Question</h2>
+    </header>
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <div class="panel-body">
+                <div align="center" style="height: auto">
+                    @Html.Label("Category", null, new { @class = "col-sm-3 control-label text-right" })
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <div class="mb-md">
+                                @using (Html.BeginForm("HelpingQuesList", "Home", new { area = "Client" }, FormMethod.Post))
+                                {
+                                    @Html.DropDownList("ddlCategory", (SelectList)ViewBag.CList, "- Select Category -",
+                                    new { @class = "form-control mb-md", @onchange = "this.form.submit();" })
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="invoice">
+                    @if (Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            using (Html.BeginForm("AddQuestion", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                        @Html.Hidden("CategoryID", item.CategoryID)
+                        @Html.Hidden("QuestionID", item.QuestionID)   
+                        <div class="form-group">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-none">
+                                    <tr>
+                                        <td class="actions-hover actions-fade">
+                                            <div class="col-md-12">
+                                                <p style="font-size: large; color: red; text-align: center;">Question</p>
+                                                <h5><strong>@Html.Raw(item.Question)</strong></h5>
+                                                <div class="col-md-12">
+                                                    <p style="font-size: large;">
+                                                        Question Type:&nbsp;@Html.DisplayFor(modelitem => item.CategoryMst.CategoryDisc)
+                                                    </p>
+                                                </div>
+                                                <br />
+                                                @if (item.Answer1 != null)
+                                                {
+                                                    <div style="margin-left: 20px;">A.) @Html.DisplayFor(modelitem => item.Answer1)</div>
+                                                    <br />
+                                                }
+                                                @if (item.Answer2 != null)
+                                                {
+                                                    <div style="margin-left: 20px;">B.) @Html.DisplayFor(modelitem => item.Answer2)</div>
+                                                    <br />
+                                                }
+                                                @if (item.Answer3 != null)
+                                                {
+                                                    <div style="margin-left: 20px;">C.) @Html.DisplayFor(modelitem => item.Answer3)</div>
+                                                    <br />
+                                                }
+                                                @if (item.Answer4 != null)
+                                                {
+                                                    <div style="margin-left: 20px;">D.) @Html.DisplayFor(modelitem => item.Answer4)</div>
+                                                    <br />
+                                                }
+                                                @if (item.Answer5 != null)
+                                                {
+                                                    <div style="margin-left: 20px;">E.) @Html.DisplayFor(modelitem => item.Answer5)</div>
+                                                    <br />
+                                                }
+                                                @if (item.Answer6 != null)
+                                                {
+                                                    <div style="margin-left: 20px;">F.) @Html.DisplayFor(modelitem => item.Answer6)</div>
+                                                    <br />
+                                                }
+                                                @if (item.Answer7 != null)
+                                                {
+                                                    <div style="margin-left: 20px;">G.) @Html.DisplayFor(modelitem => item.Answer7)</div>
+                                                    <br />
+                                                }
+                                            </div>
+                                            <div style="margin: auto;" align="right">
+                                                <a>
+                                                    @Html.TextBox("Submit", "Add",
+                                                                new
+                                                                {
+                                                                    type = "Submit",
+                                                                    @class = "mb-xs mt-xs mr-xs btn btn-success"
+                                                                })
+                                                </a>
+                                            </div>
+                                            @if (ViewBag.Message != null)
+                                            {
+                                                <p class="alert alert-danger">@ViewBag.Message</p>
+                                            }
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <table class="table table-hover mb-none">
+                                <tr>
+                                    <td class="actions-hover actions-fade">
+                                        <div class="col-md-12">
+                                            <h6 style="color: red; text-align: center">No Helping Question Available.</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    }
+                </div>
+                <hr />
+                <div class="text-center mr-lg" style="margin-left: 40px;">
+                    <div class="col-sm-12" align="center">
+                        <a id="PublishProduct" class="btn btn-primary btn-lg" 
+                                    href="@Url.Action("AddSurveyQues", "Home",
+                                    new
+                                    {
+                                        area = "Client",
+                                        id = @ViewBag.ProductID,
+                                        TSA = Session["TSA"],
+                                        Status = "Second"
+                                    }
+                                    )">Back</a>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <div class="row">
+                        <div class="header-logo">
+                            <div style="text-align: center;">
+                                <p>Powered By</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <img src="~/Contents/appimg/FullLogo.png"
+                                    width="120" height="80"
+                                    alt="Survey Pro" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

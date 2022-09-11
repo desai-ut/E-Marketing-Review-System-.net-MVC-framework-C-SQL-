@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ProjSurveyPro.ReviewAn>
+
+<div class="invoice">
+    <header class="clearfix">
+        <div class="row">
+            <div class="col-sm-6 mt-md">
+                <h2 class="h2 mt-none mb-sm text-dark text-bold">@ViewBag.UserName</h2>
+            </div>
+            <div class="col-sm-6 text-right mt-md mb-md">
+                <div class="ib">
+                    <img src="@Url.Content(@ViewBag.UserImage)" alt="UserImage" width="100" style="height:100px;"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    @if (Model.Any())
+    {
+        foreach (var item in Model)
+        {
+        @Html.Hidden("CategoryID", item.CategoryID)
+        @Html.Hidden("QuestionID", item.QuestionID)
+        <div class="form-group">
+            <div class="table-responsive">
+                <table class="table table-hover mb-none">
+                    <tr>
+                        <td class="actions-hover actions-fade">
+                            <div class="col-md-12">
+                                <p style="font-size: large; color: red; text-align: center;">Question</p>
+                                @*@Html.Hidden(""item.AnswerCategory)*@
+                                <h5><strong>@Html.Raw(item.ReviewQue.Question)</strong></h5>
+                                <br />
+                                <br />
+                                <div class="col-md-12">
+                                    @Html.DisplayFor(modelitem => item.Answer)
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        }
+    }
+    else
+    {
+        <div class="form-group">
+            <table class="table table-hover mb-none">
+                <tr>
+                    <td class="actions-hover actions-fade">
+                        <div class="col-md-12">
+                            <h6 style="color: red; text-align: center">User Not Attempted Any Question.</h6>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>

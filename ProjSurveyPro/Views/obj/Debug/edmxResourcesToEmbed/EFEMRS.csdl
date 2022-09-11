@@ -1,0 +1,1511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbEMRSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbEMRSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CategoryMsts" EntityType="dbEMRSModel.CategoryMst" />
+    <EntitySet Name="CityMsts" EntityType="dbEMRSModel.CityMst" />
+    <EntitySet Name="ClientMsts" EntityType="dbEMRSModel.ClientMst" />
+    <EntitySet Name="EmployeeMsts" EntityType="dbEMRSModel.EmployeeMst" />
+    <EntitySet Name="FeedbackMsts" EntityType="dbEMRSModel.FeedbackMst" />
+    <EntitySet Name="HelpingQues" EntityType="dbEMRSModel.HelpingQue" />
+    <EntitySet Name="ProductMsts" EntityType="dbEMRSModel.ProductMst" />
+    <EntitySet Name="PurchasePackages" EntityType="dbEMRSModel.PurchasePackage" />
+    <EntitySet Name="QueryMsts" EntityType="dbEMRSModel.QueryMst" />
+    <EntitySet Name="ReviewAns" EntityType="dbEMRSModel.ReviewAn" />
+    <EntitySet Name="ReviewQues" EntityType="dbEMRSModel.ReviewQue" />
+    <EntitySet Name="StateMsts" EntityType="dbEMRSModel.StateMst" />
+    <EntitySet Name="SurveyAns" EntityType="dbEMRSModel.SurveyAn" />
+    <EntitySet Name="SurveyMsts" EntityType="dbEMRSModel.SurveyMst" />
+    <EntitySet Name="SurveyPayments" EntityType="dbEMRSModel.SurveyPayment" />
+    <EntitySet Name="SurveyQues" EntityType="dbEMRSModel.SurveyQue" />
+    <EntitySet Name="TransferAmounts" EntityType="dbEMRSModel.TransferAmount" />
+    <EntitySet Name="UserMsts" EntityType="dbEMRSModel.UserMst" />
+    <AssociationSet Name="FK__HelpingQu__Categ__5165187F" Association="dbEMRSModel.FK__HelpingQu__Categ__5165187F">
+      <End Role="CategoryMst" EntitySet="CategoryMsts" />
+      <End Role="HelpingQues" EntitySet="HelpingQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__Categ__412EB0B6" Association="dbEMRSModel.FK__ReviewAns__Categ__412EB0B6">
+      <End Role="CategoryMst" EntitySet="CategoryMsts" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewQue__Categ__32E0915F" Association="dbEMRSModel.FK__ReviewQue__Categ__32E0915F">
+      <End Role="CategoryMst" EntitySet="CategoryMsts" />
+      <End Role="ReviewQues" EntitySet="ReviewQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__Categ__3B75D760" Association="dbEMRSModel.FK__SurveyAns__Categ__3B75D760">
+      <End Role="CategoryMst" EntitySet="CategoryMsts" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyQue__Categ__2F10007B" Association="dbEMRSModel.FK__SurveyQue__Categ__2F10007B">
+      <End Role="CategoryMst" EntitySet="CategoryMsts" />
+      <End Role="SurveyQues" EntitySet="SurveyQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CityMst__StateID__1DE57479" Association="dbEMRSModel.FK__CityMst__StateID__1DE57479">
+      <End Role="StateMst" EntitySet="StateMsts" />
+      <End Role="CityMst" EntitySet="CityMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserMst__37A5467C" Association="dbEMRSModel.FK__UserMst__37A5467C">
+      <End Role="CityMst" EntitySet="CityMsts" />
+      <End Role="UserMst" EntitySet="UserMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientMst__Appro__1B0907CE" Association="dbEMRSModel.FK__ClientMst__Appro__1B0907CE">
+      <End Role="EmployeeMst" EntitySet="EmployeeMsts" />
+      <End Role="ClientMst" EntitySet="ClientMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductMs__Clien__276EDEB3" Association="dbEMRSModel.FK__ProductMs__Clien__276EDEB3">
+      <End Role="ClientMst" EntitySet="ClientMsts" />
+      <End Role="ProductMst" EntitySet="ProductMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PurchaseP__Clien__24927208" Association="dbEMRSModel.FK__PurchaseP__Clien__24927208">
+      <End Role="ClientMst" EntitySet="ClientMsts" />
+      <End Role="PurchasePackage" EntitySet="PurchasePackages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyMst__Clien__2A4B4B5E" Association="dbEMRSModel.FK__SurveyMst__Clien__2A4B4B5E">
+      <End Role="ClientMst" EntitySet="ClientMsts" />
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FeedbackM__Surve__4E88ABD4" Association="dbEMRSModel.FK__FeedbackM__Surve__4E88ABD4">
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+      <End Role="FeedbackMst" EntitySet="FeedbackMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyMst__2B3F6F97" Association="dbEMRSModel.FK__SurveyMst__2B3F6F97">
+      <End Role="ProductMst" EntitySet="ProductMsts" />
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__4316F928" Association="dbEMRSModel.FK__ReviewAns__4316F928">
+      <End Role="ReviewQues" EntitySet="ReviewQues" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__Surve__403A8C7D" Association="dbEMRSModel.FK__ReviewAns__Surve__403A8C7D">
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewAns__UserI__4222D4EF" Association="dbEMRSModel.FK__ReviewAns__UserI__4222D4EF">
+      <End Role="UserMst" EntitySet="UserMsts" />
+      <End Role="ReviewAns" EntitySet="ReviewAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReviewQue__Surve__31EC6D26" Association="dbEMRSModel.FK__ReviewQue__Surve__31EC6D26">
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+      <End Role="ReviewQues" EntitySet="ReviewQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserMst__StateID__36B12243" Association="dbEMRSModel.FK__UserMst__StateID__36B12243">
+      <End Role="StateMst" EntitySet="StateMsts" />
+      <End Role="UserMst" EntitySet="UserMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__3D5E1FD2" Association="dbEMRSModel.FK__SurveyAns__3D5E1FD2">
+      <End Role="SurveyQues" EntitySet="SurveyQues" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__Surve__3A81B327" Association="dbEMRSModel.FK__SurveyAns__Surve__3A81B327">
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyAns__UserI__3C69FB99" Association="dbEMRSModel.FK__SurveyAns__UserI__3C69FB99">
+      <End Role="UserMst" EntitySet="UserMsts" />
+      <End Role="SurveyAns" EntitySet="SurveyAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyPay__Surve__4BAC3F29" Association="dbEMRSModel.FK__SurveyPay__Surve__4BAC3F29">
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+      <End Role="SurveyPayment" EntitySet="SurveyPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SurveyQue__Surve__2E1BDC42" Association="dbEMRSModel.FK__SurveyQue__Surve__2E1BDC42">
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+      <End Role="SurveyQues" EntitySet="SurveyQues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TransferA__UserI__48CFD27E" Association="dbEMRSModel.FK__TransferA__UserI__48CFD27E">
+      <End Role="UserMst" EntitySet="UserMsts" />
+      <End Role="TransferAmount" EntitySet="TransferAmounts" />
+    </AssociationSet>
+    <EntitySet Name="EwalletMsts" EntityType="dbEMRSModel.EwalletMst" />
+    <AssociationSet Name="FK__EwalletMs__Surve__656C112C" Association="dbEMRSModel.FK__EwalletMs__Surve__656C112C">
+      <End Role="SurveyMst" EntitySet="SurveyMsts" />
+      <End Role="EwalletMst" EntitySet="EwalletMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EwalletMs__UserI__66603565" Association="dbEMRSModel.FK__EwalletMs__UserI__66603565">
+      <End Role="UserMst" EntitySet="UserMsts" />
+      <End Role="EwalletMst" EntitySet="EwalletMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeMst_UserMst" Association="dbEMRSModel.FK_EmployeeMst_UserMst">
+      <End Role="EmployeeMst" EntitySet="EmployeeMsts" />
+      <End Role="UserMst" EntitySet="UserMsts" />
+    </AssociationSet>
+    <FunctionImport Name="uspSaveClientMst">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="CompName" Mode="In" Type="String" />
+      <Parameter Name="CompAddress" Mode="In" Type="String" />
+      <Parameter Name="OwnerName" Mode="In" Type="String" />
+      <Parameter Name="CompanyLogo" Mode="In" Type="String" />
+      <Parameter Name="ContactNo" Mode="In" Type="String" />
+      <Parameter Name="MobileNo" Mode="In" Type="String" />
+      <Parameter Name="GSTNo" Mode="In" Type="String" />
+      <Parameter Name="WebsiteName" Mode="In" Type="String" />
+      <Parameter Name="EmailID" Mode="In" Type="String" />
+      <Parameter Name="JoiningDate" Mode="In" Type="DateTime" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveEmployeeMst">
+      <Parameter Name="EmpID" Mode="In" Type="Byte" />
+      <Parameter Name="EmpName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Boolean" />
+      <Parameter Name="EmpAddress" Mode="In" Type="String" />
+      <Parameter Name="MobileNo" Mode="In" Type="String" />
+      <Parameter Name="EmailID" Mode="In" Type="String" />
+      <Parameter Name="DtBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="JoiningDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="EmpImage" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveUserMst">
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Boolean" />
+      <Parameter Name="UserAddress" Mode="In" Type="String" />
+      <Parameter Name="CityID" Mode="In" Type="Byte" />
+      <Parameter Name="StateID" Mode="In" Type="Byte" />
+      <Parameter Name="MobNo" Mode="In" Type="String" />
+      <Parameter Name="EmailID" Mode="In" Type="String" />
+      <Parameter Name="DtBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="UserImage" Mode="In" Type="String" />
+      <Parameter Name="JoiningDate" Mode="In" Type="DateTime" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="PackageMsts" EntityType="dbEMRSModel.PackageMst" />
+    <AssociationSet Name="FK__PackageMs__EmpID__20C1E124" Association="dbEMRSModel.FK__PackageMs__EmpID__20C1E124">
+      <End Role="EmployeeMst" EntitySet="EmployeeMsts" />
+      <End Role="PackageMst" EntitySet="PackageMsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PurchaseP__Packa__239E4DCF" Association="dbEMRSModel.FK__PurchaseP__Packa__239E4DCF">
+      <End Role="PackageMst" EntitySet="PackageMsts" />
+      <End Role="PurchasePackage" EntitySet="PurchasePackages" />
+    </AssociationSet>
+    <FunctionImport Name="uspSavePackageMst" ReturnType="Collection(Byte)">
+      <Parameter Name="PackageID" Mode="In" Type="Byte" />
+      <Parameter Name="PackageTitle" Mode="In" Type="String" />
+      <Parameter Name="Discription" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="Duration" Mode="In" Type="Byte" />
+      <Parameter Name="NoOfProduct" Mode="In" Type="Byte" />
+      <Parameter Name="NoOfSurveyQues" Mode="In" Type="Byte" />
+      <Parameter Name="NoOfReviewQues" Mode="In" Type="Byte" />
+      <Parameter Name="NoOfResponse" Mode="In" Type="Int16" />
+      <Parameter Name="EmpID" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveCityMst" ReturnType="Collection(dbEMRSModel.uspSaveCityMst_Result)">
+      <Parameter Name="StateID" Mode="In" Type="Byte" />
+      <Parameter Name="CityID" Mode="In" Type="Byte" />
+      <Parameter Name="cityName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="City" EntitySet="CityMsts" ReturnType="Collection(dbEMRSModel.CityMst)">
+      <Parameter Name="StateID" Mode="In" Type="Byte" />
+      <Parameter Name="CityID" Mode="In" Type="Byte" />
+      <Parameter Name="cityName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveHelpingQues">
+      <Parameter Name="CategoryID" Mode="In" Type="Byte" />
+      <Parameter Name="QuestionID" Mode="In" Type="Int16" />
+      <Parameter Name="Question" Mode="In" Type="String" />
+      <Parameter Name="Answer1" Mode="In" Type="String" />
+      <Parameter Name="Answer2" Mode="In" Type="String" />
+      <Parameter Name="Answer3" Mode="In" Type="String" />
+      <Parameter Name="Answer4" Mode="In" Type="String" />
+      <Parameter Name="Answer5" Mode="In" Type="String" />
+      <Parameter Name="Answer6" Mode="In" Type="String" />
+      <Parameter Name="Answer7" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetCity" ReturnType="Collection(dbEMRSModel.uspGetCity_Result)" />
+    <FunctionImport Name="uspGetHelpingQues" ReturnType="Collection(dbEMRSModel.uspGetHelpingQues_Result)" />
+    <FunctionImport Name="uspGetPackage" ReturnType="Collection(dbEMRSModel.uspGetPackage_Result)">
+      <Parameter Name="Package" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetProduct" ReturnType="Collection(dbEMRSModel.uspGetProduct_Result)">
+      <Parameter Name="Product" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetState" ReturnType="Collection(dbEMRSModel.uspGetState_Result)" />
+    <FunctionImport Name="uspGetCategory" ReturnType="Collection(dbEMRSModel.uspGetCategory_Result)" />
+    <FunctionImport Name="uspSaveProductMst" ReturnType="Collection(dbEMRSModel.uspSaveProductMst_Result)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="ProductID" Mode="In" Type="Int16" />
+      <Parameter Name="ProductName" Mode="In" Type="String" />
+      <Parameter Name="ProductCompany" Mode="In" Type="String" />
+      <Parameter Name="ModelName" Mode="In" Type="String" />
+      <Parameter Name="ShortDiscription" Mode="In" Type="String" />
+      <Parameter Name="BriefDiscription" Mode="In" Type="String" />
+      <Parameter Name="Facility" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="ProductImage1" Mode="In" Type="String" />
+      <Parameter Name="ProductImage2" Mode="In" Type="String" />
+      <Parameter Name="ProductImage3" Mode="In" Type="String" />
+      <Parameter Name="ProductImage4" Mode="In" Type="String" />
+      <Parameter Name="Video" Mode="In" Type="String" />
+      <Parameter Name="TotalSurveyAmt" Mode="In" Type="Decimal" />
+      <Parameter Name="SurveyPerAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="NoOfSurvey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetState" EntitySet="StateMsts" ReturnType="Collection(dbEMRSModel.StateMst)" />
+    <FunctionImport Name="GetCategory" EntitySet="CategoryMsts" ReturnType="Collection(dbEMRSModel.CategoryMst)" />
+    <FunctionImport Name="GetHelpingQues" EntitySet="HelpingQues" ReturnType="Collection(dbEMRSModel.HelpingQue)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(dbEMRSModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(dbEMRSModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="uspGetClient" ReturnType="Collection(dbEMRSModel.uspGetClient_Result)">
+      <Parameter Name="Client" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetUser" ReturnType="Collection(dbEMRSModel.uspGetUser_Result)">
+      <Parameter Name="User" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetCity" EntitySet="CityMsts" ReturnType="Collection(dbEMRSModel.CityMst)" />
+    <FunctionImport Name="uspSaveApprovedClient" ReturnType="Collection(Int16)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="ApprovedEmpID" Mode="In" Type="Byte" />
+      <Parameter Name="ActiveLeaveDt" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveApprovedUser" ReturnType="Collection(Int16)">
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="ActiveLeaveDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ApprovedEmpID" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetEmployee" ReturnType="Collection(dbEMRSModel.uspGetEmployee_Result)">
+      <Parameter Name="Emp" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveApprovedEmployee" ReturnType="Collection(Byte)">
+      <Parameter Name="EmpID" Mode="In" Type="Byte" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="ActiveLeaveDt" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetClient" EntitySet="ClientMsts" ReturnType="Collection(dbEMRSModel.ClientMst)">
+      <Parameter Name="Client" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetUser" EntitySet="UserMsts" ReturnType="Collection(dbEMRSModel.UserMst)">
+      <Parameter Name="User" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveApprovedPackage" ReturnType="Collection(Int16)">
+      <Parameter Name="PackageID" Mode="In" Type="Byte" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="uspSavePurchasePackage" ReturnType="Collection(dbEMRSModel.uspSavePurchasePackage_Result)">
+      <Parameter Name="PackageID" Mode="In" Type="Byte" />
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="PurchaseID" Mode="In" Type="Int16" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="RefNo" Mode="In" Type="String" />
+      <Parameter Name="PaidDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetPackage" EntitySet="PackageMsts" ReturnType="Collection(dbEMRSModel.PackageMst)">
+      <Parameter Name="Package" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetPurchasePackage" ReturnType="Collection(dbEMRSModel.uspGetPurchasePackage_Result)">
+      <Parameter Name="PurchasePackage" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetPurchasePackage" EntitySet="PurchasePackages" ReturnType="Collection(dbEMRSModel.PurchasePackage)">
+      <Parameter Name="PurchasePackage" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveApprovedPurchasePackage" ReturnType="Collection(Int16)">
+      <Parameter Name="PurchaseID" Mode="In" Type="Int16" />
+      <Parameter Name="StartingDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndingDate" Mode="In" Type="DateTime" />
+      <Parameter Name="PaidStatus" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveReviewQues" ReturnType="Collection(Int16)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="CategoryID" Mode="In" Type="Byte" />
+      <Parameter Name="QuestionID" Mode="In" Type="Int16" />
+      <Parameter Name="Question" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveSurveyMst" ReturnType="Collection(Int16)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="ProductID" Mode="In" Type="Int16" />
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="SurveyCnt" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveSurveyQues" ReturnType="Collection(Int16)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="CategoryID" Mode="In" Type="Byte" />
+      <Parameter Name="QuestionID" Mode="In" Type="Int16" />
+      <Parameter Name="Question" Mode="In" Type="String" />
+      <Parameter Name="Answer1" Mode="In" Type="String" />
+      <Parameter Name="Answer2" Mode="In" Type="String" />
+      <Parameter Name="Answer3" Mode="In" Type="String" />
+      <Parameter Name="Answer4" Mode="In" Type="String" />
+      <Parameter Name="Answer5" Mode="In" Type="String" />
+      <Parameter Name="Answer6" Mode="In" Type="String" />
+      <Parameter Name="Answer7" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetSurveyProduct" ReturnType="Collection(dbEMRSModel.uspGetSurveyProduct_Result)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveApprovedSurveyMst" ReturnType="Collection(Int16)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="SurveyDt" Mode="In" Type="DateTime" />
+      <Parameter Name="IsPublished" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetPublishProduct" ReturnType="Collection(dbEMRSModel.uspGetPublishProduct_Result)" />
+    <FunctionImport Name="uspSaveActiveProduct" ReturnType="Collection(Int16)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="ProductID" Mode="In" Type="Int16" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="SurveyRewardPoint" Mode="In" Type="Int16" />
+      <Parameter Name="IsPaid" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="GetPublishProduct" EntitySet="SurveyMsts" ReturnType="Collection(dbEMRSModel.SurveyMst)" />
+    <FunctionImport Name="uspSaveUpdateImageClient" ReturnType="Collection(Int16)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="CompanyLogo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveUpdateImageEmployee" ReturnType="Collection(Byte)">
+      <Parameter Name="EmpID" Mode="In" Type="Byte" />
+      <Parameter Name="EmpImage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveUpdateImageUser" ReturnType="Collection(Int16)">
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+      <Parameter Name="UserImage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetActiveProduct" ReturnType="Collection(dbEMRSModel.uspGetActiveProduct_Result)" />
+    <FunctionImport Name="GetActiveProduct" EntitySet="ProductMsts" ReturnType="Collection(dbEMRSModel.ProductMst)" />
+    <FunctionImport Name="uspSaveUpdateImageProduct" ReturnType="Collection(Int16)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="ProductID" Mode="In" Type="Int16" />
+      <Parameter Name="ProductImage1" Mode="In" Type="String" />
+      <Parameter Name="ProductImage2" Mode="In" Type="String" />
+      <Parameter Name="ProductImage3" Mode="In" Type="String" />
+      <Parameter Name="ProductImage4" Mode="In" Type="String" />
+      <Parameter Name="Video" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveChangePasswdClient" ReturnType="Collection(Int16)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="Passwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveChangePasswdEmployee" ReturnType="Collection(Byte)">
+      <Parameter Name="EmpID" Mode="In" Type="Byte" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="Passwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveChangePasswdUser" ReturnType="Collection(Int16)">
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+      <Parameter Name="Pass" Mode="In" Type="String" />
+      <Parameter Name="Passwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployee" EntitySet="EmployeeMsts" ReturnType="Collection(dbEMRSModel.EmployeeMst)">
+      <Parameter Name="Emp" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetReviewQuesForAns" ReturnType="Collection(dbEMRSModel.uspGetReviewQuesForAns_Result)">
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetSurveyQuesForAns" ReturnType="Collection(dbEMRSModel.uspGetSurveyQuesForAns_Result)">
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetReviewQuesForAns" EntitySet="ReviewQues" ReturnType="Collection(dbEMRSModel.ReviewQue)">
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyQuesForAns" EntitySet="SurveyQues" ReturnType="Collection(dbEMRSModel.SurveyQue)">
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetReviewQues" ReturnType="Collection(dbEMRSModel.uspGetReviewQues_Result)">
+      <Parameter Name="Client" Mode="In" Type="Int16" />
+      <Parameter Name="Product" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetSurveyQues" ReturnType="Collection(dbEMRSModel.uspGetSurveyQues_Result)">
+      <Parameter Name="Client" Mode="In" Type="Int16" />
+      <Parameter Name="Product" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyQues" EntitySet="SurveyQues" ReturnType="Collection(dbEMRSModel.SurveyQue)">
+      <Parameter Name="Client" Mode="In" Type="Int16" />
+      <Parameter Name="Product" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetReviewQues" EntitySet="ReviewQues" ReturnType="Collection(dbEMRSModel.ReviewQue)">
+      <Parameter Name="Client" Mode="In" Type="Int16" />
+      <Parameter Name="Product" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveReviewAns" ReturnType="Collection(Int16)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="CategoryID" Mode="In" Type="Byte" />
+      <Parameter Name="QuestionID" Mode="In" Type="Int16" />
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+      <Parameter Name="Answer" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveSurveyAns" ReturnType="Collection(Int16)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="CategoryID" Mode="In" Type="Byte" />
+      <Parameter Name="QuestionID" Mode="In" Type="Int16" />
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+      <Parameter Name="Answer" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetReviewAnsForUser" ReturnType="Collection(dbEMRSModel.uspGetReviewAnsForUser_Result)">
+      <Parameter Name="User" Mode="In" Type="Int16" />
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetSurveyAnsForUser" ReturnType="Collection(dbEMRSModel.uspGetSurveyAnsForUser_Result)">
+      <Parameter Name="User" Mode="In" Type="Int16" />
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetReviewAnsForUser" EntitySet="ReviewAns" ReturnType="Collection(dbEMRSModel.ReviewAn)">
+      <Parameter Name="User" Mode="In" Type="Int16" />
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyAnsForUser" EntitySet="SurveyAns" ReturnType="Collection(dbEMRSModel.SurveyAn)">
+      <Parameter Name="User" Mode="In" Type="Int16" />
+      <Parameter Name="Survey" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetProduct" EntitySet="ProductMsts" ReturnType="Collection(dbEMRSModel.ProductMst)">
+      <Parameter Name="Product" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveSurveyPayment" ReturnType="Collection(Int32)">
+      <Parameter Name="SPID" Mode="In" Type="Int32" />
+      <Parameter Name="SPDate" Mode="In" Type="DateTime" />
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="TotalAmt" Mode="In" Type="Int16" />
+      <Parameter Name="RefNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyProduct" EntitySet="SurveyMsts" ReturnType="Collection(dbEMRSModel.SurveyMst)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveSurveyCntIncrement">
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspCheckPackage" ReturnType="Collection(Int16)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetProductResponse" ReturnType="Collection(dbEMRSModel.uspGetProductResponse_Result)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetProductResponse" EntitySet="SurveyMsts" ReturnType="Collection(dbEMRSModel.SurveyMst)">
+      <Parameter Name="ClientID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveEwalletMst" ReturnType="Collection(Int16)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+      <Parameter Name="UserID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetResponse" ReturnType="Collection(dbEMRSModel.uspGetResponse_Result)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GetResponse" EntitySet="EwalletMsts" ReturnType="Collection(dbEMRSModel.EwalletMst)">
+      <Parameter Name="SurveyID" Mode="In" Type="Int16" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="CategoryMst">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryDisc" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="HelpingQues" Relationship="dbEMRSModel.FK__HelpingQu__Categ__5165187F" FromRole="CategoryMst" ToRole="HelpingQues" />
+    <NavigationProperty Name="ReviewAns" Relationship="dbEMRSModel.FK__ReviewAns__Categ__412EB0B6" FromRole="CategoryMst" ToRole="ReviewAns" />
+    <NavigationProperty Name="ReviewQues" Relationship="dbEMRSModel.FK__ReviewQue__Categ__32E0915F" FromRole="CategoryMst" ToRole="ReviewQues" />
+    <NavigationProperty Name="SurveyAns" Relationship="dbEMRSModel.FK__SurveyAns__Categ__3B75D760" FromRole="CategoryMst" ToRole="SurveyAns" />
+    <NavigationProperty Name="SurveyQues" Relationship="dbEMRSModel.FK__SurveyQue__Categ__2F10007B" FromRole="CategoryMst" ToRole="SurveyQues" />
+  </EntityType>
+  <EntityType Name="CityMst">
+    <Key>
+      <PropertyRef Name="StateID" />
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="StateID" Type="Byte" Nullable="false" />
+    <Property Name="CityID" Type="Byte" Nullable="false" />
+    <Property Name="CityName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="StateMst" Relationship="dbEMRSModel.FK__CityMst__StateID__1DE57479" FromRole="CityMst" ToRole="StateMst" />
+    <NavigationProperty Name="UserMsts" Relationship="dbEMRSModel.FK__UserMst__37A5467C" FromRole="CityMst" ToRole="UserMst" />
+  </EntityType>
+  <EntityType Name="ClientMst">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CompName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CompAddress" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="OwnerName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CompanyLogo" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="ContactNo" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="GSTNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="WebsiteName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Passwd" Type="Binary" MaxLength="20" FixedLength="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ActiveLeaveDt" Type="DateTime" Precision="0" />
+    <Property Name="LastLoginDt" Type="DateTime" Precision="0" />
+    <Property Name="ApprovedEmpID" Type="Byte" />
+    <NavigationProperty Name="EmployeeMst" Relationship="dbEMRSModel.FK__ClientMst__Appro__1B0907CE" FromRole="ClientMst" ToRole="EmployeeMst" />
+    <NavigationProperty Name="ProductMsts" Relationship="dbEMRSModel.FK__ProductMs__Clien__276EDEB3" FromRole="ClientMst" ToRole="ProductMst" />
+    <NavigationProperty Name="PurchasePackages" Relationship="dbEMRSModel.FK__PurchaseP__Clien__24927208" FromRole="ClientMst" ToRole="PurchasePackage" />
+    <NavigationProperty Name="SurveyMsts" Relationship="dbEMRSModel.FK__SurveyMst__Clien__2A4B4B5E" FromRole="ClientMst" ToRole="SurveyMst" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="EmployeeMst">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="EmpAddress" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DtBirth" Type="DateTime" Precision="0" />
+    <Property Name="JoiningDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Designation" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Passwd" Type="Binary" MaxLength="20" FixedLength="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ActiveLeaveDt" Type="DateTime" Precision="0" />
+    <Property Name="EmpImage" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="LastLoginDt" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ClientMsts" Relationship="dbEMRSModel.FK__ClientMst__Appro__1B0907CE" FromRole="EmployeeMst" ToRole="ClientMst" />
+    <NavigationProperty Name="UserMsts" Relationship="dbEMRSModel.FK_EmployeeMst_UserMst" FromRole="EmployeeMst" ToRole="UserMst" />
+    <NavigationProperty Name="PackageMsts" Relationship="dbEMRSModel.FK__PackageMs__EmpID__20C1E124" FromRole="EmployeeMst" ToRole="PackageMst" />
+  </EntityType>
+  <EntityType Name="FeedbackMst">
+    <Key>
+      <PropertyRef Name="FeedbackID" />
+    </Key>
+    <Property Name="FeedbackID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SurveyID" Type="Int16" />
+    <Property Name="FeedbackDisc" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <Property Name="Ratings" Type="Byte" Nullable="false" />
+    <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserContactNo" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SurveyMst" Relationship="dbEMRSModel.FK__FeedbackM__Surve__4E88ABD4" FromRole="FeedbackMst" ToRole="SurveyMst" />
+  </EntityType>
+  <EntityType Name="HelpingQue">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="CategoryID" Type="Byte" Nullable="false" />
+    <Property Name="QuestionID" Type="Int16" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer1" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer2" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer3" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer4" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer5" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer6" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer7" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CategoryMst" Relationship="dbEMRSModel.FK__HelpingQu__Categ__5165187F" FromRole="HelpingQues" ToRole="CategoryMst" />
+  </EntityType>
+  <EntityType Name="ProductMst">
+    <Key>
+      <PropertyRef Name="ClientID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ClientID" Type="Int16" Nullable="false" />
+    <Property Name="ProductID" Type="Int16" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ProductCompany" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ModelName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ShortDiscription" Type="String" MaxLength="1500" Unicode="false" FixedLength="false" />
+    <Property Name="BriefDiscription" Type="String" MaxLength="6000" Unicode="false" FixedLength="false" />
+    <Property Name="Facility" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="ProductImage1" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="ProductImage2" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="ProductImage3" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="ProductImage4" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Video" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="TotalSurveyAmt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="SurveyPerAmount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="NoOfSurvey" Type="Int16" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="SurveyRewardPoint" Type="Int16" />
+    <Property Name="IsPaid" Type="Boolean" />
+    <NavigationProperty Name="ClientMst" Relationship="dbEMRSModel.FK__ProductMs__Clien__276EDEB3" FromRole="ProductMst" ToRole="ClientMst" />
+    <NavigationProperty Name="SurveyMsts" Relationship="dbEMRSModel.FK__SurveyMst__2B3F6F97" FromRole="ProductMst" ToRole="SurveyMst" />
+  </EntityType>
+  <EntityType Name="PurchasePackage">
+    <Key>
+      <PropertyRef Name="PurchaseID" />
+    </Key>
+    <Property Name="PackageID" Type="Byte" />
+    <Property Name="ClientID" Type="Int16" />
+    <Property Name="PurchaseID" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="StartingDate" Type="DateTime" Precision="0" />
+    <Property Name="EndingDate" Type="DateTime" Precision="0" />
+    <Property Name="PaidStatus" Type="Boolean" />
+    <Property Name="RefNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PaidDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ClientMst" Relationship="dbEMRSModel.FK__PurchaseP__Clien__24927208" FromRole="PurchasePackage" ToRole="ClientMst" />
+    <NavigationProperty Name="PackageMst" Relationship="dbEMRSModel.FK__PurchaseP__Packa__239E4DCF" FromRole="PurchasePackage" ToRole="PackageMst" />
+  </EntityType>
+  <EntityType Name="QueryMst">
+    <Key>
+      <PropertyRef Name="QueryID" />
+    </Key>
+    <Property Name="QueryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="QueryDisc" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ReplyStatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ReviewAn">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="SurveyID" Type="Int16" Nullable="false" />
+    <Property Name="CategoryID" Type="Byte" Nullable="false" />
+    <Property Name="QuestionID" Type="Int16" Nullable="false" />
+    <Property Name="UserID" Type="Int16" Nullable="false" />
+    <Property Name="Answer" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CategoryMst" Relationship="dbEMRSModel.FK__ReviewAns__Categ__412EB0B6" FromRole="ReviewAns" ToRole="CategoryMst" />
+    <NavigationProperty Name="ReviewQue" Relationship="dbEMRSModel.FK__ReviewAns__4316F928" FromRole="ReviewAns" ToRole="ReviewQues" />
+    <NavigationProperty Name="SurveyMst" Relationship="dbEMRSModel.FK__ReviewAns__Surve__403A8C7D" FromRole="ReviewAns" ToRole="SurveyMst" />
+    <NavigationProperty Name="UserMst" Relationship="dbEMRSModel.FK__ReviewAns__UserI__4222D4EF" FromRole="ReviewAns" ToRole="UserMst" />
+  </EntityType>
+  <EntityType Name="ReviewQue">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="SurveyID" Type="Int16" Nullable="false" />
+    <Property Name="CategoryID" Type="Byte" Nullable="false" />
+    <Property Name="QuestionID" Type="Int16" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CategoryMst" Relationship="dbEMRSModel.FK__ReviewQue__Categ__32E0915F" FromRole="ReviewQues" ToRole="CategoryMst" />
+    <NavigationProperty Name="ReviewAns" Relationship="dbEMRSModel.FK__ReviewAns__4316F928" FromRole="ReviewQues" ToRole="ReviewAns" />
+    <NavigationProperty Name="SurveyMst" Relationship="dbEMRSModel.FK__ReviewQue__Surve__31EC6D26" FromRole="ReviewQues" ToRole="SurveyMst" />
+  </EntityType>
+  <EntityType Name="StateMst">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CityMsts" Relationship="dbEMRSModel.FK__CityMst__StateID__1DE57479" FromRole="StateMst" ToRole="CityMst" />
+    <NavigationProperty Name="UserMsts" Relationship="dbEMRSModel.FK__UserMst__StateID__36B12243" FromRole="StateMst" ToRole="UserMst" />
+  </EntityType>
+  <EntityType Name="SurveyAn">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="SurveyID" Type="Int16" Nullable="false" />
+    <Property Name="CategoryID" Type="Byte" Nullable="false" />
+    <Property Name="QuestionID" Type="Int16" Nullable="false" />
+    <Property Name="UserID" Type="Int16" Nullable="false" />
+    <Property Name="Answer" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="CategoryMst" Relationship="dbEMRSModel.FK__SurveyAns__Categ__3B75D760" FromRole="SurveyAns" ToRole="CategoryMst" />
+    <NavigationProperty Name="SurveyQue" Relationship="dbEMRSModel.FK__SurveyAns__3D5E1FD2" FromRole="SurveyAns" ToRole="SurveyQues" />
+    <NavigationProperty Name="SurveyMst" Relationship="dbEMRSModel.FK__SurveyAns__Surve__3A81B327" FromRole="SurveyAns" ToRole="SurveyMst" />
+    <NavigationProperty Name="UserMst" Relationship="dbEMRSModel.FK__SurveyAns__UserI__3C69FB99" FromRole="SurveyAns" ToRole="UserMst" />
+  </EntityType>
+  <EntityType Name="SurveyMst">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+    </Key>
+    <Property Name="ClientID" Type="Int16" />
+    <Property Name="ProductID" Type="Int16" />
+    <Property Name="SurveyID" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SurveyDt" Type="DateTime" Precision="0" />
+    <Property Name="SurveyCnt" Type="Int16" />
+    <Property Name="IsPublished" Type="Boolean" />
+    <NavigationProperty Name="ClientMst" Relationship="dbEMRSModel.FK__SurveyMst__Clien__2A4B4B5E" FromRole="SurveyMst" ToRole="ClientMst" />
+    <NavigationProperty Name="FeedbackMsts" Relationship="dbEMRSModel.FK__FeedbackM__Surve__4E88ABD4" FromRole="SurveyMst" ToRole="FeedbackMst" />
+    <NavigationProperty Name="ProductMst" Relationship="dbEMRSModel.FK__SurveyMst__2B3F6F97" FromRole="SurveyMst" ToRole="ProductMst" />
+    <NavigationProperty Name="ReviewAns" Relationship="dbEMRSModel.FK__ReviewAns__Surve__403A8C7D" FromRole="SurveyMst" ToRole="ReviewAns" />
+    <NavigationProperty Name="ReviewQues" Relationship="dbEMRSModel.FK__ReviewQue__Surve__31EC6D26" FromRole="SurveyMst" ToRole="ReviewQues" />
+    <NavigationProperty Name="SurveyAns" Relationship="dbEMRSModel.FK__SurveyAns__Surve__3A81B327" FromRole="SurveyMst" ToRole="SurveyAns" />
+    <NavigationProperty Name="SurveyPayments" Relationship="dbEMRSModel.FK__SurveyPay__Surve__4BAC3F29" FromRole="SurveyMst" ToRole="SurveyPayment" />
+    <NavigationProperty Name="SurveyQues" Relationship="dbEMRSModel.FK__SurveyQue__Surve__2E1BDC42" FromRole="SurveyMst" ToRole="SurveyQues" />
+    <NavigationProperty Name="EwalletMsts" Relationship="dbEMRSModel.FK__EwalletMs__Surve__656C112C" FromRole="SurveyMst" ToRole="EwalletMst" />
+  </EntityType>
+  <EntityType Name="SurveyPayment">
+    <Key>
+      <PropertyRef Name="SPID" />
+    </Key>
+    <Property Name="SPID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SPDate" Type="DateTime" Precision="0" />
+    <Property Name="SurveyID" Type="Int16" />
+    <Property Name="TotalAmt" Type="Int16" />
+    <Property Name="RefNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SurveyMst" Relationship="dbEMRSModel.FK__SurveyPay__Surve__4BAC3F29" FromRole="SurveyPayment" ToRole="SurveyMst" />
+  </EntityType>
+  <EntityType Name="SurveyQue">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="CategoryID" />
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="SurveyID" Type="Int16" Nullable="false" />
+    <Property Name="CategoryID" Type="Byte" Nullable="false" />
+    <Property Name="QuestionID" Type="Int16" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer1" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer2" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer3" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer4" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer5" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer6" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="Answer7" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CategoryMst" Relationship="dbEMRSModel.FK__SurveyQue__Categ__2F10007B" FromRole="SurveyQues" ToRole="CategoryMst" />
+    <NavigationProperty Name="SurveyAns" Relationship="dbEMRSModel.FK__SurveyAns__3D5E1FD2" FromRole="SurveyQues" ToRole="SurveyAns" />
+    <NavigationProperty Name="SurveyMst" Relationship="dbEMRSModel.FK__SurveyQue__Surve__2E1BDC42" FromRole="SurveyQues" ToRole="SurveyMst" />
+  </EntityType>
+  <EntityType Name="TransferAmount">
+    <Key>
+      <PropertyRef Name="TAID" />
+    </Key>
+    <Property Name="UserID" Type="Int16" />
+    <Property Name="TAID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TADate" Type="DateTime" Precision="0" />
+    <Property Name="TotalTransferRewardPoint" Type="Int16" />
+    <Property Name="TotalTransferAmount" Type="Int16" />
+    <Property Name="TransferTo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="TransferToUserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RefNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="UserMst" Relationship="dbEMRSModel.FK__TransferA__UserI__48CFD27E" FromRole="TransferAmount" ToRole="UserMst" />
+  </EntityType>
+  <EntityType Name="UserMst">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="UserAddress" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CityID" Type="Byte" />
+    <Property Name="StateID" Type="Byte" />
+    <Property Name="MobNo" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DtBirth" Type="DateTime" Precision="0" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="0" Nullable="false" />
+    <Property Name="Passwd" Type="Binary" MaxLength="20" FixedLength="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ActiveLeaveDate" Type="DateTime" Precision="0" />
+    <Property Name="UserImage" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastLoginDt" Type="DateTime" Precision="0" />
+    <Property Name="RedeemRewardPoint" Type="Int16" />
+    <Property Name="ApprovedEmpID" Type="Byte" />
+    <NavigationProperty Name="CityMst" Relationship="dbEMRSModel.FK__UserMst__37A5467C" FromRole="UserMst" ToRole="CityMst" />
+    <NavigationProperty Name="ReviewAns" Relationship="dbEMRSModel.FK__ReviewAns__UserI__4222D4EF" FromRole="UserMst" ToRole="ReviewAns" />
+    <NavigationProperty Name="StateMst" Relationship="dbEMRSModel.FK__UserMst__StateID__36B12243" FromRole="UserMst" ToRole="StateMst" />
+    <NavigationProperty Name="SurveyAns" Relationship="dbEMRSModel.FK__SurveyAns__UserI__3C69FB99" FromRole="UserMst" ToRole="SurveyAns" />
+    <NavigationProperty Name="TransferAmounts" Relationship="dbEMRSModel.FK__TransferA__UserI__48CFD27E" FromRole="UserMst" ToRole="TransferAmount" />
+    <NavigationProperty Name="EwalletMsts" Relationship="dbEMRSModel.FK__EwalletMs__UserI__66603565" FromRole="UserMst" ToRole="EwalletMst" />
+    <NavigationProperty Name="EmployeeMst" Relationship="dbEMRSModel.FK_EmployeeMst_UserMst" FromRole="UserMst" ToRole="EmployeeMst" />
+  </EntityType>
+  <Association Name="FK__HelpingQu__Categ__5165187F">
+    <End Role="CategoryMst" Type="dbEMRSModel.CategoryMst" Multiplicity="1" />
+    <End Role="HelpingQues" Type="dbEMRSModel.HelpingQue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="HelpingQues">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__Categ__412EB0B6">
+    <End Role="CategoryMst" Type="dbEMRSModel.CategoryMst" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.ReviewAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewQue__Categ__32E0915F">
+    <End Role="CategoryMst" Type="dbEMRSModel.CategoryMst" Multiplicity="1" />
+    <End Role="ReviewQues" Type="dbEMRSModel.ReviewQue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ReviewQues">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__Categ__3B75D760">
+    <End Role="CategoryMst" Type="dbEMRSModel.CategoryMst" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.SurveyAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyQue__Categ__2F10007B">
+    <End Role="CategoryMst" Type="dbEMRSModel.CategoryMst" Multiplicity="1" />
+    <End Role="SurveyQues" Type="dbEMRSModel.SurveyQue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMst">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SurveyQues">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CityMst__StateID__1DE57479">
+    <End Role="StateMst" Type="dbEMRSModel.StateMst" Multiplicity="1" />
+    <End Role="CityMst" Type="dbEMRSModel.CityMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMst">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="CityMst">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserMst__37A5467C">
+    <End Role="CityMst" Type="dbEMRSModel.CityMst" Multiplicity="0..1" />
+    <End Role="UserMst" Type="dbEMRSModel.UserMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CityMst">
+        <PropertyRef Name="StateID" />
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="UserMst">
+        <PropertyRef Name="StateID" />
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientMst__Appro__1B0907CE">
+    <End Role="EmployeeMst" Type="dbEMRSModel.EmployeeMst" Multiplicity="0..1" />
+    <End Role="ClientMst" Type="dbEMRSModel.ClientMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeMst">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="ClientMst">
+        <PropertyRef Name="ApprovedEmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductMs__Clien__276EDEB3">
+    <End Role="ClientMst" Type="dbEMRSModel.ClientMst" Multiplicity="1" />
+    <End Role="ProductMst" Type="dbEMRSModel.ProductMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientMst">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="ProductMst">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PurchaseP__Clien__24927208">
+    <End Role="ClientMst" Type="dbEMRSModel.ClientMst" Multiplicity="0..1" />
+    <End Role="PurchasePackage" Type="dbEMRSModel.PurchasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientMst">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="PurchasePackage">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyMst__Clien__2A4B4B5E">
+    <End Role="ClientMst" Type="dbEMRSModel.ClientMst" Multiplicity="0..1" />
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientMst">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="SurveyMst">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FeedbackM__Surve__4E88ABD4">
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="0..1" />
+    <End Role="FeedbackMst" Type="dbEMRSModel.FeedbackMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="FeedbackMst">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyMst__2B3F6F97">
+    <End Role="ProductMst" Type="dbEMRSModel.ProductMst" Multiplicity="0..1" />
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMst">
+        <PropertyRef Name="ClientID" />
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="SurveyMst">
+        <PropertyRef Name="ClientID" />
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__4316F928">
+    <End Role="ReviewQues" Type="dbEMRSModel.ReviewQue" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.ReviewAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewQues">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__Surve__403A8C7D">
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.ReviewAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewAns__UserI__4222D4EF">
+    <End Role="UserMst" Type="dbEMRSModel.UserMst" Multiplicity="1" />
+    <End Role="ReviewAns" Type="dbEMRSModel.ReviewAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ReviewAns">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReviewQue__Surve__31EC6D26">
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="1" />
+    <End Role="ReviewQues" Type="dbEMRSModel.ReviewQue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="ReviewQues">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserMst__StateID__36B12243">
+    <End Role="StateMst" Type="dbEMRSModel.StateMst" Multiplicity="0..1" />
+    <End Role="UserMst" Type="dbEMRSModel.UserMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMst">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="UserMst">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__3D5E1FD2">
+    <End Role="SurveyQues" Type="dbEMRSModel.SurveyQue" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.SurveyAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyQues">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="SurveyID" />
+        <PropertyRef Name="CategoryID" />
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__Surve__3A81B327">
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.SurveyAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyAns__UserI__3C69FB99">
+    <End Role="UserMst" Type="dbEMRSModel.UserMst" Multiplicity="1" />
+    <End Role="SurveyAns" Type="dbEMRSModel.SurveyAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="SurveyAns">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyPay__Surve__4BAC3F29">
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="0..1" />
+    <End Role="SurveyPayment" Type="dbEMRSModel.SurveyPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="SurveyPayment">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SurveyQue__Surve__2E1BDC42">
+    <End Role="SurveyMst" Type="dbEMRSModel.SurveyMst" Multiplicity="1" />
+    <End Role="SurveyQues" Type="dbEMRSModel.SurveyQue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="SurveyQues">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TransferA__UserI__48CFD27E">
+    <End Role="UserMst" Type="dbEMRSModel.UserMst" Multiplicity="0..1" />
+    <End Role="TransferAmount" Type="dbEMRSModel.TransferAmount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="TransferAmount">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EwalletMst">
+    <Key>
+      <PropertyRef Name="SurveyID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Int16" Name="UserID" Nullable="false" />
+    <Property Type="Byte" Name="NoOfAttemptedSurveyQues" />
+    <Property Type="Byte" Name="NoOfAttemptedReviewQues" />
+    <Property Type="Boolean" Name="IsApproved" />
+    <Property Type="Int16" Name="RewardPoint" />
+    <NavigationProperty Name="SurveyMst" Relationship="dbEMRSModel.FK__EwalletMs__Surve__656C112C" FromRole="EwalletMst" ToRole="SurveyMst" />
+    <NavigationProperty Name="UserMst" Relationship="dbEMRSModel.FK__EwalletMs__UserI__66603565" FromRole="EwalletMst" ToRole="UserMst" />
+  </EntityType>
+  <Association Name="FK__EwalletMs__Surve__656C112C">
+    <End Type="dbEMRSModel.SurveyMst" Role="SurveyMst" Multiplicity="1" />
+    <End Type="dbEMRSModel.EwalletMst" Role="EwalletMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SurveyMst">
+        <PropertyRef Name="SurveyID" />
+      </Principal>
+      <Dependent Role="EwalletMst">
+        <PropertyRef Name="SurveyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EwalletMs__UserI__66603565">
+    <End Type="dbEMRSModel.UserMst" Role="UserMst" Multiplicity="1" />
+    <End Type="dbEMRSModel.EwalletMst" Role="EwalletMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMst">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="EwalletMst">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeMst_UserMst">
+    <End Type="dbEMRSModel.EmployeeMst" Role="EmployeeMst" Multiplicity="0..1" />
+    <End Type="dbEMRSModel.UserMst" Role="UserMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeMst">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="UserMst">
+        <PropertyRef Name="ApprovedEmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PackageMst">
+    <Key>
+      <PropertyRef Name="PackageID" />
+    </Key>
+    <Property Type="Byte" Name="PackageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PackageTitle" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Discription" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Price" Nullable="false" Precision="10" Scale="4" />
+    <Property Type="Byte" Name="Duration" Nullable="false" />
+    <Property Type="Byte" Name="NoOfProduct" Nullable="false" />
+    <Property Type="Byte" Name="NoOfSurveyQues" />
+    <Property Type="Byte" Name="NoOfReviewQues" />
+    <Property Type="Int16" Name="NoOfResponse" />
+    <Property Type="Boolean" Name="IsActive" />
+    <Property Type="Byte" Name="EmpID" />
+    <NavigationProperty Name="EmployeeMst" Relationship="dbEMRSModel.FK__PackageMs__EmpID__20C1E124" FromRole="PackageMst" ToRole="EmployeeMst" />
+    <NavigationProperty Name="PurchasePackages" Relationship="dbEMRSModel.FK__PurchaseP__Packa__239E4DCF" FromRole="PackageMst" ToRole="PurchasePackage" />
+  </EntityType>
+  <Association Name="FK__PackageMs__EmpID__20C1E124">
+    <End Type="dbEMRSModel.EmployeeMst" Role="EmployeeMst" Multiplicity="0..1" />
+    <End Type="dbEMRSModel.PackageMst" Role="PackageMst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeMst">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="PackageMst">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PurchaseP__Packa__239E4DCF">
+    <End Type="dbEMRSModel.PackageMst" Role="PackageMst" Multiplicity="0..1" />
+    <End Type="dbEMRSModel.PurchasePackage" Role="PurchasePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PackageMst">
+        <PropertyRef Name="PackageID" />
+      </Principal>
+      <Dependent Role="PurchasePackage">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="uspSaveCityMst_Result">
+    <Property Type="Byte" Name="StateID" Nullable="true" />
+    <Property Type="Byte" Name="CityID" Nullable="true" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="uspGetCity_Result">
+    <Property Type="Byte" Name="StateID" Nullable="false" />
+    <Property Type="Byte" Name="CityID" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="uspGetHelpingQues_Result">
+    <Property Type="Byte" Name="CategoryID" Nullable="true" />
+    <Property Type="Int16" Name="QuestionID" Nullable="true" />
+    <Property Type="String" Name="Question" Nullable="true" MaxLength="5000" />
+    <Property Type="String" Name="Answer1" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer2" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer3" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer4" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer5" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer6" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer7" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="CategoryDisc" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="uspGetPackage_Result">
+    <Property Type="Byte" Name="PackageID" Nullable="false" />
+    <Property Type="String" Name="PackageTitle" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Discription" Nullable="false" MaxLength="500" />
+    <Property Type="Decimal" Name="Price" Nullable="false" Precision="10" />
+    <Property Type="Byte" Name="Duration" Nullable="false" />
+    <Property Type="Byte" Name="NoOfProduct" Nullable="false" />
+    <Property Type="Byte" Name="NoOfSurveyQues" Nullable="true" />
+    <Property Type="Byte" Name="NoOfReviewQues" Nullable="true" />
+    <Property Type="Int16" Name="NoOfResponse" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Byte" Name="EmpID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetProduct_Result">
+    <Property Type="Int16" Name="ClientID" Nullable="false" />
+    <Property Type="Int16" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ProductCompany" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ModelName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ShortDiscription" Nullable="true" MaxLength="1500" />
+    <Property Type="String" Name="BriefDiscription" Nullable="true" MaxLength="5000" />
+    <Property Type="String" Name="Facility" Nullable="true" MaxLength="1000" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="10" />
+    <Property Type="String" Name="ProductImage1" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ProductImage2" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ProductImage3" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ProductImage4" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Video" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="TotalSurveyAmt" Nullable="true" Precision="10" />
+    <Property Type="Decimal" Name="SurveyPerAmount" Nullable="true" Precision="10" />
+    <Property Type="Int16" Name="NoOfSurvey" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int16" Name="SurveyRewardPoint" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetState_Result">
+    <Property Type="Byte" Name="StateID" Nullable="false" />
+    <Property Type="String" Name="StateName" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="uspGetCategory_Result">
+    <Property Type="Byte" Name="CategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryDisc" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="uspSaveProductMst_Result">
+    <Property Type="Byte" Name="ProductID" Nullable="true" />
+    <Property Type="Int16" Name="ClientID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="uspGetClient_Result">
+    <Property Type="Int16" Name="ClientID" Nullable="false" />
+    <Property Type="String" Name="CompName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CompAddress" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="OwnerName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ContactNo" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="13" />
+    <Property Type="String" Name="GSTNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WebsiteName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="false" />
+    <Property Type="Binary" Name="Passwd" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="ActiveLeaveDt" Nullable="true" />
+    <Property Type="DateTime" Name="LastLoginDt" Nullable="true" />
+    <Property Type="Byte" Name="ApprovedEmpID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetUser_Result">
+    <Property Type="Int16" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="Gender" Nullable="false" />
+    <Property Type="String" Name="UserAddress" Nullable="false" MaxLength="500" />
+    <Property Type="Byte" Name="CityID" Nullable="true" />
+    <Property Type="Byte" Name="StateID" Nullable="true" />
+    <Property Type="String" Name="MobNo" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="EmailID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DtBirth" Nullable="true" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="false" />
+    <Property Type="Binary" Name="Passwd" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="ActiveLeaveDate" Nullable="true" />
+    <Property Type="String" Name="UserImage" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDt" Nullable="true" />
+    <Property Type="Int16" Name="RedeemRewardPoint" Nullable="true" />
+    <Property Type="Byte" Name="ApprovedEmpID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetEmployee_Result">
+    <Property Type="Byte" Name="EmpID" Nullable="false" />
+    <Property Type="String" Name="EmpName" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="Gender" Nullable="false" />
+    <Property Type="String" Name="EmpAddress" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MobileNo" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="EmailID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DtBirth" Nullable="true" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="false" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="15" />
+    <Property Type="Binary" Name="Passwd" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="ActiveLeaveDt" Nullable="true" />
+    <Property Type="String" Name="EmpImage" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDt" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspSavePurchasePackage_Result">
+    <Property Type="Int16" Name="PurchaseID" Nullable="true" />
+    <Property Type="Byte" Name="PackageID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetPurchasePackage_Result">
+    <Property Type="Byte" Name="PackageID" Nullable="true" />
+    <Property Type="Int16" Name="ClientID" Nullable="true" />
+    <Property Type="Int16" Name="PurchaseID" Nullable="false" />
+    <Property Type="Decimal" Name="Price" Nullable="false" Precision="10" />
+    <Property Type="DateTime" Name="StartingDate" Nullable="true" />
+    <Property Type="DateTime" Name="EndingDate" Nullable="true" />
+    <Property Type="Boolean" Name="PaidStatus" Nullable="true" />
+    <Property Type="String" Name="RefNo" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="PaidDate" Nullable="true" />
+    <Property Type="String" Name="CompName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PackageTitle" Nullable="false" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="uspGetSurveyProduct_Result">
+    <Property Type="Int16" Name="ClientID" Nullable="true" />
+    <Property Type="Int16" Name="ProductID" Nullable="true" />
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="DateTime" Name="SurveyDt" Nullable="true" />
+    <Property Type="Int16" Name="SurveyCnt" Nullable="true" />
+    <Property Type="Boolean" Name="IsPublished" Nullable="true" />
+    <Property Type="String" Name="ProductImage1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="TotalSurveyAmt" Nullable="true" Precision="10" />
+  </ComplexType>
+  <ComplexType Name="uspGetPublishProduct_Result">
+    <Property Type="Int16" Name="ClientID" Nullable="true" />
+    <Property Type="Int16" Name="ProductID" Nullable="true" />
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="DateTime" Name="SurveyDt" Nullable="true" />
+    <Property Type="Int16" Name="SurveyCnt" Nullable="true" />
+    <Property Type="Boolean" Name="IsPublished" Nullable="true" />
+    <Property Type="String" Name="ProductImage1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="TotalSurveyAmt" Nullable="true" Precision="10" />
+    <Property Type="String" Name="ProductCompany" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetActiveProduct_Result">
+    <Property Type="Int16" Name="ClientID" Nullable="false" />
+    <Property Type="Int16" Name="ProductID" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ProductCompany" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ModelName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ShortDiscription" Nullable="true" MaxLength="1500" />
+    <Property Type="String" Name="BriefDiscription" Nullable="true" MaxLength="5000" />
+    <Property Type="String" Name="Facility" Nullable="true" MaxLength="1000" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="10" />
+    <Property Type="String" Name="ProductImage1" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="ProductImage2" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="ProductImage3" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="ProductImage4" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="Video" Nullable="true" MaxLength="70" />
+    <Property Type="Decimal" Name="TotalSurveyAmt" Nullable="true" Precision="10" />
+    <Property Type="Decimal" Name="SurveyPerAmount" Nullable="true" Precision="10" />
+    <Property Type="Int16" Name="NoOfSurvey" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int16" Name="SurveyRewardPoint" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetReviewQuesForAns_Result">
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Byte" Name="CategoryID" Nullable="false" />
+    <Property Type="Int16" Name="QuestionID" Nullable="false" />
+    <Property Type="String" Name="Question" Nullable="false" MaxLength="5000" />
+    <Property Type="String" Name="CompName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="OwnerName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="ContactNo" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="EmailID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CategoryDisc" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ModelName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ProductCompany" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspGetSurveyQuesForAns_Result">
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Byte" Name="CategoryID" Nullable="false" />
+    <Property Type="Int16" Name="QuestionID" Nullable="false" />
+    <Property Type="String" Name="Question" Nullable="false" MaxLength="5000" />
+    <Property Type="String" Name="Answer1" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer2" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer3" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer4" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer5" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer6" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer7" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="CompName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="OwnerName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="ContactNo" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="EmailID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CategoryDisc" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ModelName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ProductCompany" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspGetReviewQues_Result">
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Byte" Name="CategoryID" Nullable="false" />
+    <Property Type="Int16" Name="QuestionID" Nullable="false" />
+    <Property Type="String" Name="Question" Nullable="false" MaxLength="5000" />
+  </ComplexType>
+  <ComplexType Name="uspGetSurveyQues_Result">
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Byte" Name="CategoryID" Nullable="false" />
+    <Property Type="Int16" Name="QuestionID" Nullable="false" />
+    <Property Type="String" Name="Question" Nullable="false" MaxLength="5000" />
+    <Property Type="String" Name="Answer1" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer2" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer3" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer4" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer5" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer6" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer7" Nullable="true" MaxLength="2000" />
+  </ComplexType>
+  <ComplexType Name="uspGetReviewAnsForUser_Result">
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Byte" Name="CategoryID" Nullable="false" />
+    <Property Type="Int16" Name="QuestionID" Nullable="false" />
+    <Property Type="Int16" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Answer" Nullable="false" MaxLength="5000" />
+    <Property Type="String" Name="Question" Nullable="false" MaxLength="5000" />
+  </ComplexType>
+  <ComplexType Name="uspGetSurveyAnsForUser_Result">
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Byte" Name="CategoryID" Nullable="false" />
+    <Property Type="Int16" Name="QuestionID" Nullable="false" />
+    <Property Type="Int16" Name="UserID" Nullable="false" />
+    <Property Type="Byte" Name="Answer" Nullable="false" />
+    <Property Type="String" Name="Question" Nullable="false" MaxLength="5000" />
+    <Property Type="String" Name="Answer1" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer2" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer3" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer4" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer5" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer6" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="Answer7" Nullable="true" MaxLength="2000" />
+  </ComplexType>
+  <ComplexType Name="uspGetProductResponse_Result">
+    <Property Type="Int16" Name="ClientID" Nullable="true" />
+    <Property Type="Int16" Name="ProductID" Nullable="true" />
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="DateTime" Name="SurveyDt" Nullable="true" />
+    <Property Type="Int16" Name="SurveyCnt" Nullable="true" />
+    <Property Type="Boolean" Name="IsPublished" Nullable="true" />
+    <Property Type="Int16" Name="ProductID1" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ProductImage1" Nullable="true" MaxLength="60" />
+    <Property Type="Int16" Name="SurveyRewardPoint" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetResponse_Result">
+    <Property Type="Int16" Name="SurveyID" Nullable="false" />
+    <Property Type="Int16" Name="UserID" Nullable="false" />
+    <Property Type="Byte" Name="NoOfAttemptedSurveyQues" Nullable="true" />
+    <Property Type="Byte" Name="NoOfAttemptedReviewQues" Nullable="true" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="true" />
+    <Property Type="Int16" Name="RewardPoint" Nullable="true" />
+    <Property Type="Int16" Name="UserID1" Nullable="false" />
+    <Property Type="String" Name="UserImage" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

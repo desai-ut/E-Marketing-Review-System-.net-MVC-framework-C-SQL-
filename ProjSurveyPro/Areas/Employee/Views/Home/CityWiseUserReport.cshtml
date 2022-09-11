@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "CityWiseUserReport";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" lang="javascript">
+    function GetCity(StateID) {
+        var url = "@Url.Action("FillCity", "Home")";
+        $.ajax({
+            url: url,
+            data: { StateID: StateID },
+            cache: false,
+            type: "POST",
+            success: function (data) {
+                var dropdown = $('#ddlCity');
+                $("#ddlCity").empty();
+                $("#ddlCity").append("<option>- Select City -</option>");
+                $.each(data, function () {
+                    dropdown.append(
+                        $("<option></option>").text(this.Text).val(this.Value)
+                    );
+                });
+            },
+            error: function (reponse) {
+                alert("You Have To Select Any State");
+            }
+        });
+    }
+</script>
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>City Wise User Report</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">City Wise Report</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        @Html.Label("State", null, new { @class = "col-sm-1 control-label text-right" })
+                        <div class="col-sm-10">
+                            <div class="mb-md">
+                                @Html.DropDownList("ddlState", (SelectList)ViewBag.StateList, "- Select State -",
+                            new { @class = "form-control mb-md", onchange = "GetCity(this.value);" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.Label("City", null, new { @class = "col-sm-1 control-label text-right" })
+                        <div class="col-sm-10">
+                            <div class="mb-md">
+                                @using (Html.BeginForm("CityWiseUserReport", "Home", new { area = "Employee" }, FormMethod.Post))
+                                {
+                                    if (ViewBag.CityList == null)
+                                    {
+                                    @Html.DropDownList("ddlCity", new SelectList(Enumerable.Empty<SelectListItem>(), "CityID", "CityName"),
+                                    "- Select City -", new { @class = "form-control mb-md", onchange = "this.form.submit();" })
+                                    }
+                                    else
+                                    {
+                                    @Html.DropDownList("ddlCity", (SelectList)ViewBag.CityList, "- Select State -",
+                                    new { @class = "form-control mb-md", onchange = "this.form.submit();" })
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="~/Contents/assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>State Name</th>
+                            <th>City Name</th>
+                            <th class="center hidden-phone">User Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in ViewBag.CityWiseUserReport)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;">
+                                    @item.UserName
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.StateName
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.CityName
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @{ var Status = item.IsActive;
+                                       if (Status == true)
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-success">Active</a>
+                                       }
+                                       else
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-danger">InActive</a>
+                                       }
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

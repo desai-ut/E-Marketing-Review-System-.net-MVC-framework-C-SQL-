@@ -1,0 +1,145 @@
+﻿@using CaptchaMvc.HtmlHelpers;
+@using ProjSurveyPro;
+@using CaptchaMvc;
+@{
+    ViewBag.Title = "TransferReward";
+    Layout = "~/Views/Master/UserLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Transfer Reward</h2>
+    </header>
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Transfer Reward</h2>
+            </header>
+            <div class="panel-body">
+                @using (Html.BeginForm("TransferReward", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        @Html.Label("Total Reward Points", null, new { @class = "col-sm-3 control-label" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                @Html.TextBox("RP", (int)@ViewBag.RewardPoint,
+                                                  new
+                                                  {
+                                                      type = "number",
+                                                      @class = "form-control",
+                                                      @readonly = "true"
+                                                  })
+                            </div>
+                            @if (Session["RP"] == "1")
+                            {
+                                <h6 style="color: red;">@ViewBag.RP</h6>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Total Transfer Reward", null, new { @class = "col-sm-3 control-label" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                                @Html.TextBox("TransferAmt", 0,
+                                                    new
+                                                    {
+                                                        type = "number",
+                                                        @class = "form-control",
+                                                        placeholder = "Total Transfer Amount"
+
+                                                    })
+                            </div>
+                            @if (Session["TransferAmt"] == "1")
+                            {
+                                <h6 style="color: red;">@ViewBag.TransferAmt</h6>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Transfer To", null, new { @class = "col-sm-3 control-label" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-paper-plane"></i>
+                                </span>
+                                @Html.TextBox("TransferTo", "PayTm",
+                                            new
+                                            {
+                                                @class = "form-control populate",
+                                                placeholder = "Enter Your Wallet Name"
+                                            })
+                            </div>
+                            @if (Session["TransferTo"] == "1")
+                            {
+                                <h6 style="color: red;">@ViewBag.TransferTo</h6>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Transfer To UserName", null, new { @class = "col-sm-3 control-label" })
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-paper-plane"></i>
+                                </span>
+                                @Html.TextBox("UserName", null,
+                                                    new
+                                                    {
+                                                        type = "text",
+                                                        @class = "form-control",
+                                                        placeholder = "Enter Your Name"
+                                                    })
+                            </div>
+                            @if (Session["UserName"] == "1")
+                            {
+                                <h6 style="color: red;">@ViewBag.UserName</h6>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12" align="center">
+                                @Html.MathCaptcha()
+                                <h6 style="color: red;">@ViewBag.Error</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12" align="center">
+                                @Html.TextBox("Submit", "Submit",
+                                             new
+                                             {
+                                                 type = "submit",
+                                                 @class = "mb-xs mt-xs mr-xs btn btn-success"
+                                             })
+                            </div>
+                        </div>
+                    </div>
+                }
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

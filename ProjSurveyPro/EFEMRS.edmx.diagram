@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad7cf2a6f8d24005b2c50b7bc723c36f" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="dbEMRSModel.CategoryMst" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.CityMst" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.ClientMst" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.EmployeeMst" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.FeedbackMst" Width="1.5" PointX="9.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.HelpingQue" Width="1.5" PointX="12.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.ProductMst" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.ReviewAn" Width="1.5" PointX="9.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.ReviewQue" Width="1.5" PointX="12.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.StateMst" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.SurveyAn" Width="1.5" PointX="14.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.SurveyMst" Width="1.5" PointX="7.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.SurveyPayment" Width="1.5" PointX="9.75" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.SurveyQue" Width="1.5" PointX="12.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.TransferAmount" Width="1.5" PointX="14.375" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbEMRSModel.UserMst" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="dbEMRSModel.FK__HelpingQu__Categ__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ReviewAns__Categ__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ReviewQue__Categ__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyAns__Categ__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyQue__Categ__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__CityMst__StateID__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__UserMst__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ClientMst__Appro__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ProductMs__Clien__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyMst__Clien__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__FeedbackM__Surve__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyMst__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ReviewAns__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ReviewAns__Surve__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ReviewAns__UserI__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__ReviewQue__Surve__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__UserMst__StateID__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyAns__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyAns__Surve__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyAns__UserI__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyPay__Surve__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__SurveyQue__Surve__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="dbEMRSModel.FK__TransferA__UserI__48CFD27E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbEMRSModel.EwalletMst" Width="1.5" PointX="4.625" PointY="2" />
+        <AssociationConnector Association="dbEMRSModel.FK__EwalletMs__Surve__656C112C" />
+        <AssociationConnector Association="dbEMRSModel.FK__EwalletMs__UserI__66603565" />
+        <AssociationConnector Association="dbEMRSModel.FK_EmployeeMst_UserMst" />
+        <EntityTypeShape EntityType="dbEMRSModel.PackageMst" Width="1.5" PointX="5.25" PointY="24" />
+        <AssociationConnector Association="dbEMRSModel.FK__PackageMs__EmpID__20C1E124" />
+        <EntityTypeShape EntityType="dbEMRSModel.PurchasePackage" Width="1.5" PointX="5.25" PointY="19.75" />
+        <AssociationConnector Association="dbEMRSModel.FK__PurchaseP__Clien__24927208" />
+        <AssociationConnector Association="dbEMRSModel.FK__PurchaseP__Packa__239E4DCF" />
+        <EntityTypeShape EntityType="dbEMRSModel.sysdiagram" Width="1.5" PointX="1.9450234314170776" PointY="22.334504152803916" />
+        <EntityTypeShape EntityType="dbEMRSModel.QueryMst" Width="1.5" PointX="2.625" PointY="9" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

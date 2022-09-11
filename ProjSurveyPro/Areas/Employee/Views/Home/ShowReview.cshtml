@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ProjSurveyPro.ReviewAn>
+@{
+    ViewBag.Title = "ShowReview";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Product Review</h2>
+    </header>
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <div class="panel-body">
+                @Html.Partial("ShowReviewPartial", Model)
+                <div class="text-center mr-lg" style="margin-left: 40px;">
+                    <a href="@Url.Action("ViewResponse", "Home",
+                    new { area = "Employee", SID = Session["SurveyID"] })" class="mb-xs mt-xs btn btn-info" style="text-align:center;">Back</a>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="header-logo">
+                            <div style="text-align: center;">
+                                <p>Powered By</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <img src="~/Contents/appimg/FullLogo.png"
+                                    width="120" height="80"
+                                    alt="Survey Pro" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

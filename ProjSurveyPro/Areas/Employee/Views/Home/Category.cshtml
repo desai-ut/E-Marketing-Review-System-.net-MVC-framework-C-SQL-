@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ProjSurveyPro.CategoryMst>
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>View Category</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Category</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    @*<div class="col-sm-6">*@
+                    <div class="text-left mb-md">
+                        <div class="btn-group" style="margin-left: 16px">
+                            <a id="AddCategory" class="btn btn-primary hidden-xs"
+                             href="@Url.Action("AddCategory", "Home", new { area = "Employee" })">Add <i class="fa fa-plus"></i></a>
+                        </div>
+                    </div>
+                    @*</div>*@
+                </div>
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                    <thead>
+                        <tr>
+                            <th width="70%">Category</th>
+                            <th width="30%" style="text-align: center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in Model)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;">
+                                    @Html.DisplayFor(modelItem => item.CategoryDisc)
+                                </td>
+                                <td style="text-align: center">
+                                    <a href="@Url.Action("AddCategory", "Home", new { id = item.CategoryID, area = "Employee" })" 
+                                           class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

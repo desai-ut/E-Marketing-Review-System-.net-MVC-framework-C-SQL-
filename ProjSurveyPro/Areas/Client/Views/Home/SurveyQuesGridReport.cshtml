@@ -1,0 +1,206 @@
+﻿@{
+    ViewBag.Title = "SurveyQuesGridReport";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>SurveyQues. Grid Report</h2>
+    </header>
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <div class="panel-body">
+                <div class="invoice">
+                    <header class="clearfix">
+                        <div class="row">
+                            <div class="col-sm-6 mt-md">
+                                <h2 class="h2 mt-none mb-sm text-dark text-bold">@ViewBag.ProductName</h2>
+                                <h4 class="h4 m-none text-dark text-bold">@ViewBag.ModelName</h4>
+                            </div>
+                            <div class="col-sm-6 text-right mt-md mb-md">
+                                <address class="ib mr-xlg">
+                                    @ViewBag.CompName
+                                    <br />
+                                    @ViewBag.OwnerName
+                                    <br />
+                                    @ViewBag.ContactNo
+                                    <br />
+                                    @ViewBag.EmailID
+                                </address>
+                                <div class="ib">
+                                    <img src="@Url.Content(@ViewBag.CompanyLogo)" alt="CompanyLogo" width="100" style="height:100px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    <div class="panel-actions">
+                                    </div>
+                                    <h2 class="panel-title" style="text-align: center;">Question</h2>
+                                </header>
+                                <div class="panel-body" style="border: groove;">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered mb-none">
+                                            <thead>
+                                                <tr>
+                                                    <h3 style="font-weight: 600; color: indianred;">@Html.Raw(ViewBag.Question)</h3>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr style="font-weight: 800; text-align: center;">
+                                                    <td>Answer Category</td>
+                                                    <td>Average</td>
+                                                    <td>Total Count</td>
+                                                </tr>
+                                                @if (ViewBag.CategoryID == 4)
+                                                {
+                                                    <tr style="text-align: center;">
+                                                        <td>1 Star</td>
+                                                        <td>@ViewBag.AvgAns1%</td>
+                                                        <td>@ViewBag.CntAns1</td>
+                                                    </tr>
+                                                    <tr style="text-align: center;">
+                                                        <td>2 Star</td>
+                                                        <td>@ViewBag.AvgAns2%</td>
+                                                        <td>@ViewBag.CntAns2</td>
+                                                    </tr>
+                                                    <tr style="text-align: center;">
+                                                        <td>3 Star</td>
+                                                        <td>@ViewBag.AvgAns3%</td>
+                                                        <td>@ViewBag.CntAns3</td>
+                                                    </tr>
+                                                    <tr style="text-align: center;">
+                                                        <td>4 Star</td>
+                                                        <td>@ViewBag.AvgAns4%</td>
+                                                        <td>@ViewBag.CntAns4</td>
+                                                    </tr>
+                                                    <tr style="text-align: center;">
+                                                        <td>5 Star</td>
+                                                        <td>@ViewBag.AvgAns5%</td>
+                                                        <td>@ViewBag.CntAns5</td>
+                                                    </tr>  
+                                                    <tr style="text-align: center;">
+                                                        <td></td>
+                                                        <td style="font-weight: bold;">Total Survey</td>
+                                                        <td style="font-weight: 900;">@ViewBag.TotalCount</td>
+                                                    </tr>
+                                                }
+                                                else if (ViewBag.CategoryID == 3)
+                                                {
+                                                    <tr style="text-align: center;">
+                                                        <td>Likes</td>
+                                                        <td>@ViewBag.AvgAns1%</td>
+                                                        <td>@ViewBag.CntAns1</td>
+                                                    </tr>
+                                                    <tr style="text-align: center;">
+                                                        <td>Dislikes</td>
+                                                        <td>@ViewBag.AvgAns2%</td>
+                                                        <td>@ViewBag.CntAns2</td>
+                                                    </tr>
+                                                    <tr style="text-align: center;">
+                                                        <td></td>
+                                                        <td style="font-weight: bold;">Total Survey</td>
+                                                        <td style="font-weight: 900;">@ViewBag.TotalCount</td>
+                                                    </tr>
+                                                }
+                                                else
+                                                {
+                                                    if (ViewBag.Answer1 != null)
+                                                    {
+                                                    <tr style="text-align: center;">
+                                                        <td>@ViewBag.Answer1</td>
+                                                        <td>@ViewBag.AvgAns1%</td>
+                                                        <td>@ViewBag.CntAns1</td>
+                                                    </tr>
+                                                    }
+                                                    if (ViewBag.Answer2 != null)
+                                                    {
+                                                    <tr style="text-align: center;">
+                                                        <td>@ViewBag.Answer2</td>
+                                                        <td>@ViewBag.AvgAns2%</td>
+                                                        <td>@ViewBag.CntAns2</td>
+                                                    </tr>
+                                                    }
+                                                    if (ViewBag.Answer3 != null)
+                                                    {
+                                                    <tr style="text-align: center;">
+                                                        <td>@ViewBag.Answer3</td>
+                                                        <td>@ViewBag.AvgAns3%</td>
+                                                        <td>@ViewBag.CntAns3</td>
+                                                    </tr>
+                                                    }
+                                                    if (ViewBag.Answer4 != null)
+                                                    {
+                                                    <tr style="text-align: center;">
+                                                        <td>@ViewBag.Answer4</td>
+                                                        <td>@ViewBag.AvgAns4%</td>
+                                                        <td>@ViewBag.CntAns4</td>
+                                                    </tr>
+                                                    }
+                                                    if (ViewBag.Answer5 != null)
+                                                    {
+                                                    <tr style="text-align: center;">
+                                                        <td>@ViewBag.Answer5</td>
+                                                        <td>@ViewBag.AvgAns5%</td>
+                                                        <td>@ViewBag.CntAns5</td>
+                                                    </tr>
+                                                    }
+                                                    if (ViewBag.Answer6 != null)
+                                                    {
+                                                    <tr style="text-align: center;">
+                                                        <td>@ViewBag.Answer6</td>
+                                                        <td>@ViewBag.AvgAns6%</td>
+                                                        <td>@ViewBag.CntAns6</td>
+                                                    </tr>
+                                                    }
+                                                    if (ViewBag.Answer7 != null)
+                                                    {   
+                                                    <tr style="text-align: center;">
+                                                        <td>@ViewBag.Answer7</td>
+                                                        <td>@ViewBag.AvgAns7%</td>
+                                                        <td>@ViewBag.CntAns7</td>
+                                                    </tr>
+                                                    }
+                                                    <tr style="text-align: center;">
+                                                        <td></td>
+                                                        <td style="font-weight: bold;">Total Survey</td>
+                                                        <td style="font-weight: 900;">@ViewBag.TotalCount</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="text-center mr-lg" style="margin-left: 40px;">
+                        <div class="text-Center mr-lg">
+                            <a href="@Url.Action("SurveyQuesReport", "Home", new { area = "Client", SID = ViewBag.SurveyID })" 
+                                id="btnSubmit"class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="header-logo">
+                                <div style="text-align: center;">
+                                    <p>Powered By</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <img src="~/Contents/appimg/FullLogo.png"
+                                        width="120" height="80"
+                                        alt="Survey Pro" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

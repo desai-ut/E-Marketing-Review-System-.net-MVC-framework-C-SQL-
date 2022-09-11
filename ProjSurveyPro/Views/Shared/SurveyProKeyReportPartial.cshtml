@@ -1,0 +1,33 @@
+﻿<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart', 'bar'] });
+    google.charts.setOnLoadCallback(drawAnnotations);
+
+    function drawAnnotations() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Active Client',   @ViewBag.Client],
+          ['Active User',   @ViewBag.AUser],
+          ['Active Product',   @ViewBag.AProduct],
+          ['Active Product',   @ViewBag.Product],
+          ['Active Employee',   @ViewBag.Employee],
+          ['No of Feedback',   @ViewBag.Feedback],
+          ['Query Request',   @ViewBag.Query],
+          ['Total Survey Response',   @ViewBag.TotalResponse],
+          ['Purchase Package',   @ViewBag.PurchasePackage]
+        ]);
+
+        var options = {
+            title: 'SurveyPro Keys Count Chart',
+            'is3D': true,
+            'height': '600',
+            'width': '800'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+<div id="chart_div" style="height: auto" align="center"></div>

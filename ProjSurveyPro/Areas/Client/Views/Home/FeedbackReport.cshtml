@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "FeedbackReport";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+    List<SelectListItem> Star = new List<SelectListItem>();
+    {
+        Star.Add(new SelectListItem
+        {
+            Text = "1 Star",
+            Value = "1"
+        });
+        Star.Add(new SelectListItem
+        {
+            Text = "2 Star",
+            Value = "2"
+        });
+        Star.Add(new SelectListItem
+        {
+            Text = "3 Star",
+            Value = "3"
+        });
+        Star.Add(new SelectListItem
+        {
+            Text = "4 Star",
+            Value = "4"
+        });
+        Star.Add(new SelectListItem
+        {
+            Text = "5 Star",
+            Value = "5"
+        });
+        Star.Add(new SelectListItem
+        {
+            Text = "All Feedback",
+            Value = "0"
+        });
+    }
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Product Feedback Report</h2>
+    </header>
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Feedback Report</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    @Html.Label("Star", null, new { @class = "col-sm-3 control-label text-right" })
+                    <div class="col-sm-6">
+                        <div class="mb-md">
+                            @using (Html.BeginForm("FeedbackReport", "Home", new { area = "Client" }, FormMethod.Post))
+                            {
+                                @Html.DropDownList("ddlStar", Star, "- Select Star -",
+                                        new { @class = "form-control mb-md", @onchange = "this.form.submit();" })
+                            }
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                    <thead>
+                        <tr>
+                            <th width="240px">Product Name</th>
+                            <th width="240px">Model Name</th>
+                            <th class="center hidden-phone" width="140px">Ratings</th>
+                            <th>Feedback Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in ViewBag.FeedbackGrid)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;">
+                                    @item.ProductName
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.ModelName
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone" >
+                                    @item.Ratings
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.FeedbackDisc
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

@@ -1,0 +1,117 @@
+﻿@model ProjSurveyPro.EmployeeMst
+
+<fieldset disabled>
+    <div class="form-group">
+        <div class="col-md-12" align="center">
+            <div class="thumb-info mb-md">
+                <img id="UserImage" src="@Url.Content(Model.EmpImage)" alt="User Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Name", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.EmpName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Your Name"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.EmpName, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Gender", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBox("Gender", (string)ViewBag.Gender,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "3"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.Gender, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Designation", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.Designation,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "3"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.Designation, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Date of Birth", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+                @Html.TextBoxFor(model => model.DtBirth, "{0:dd/MM/yyyy}",
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control"
+                                            }
+                                        )
+            </div>
+            @Html.ValidationMessageFor(model => model.DtBirth, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Email-Id", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.EmailID,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Your Email-Id",
+                                                pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z]{2,4}$"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.EmailID, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Mobile No", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-3 .col-md-offset-3">
+            @Html.TextBoxFor(model => model.MobileNo,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "Enter Your Mobile No",
+                                                pattern = "^[0-9]*",
+                                                minlegth = 10,
+                                                style = "text-align:right"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.MobileNo, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Address", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextAreaFor(model => model.EmpAddress,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "3"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.EmpAddress, null, new { style = "color:red;" })
+        </div>
+    </div>
+</fieldset>

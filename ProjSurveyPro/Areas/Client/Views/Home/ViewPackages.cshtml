@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProjSurveyPro.PackageMst>
+
+@{
+    ViewBag.Title = "ViewPackages";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+<section role="main" class="content-body">
+    <div class="row">
+        <div class="pricing-table princig-table-flat spaced no-borders">
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                <div class="col-md-3 col-sm-6">
+                    <div class="plan">
+                        <h3>@Html.DisplayFor(modelItem => item.PackageTitle)
+                            <span>₹@Html.DisplayFor(modelItem => item.Price)</span>
+                        </h3>
+                        <ul>
+                            <li><strong>@Html.DisplayFor(modelItem => item.Duration)</strong> Months</li>
+                            <li><strong>@Html.DisplayFor(modelItem => item.NoOfProduct)</strong> Products</li>
+                            <li><strong>@Html.DisplayFor(modelItem => item.NoOfSurveyQues)</strong> Survey Questions</li>
+                            <li><strong>@Html.DisplayFor(modelItem => item.NoOfReviewQues)</strong> Review Questions</li>
+                            <li><strong>@Html.DisplayFor(modelItem => item.NoOfResponse)</strong> Responses</li>
+                            <a class="btn btn-lg btn-primary" href="@Url.Action("PurchasePackage", "Home",
+                            new { area = "Client", PID = item.PackageID, Price = item.Price })">Buy Now</a>
+                        </ul>
+                    </div>
+                </div>
+                }
+            }
+            else
+            {
+                <div class="col-md-12">
+                    <h6 style="color: red; text-align: center">No Package Available Currently.</h6>
+                </div>
+            }
+        </div>
+    </div>
+</section>

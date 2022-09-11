@@ -1,0 +1,148 @@
+﻿@using CaptchaMvc.HtmlHelpers;
+@using ProjSurveyPro;
+@using CaptchaMvc;
+@model ProjSurveyPro.QueryMst
+@{
+    ViewBag.Title = "ReachUs";
+    Layout = "~/Views/Master/IndexLayout.cshtml";
+}
+
+<html>
+<body>
+
+    <div role="main" class="main">
+        <section class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li class="active">Reach Us</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Reach Us</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="~/Contents/appimg/logos/ContactUs.png"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-success hidden mt-lg" id="contactSuccess">
+                        <strong>Success!</strong> Your message has been sent to us.
+                    </div>
+
+                    <div class="alert alert-danger hidden mt-lg" id="contactError">
+                        <strong>Error!</strong> There was an error sending your message.
+                        <span class="font-size-xs mt-sm display-block" id="mailErrorMessage"></span>
+                    </div>
+                    @using (Html.BeginForm("ReachUs", "Home", FormMethod.Post))
+                    {
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    @Html.Label("Your Name ")
+                                    @Html.TextBox("txtName", null,
+                                    new
+                                    {
+                                        maxlength = "100",
+                                        @class = "form-control",
+                                        placeholder = "Enter Your Name",
+                                    }
+                                    )
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.Label("Your E-Mail ID *")
+                                    @Html.TextBoxFor(model => model.EmailID,
+                                    new
+                                    {
+                                        maxlength = "100",
+                                        @class = "form-control",
+                                        placeholder = "Enter Your Email"
+                                    }
+                                    )
+                                    @Html.ValidationMessageFor(model => model.EmailID, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.Label("Subject ")
+                                    @Html.TextBox("txtSubject", null,
+                                    new
+                                    {
+                                        maxlength = "100",
+                                        @class = "form-control",
+                                        placeholder = "Enter Subject",
+                                    }
+                                    )
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.Label("Message *")
+                                    @Html.TextAreaFor(model => model.QueryDisc,
+                                    new
+                                    {
+                                        maxlength = "5000",
+                                        Rows = "10",
+                                        @class = "form-control",
+                                        placeholder = "Enter Your Query"
+                                    }
+                                    )
+                                    @Html.ValidationMessageFor(model => model.QueryDisc, null, new { style = "color:red;" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    @Html.MathCaptcha()
+                                    <h6 style="color: red;">@ViewBag.Error</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TextBox("btnSubmit", "Send Query", new { @class = "btn btn-primary btn-lg mb-xlg", type = "Submit" })
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-6">
+
+                    <hr>
+
+                    <h4 class="heading-primary">The <strong>Office</strong></h4>
+                    <ul class="list list-icons list-icons-style-3 mt-xlg">
+                        <li><i class="fa fa-map-marker"></i><strong>Address:</strong> 9,Shraddha Soc, Vesu, Surat, India</li>
+                        <li><i class="fa fa-phone"></i><strong>Phone:</strong> 7575040697</li>
+                        <li><i class="fa fa-envelope"></i><strong>Email:</strong> @Html.ActionLink("SurveyPro441@gmail.com", "SurveyPro441@gmail.com")</li>
+                    </ul>
+
+                    <hr>
+
+                    <h4 class="heading-primary">Business <strong>Hours</strong></h4>
+                    <ul class="list list-icons list-dark mt-xlg">
+                        <li><i class="fa fa-clock-o"></i>Monday - Friday :- 9am to 7pm</li>
+                        <li><i class="fa fa-clock-o"></i>Saturday/Sunday :- Closed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Survey Pro</title>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Porto - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Contents/appimg/NewSortLogo.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/Contents/appimg/NewSortLogo.png">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="~/Contents/appvendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/animate/animate.min.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/simple-line-icons/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/owl.carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/magnific-popup/magnific-popup.min.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/Contents/appcss/theme.css">
+    <link rel="stylesheet" href="~/Contents/appcss/theme-elements.css">
+    <link rel="stylesheet" href="~/Contents/appcss/theme-blog.css">
+    <link rel="stylesheet" href="~/Contents/appcss/theme-shop.css">
+
+    <!-- Current Page CSS -->
+    <link rel="stylesheet" href="~/Contents/appvendor/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/rs-plugin/css/layers.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/rs-plugin/css/navigation.css">
+    <link rel="stylesheet" href="~/Contents/appvendor/circle-flip-slideshow/css/component.css">
+    <link rel="stylesheet" href="~/Contents/RatingCss/starability-minified/starability-all.min.css" />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="~/Contents/appcss/skins/default.css">
+    <script src="~/Contents/appmaster/style-switcher/style.switcher.localstorage.js"></script>
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="~/Contents/appcss/custom.css">
+
+    <!-- Head Libs -->
+    <script src="~/Contents/appvendor/modernizr/modernizr.min.js"></script>
+
+</head>
+<body>
+    <div class="body">
+        <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
+            <div class="header-body">
+                <div class="header-container container">
+                    <div class="header-row">
+                        <div class="header-column">
+                            <div class="header-logo">
+                                <a href="@Url.Action("Index", "Home")" class="logo pull-left">
+                                    <img src="~/Contents/appimg/FullLogo.png"
+                                        width="120" height="80"
+                                        alt="Survey Pro"
+                                        class="appear-animation bounceIn appear-animation-visible"
+                                        data-appear-animation="bounceIn"
+                                        style="animation-iteration-count: 3;"
+                                        data-sticky-width="111" data-sticky-height="70" data-sticky-top="33" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header-column">
+                            <div class="header-row">
+                                <nav class="header-nav-top">
+                                    <ul class="nav nav-pills">
+                                        <li class="hidden-xs">
+                                            <a href="@Url.Action("MeetUs", "Home")"><i class="fa fa-angle-right"></i>Meet Us</a>
+                                        </li>
+                                        <li class="hidden-xs">
+                                            <a href="@Url.Action("ReachUs", "Home")"><i class="fa fa-angle-right"></i>Reach Us</a>
+                                        </li>
+                                        <li>
+                                            <span class="ws-nowrap"><i class="fa fa-phone"></i>(+91) 7575040697</span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header-row">
+                                <div class="header-nav">
+                                    <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                    <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+                                        <nav>
+                                            <ul class="nav nav-pills" id="mainNav">
+                                                @*<li class="">
+                                                    @Html.ActionLink("User", "Index", "Home", new { area = "User" }, null)
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Client", "Index", "Home", new { area = "Client" }, null)
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Employee", "Index", "Home", new { area = "Employee" }, null)
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Admin", "Index", "Home", new { area = "Admin" }, null)
+                                                </li>*@
+                                                <li class="">
+                                                    @Html.ActionLink("Home", "Index")
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Our Service", "Service")
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Packages", "ViewPackages")
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Products", "ViewProducts")
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("About System", "AboutSystem")
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Meet Us", "MeetUs")
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Reach Us", "ReachUs")
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle">Sign Up</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>@Html.ActionLink("User Sign Up", "UserSignUp")</li>
+                                                        <li>@Html.ActionLink("Company Sign Up", "CompanySignUp")</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="">
+                                                    @Html.ActionLink("Sign In", "SignIn")
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div>
+            @RenderBody();
+        </div>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-ribbon">
+                        <span>Get in Touch</span>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-4">
+                        <div class="contact-details">
+                            <h4>Contact Us</h4>
+                            <ul class="contact">
+                                <li>
+                                    <p><i class="fa fa-map-marker"></i><strong>Address:</strong> 9,Shraddha Soc, Vesu, Surat, India</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa fa-phone"></i><strong>Phone:</strong> (+91) 7575040697</p>
+                                </li>
+                                <li>
+                                    <p><i class="fa fa-envelope"></i><strong>Email:</strong> <a href="mailto:surveypro441@gmail.com">surveypro441@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>Follow Us</h4>
+                        <ul class="social-icons">
+                            <li class="social-icons-facebook"><a href="@Url.Action("http://www.facebook.com/")" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li class="social-icons-twitter"><a href="@Url.Action("http://www.twitter.com/")" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li class="social-icons-linkedin"><a href="@Url.Action("http://www.linkedin.com/")" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <a href="index.html" class="logo">
+                                <img alt="Porto Website Template" class="img-responsive" src="/Contents/appimg/Logo.png">
+                            </a>
+                        </div>
+                        <div class="col-md-7">
+                            <p>© Copyright 2017. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <nav id="sub-menu">
+                                <ul>
+                                    <li>@Html.ActionLink("FAQ's", "FAQ")</li>
+                                    <li>@Html.ActionLink("Reach Us", "ReachUs")</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Vendor -->
+    <script src="~/Contents/appvendor/jquery/jquery.min.js"></script>
+    <script src="~/Contents/appvendor/jquery.appear/jquery.appear.min.js"></script>
+    <script src="~/Contents/appvendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/Contents/appvendor/jquery-cookie/jquery-cookie.min.js"></script>
+    <script src="~/Contents/appmaster/style-switcher/style.switcher.js" id="styleSwitcherScript" data-skin-src=""></script>
+    <script src="~/Contents/appvendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Contents/appvendor/common/common.min.js"></script>
+    <script src="~/Contents/appvendor/jquery.validation/jquery.validation.min.js"></script>
+    <script src="~/Contents/appvendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+    <script src="~/Contents/appvendor/jquery.gmap/jquery.gmap.min.js"></script>
+    <script src="~/Contents/appvendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+    <script src="~/Contents/appvendor/isotope/jquery.isotope.min.js"></script>
+    <script src="~/Contents/appvendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="~/Contents/appvendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/Contents/appvendor/vide/vide.min.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/Contents/appjs/theme.js"></script>
+
+    <!-- Current Page Vendor and Views -->
+    <script src="~/Contents/appvendor/bootpag/bootpag.js"></script>
+    <script src="~/Contents/appvendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Contents/appvendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/Contents/appjs/custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/Contents/appjs/theme.init.js"></script>
+
+    <!-- Examples -->
+    <script src="~/Contents/appjs/examples/examples.portfolio.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../../www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-42715764-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="~/Contents/appmaster/analytics/analytics.js"></script>
+
+</body>
+</html>

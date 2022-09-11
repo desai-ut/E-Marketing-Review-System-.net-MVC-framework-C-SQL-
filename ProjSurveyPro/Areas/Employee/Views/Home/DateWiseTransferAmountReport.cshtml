@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "DateWiseTransferAmountReport";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Transfer Reward Point Report</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Transfer Reward Report</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    @Html.Label("Date", null, new { @class = "col-sm-3 control-label text-right" })
+                    <div class="col-sm-6">
+                        <div class="mb-md">
+                            @using (Html.BeginForm("DateWiseTransferAmountReport", "Home", new { area = "Employee" }, FormMethod.Post))
+                            {         
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                        <input type="text" name="Date" data-plugin-datepicker="" data-plugin-options="{ &quot;multidate&quot;: true }" placeholder="Select Your Date" class="form-control" onchange="this.form.submit();">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="~/Contents/assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Transfer Reward</th>
+                            <th>Transfer Amount</th>
+                            <th>Transfer Date</th>
+                            <th class="center hidden-phone">User Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in ViewBag.TransferAmountReport)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;">
+                                    @item.UserName
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.TotalTransferRewardPoint
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.TotalTransferAmount
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.TransferDate
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @{ var Status = item.IsActive;
+                                       if (Status == true)
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-success">Active</a>
+                                       }
+                                       else
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-danger">InActive</a>
+                                       }
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

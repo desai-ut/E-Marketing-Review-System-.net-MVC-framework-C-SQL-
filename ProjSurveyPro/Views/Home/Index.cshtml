@@ -1,0 +1,251 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Master/IndexLayout.cshtml";
+}
+
+<html>
+<body>
+
+    <div role="main" class="main">
+
+        <div class="slider-container rev_slider_wrapper" style="height: 677px;">
+            <div id="revolutionSlider" class="slider rev_slider" data-plugin-revolution-slider data-plugin-options='{"delay": 9000, "gridwidth": 800, "gridheight": 677}'>
+                <ul>
+                    <li data-transition="fade">
+                        <img src="/Contents/appimg/slides/slide-bg-full-4-dark.jpg"
+                            alt=""
+                            data-bgposition="center center"
+                            data-bgfit="cover"
+                            data-bgrepeat="no-repeat"
+                            class="rev-slidebg">
+
+                        <div class="tp-caption featured-label"
+                            data-x="center"
+                            data-y="center" data-voffset="-45"
+                            data-start="500"
+                            style="z-index: 5"
+                            data-transform_in="y:[100%];s:500;"
+                            data-transform_out="opacity:0;s:500;">
+                            WELCOME TO SURVEY PRO
+                        </div>
+
+                        <div class="tp-caption bottom-label"
+                            data-x="center"
+                            data-y="center" data-voffset="5"
+                            data-start="1000"
+                            data-transform_idle="o:1;"
+                            data-transform_in="y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;s:600;e:Power4.easeInOut;"
+                            data-transform_out="opacity:0;s:500;"
+                            data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                            data-splitin="chars"
+                            data-splitout="none"
+                            data-responsive_offset="on"
+                            style="font-size: 23px; line-height: 30px; z-index: 5"
+                            data-elementdelay="0.05">
+                            Survey Pro is site For Product Marketing and Getting Survey and Reviews From Users.
+                        </div>
+                    </li>
+                    <li data-transition="fade">
+                        <img src="/Contents/appimg/slides/slide-bg-full-3-dark.jpg"
+                            alt=""
+                            data-bgposition="center center"
+                            data-bgfit="cover"
+                            data-bgrepeat="no-repeat"
+                            class="rev-slidebg">
+
+                        <div class="tp-caption"
+                            data-x="center" data-hoffset="-150"
+                            data-y="center" data-voffset="-95"
+                            data-start="1000"
+                            style="z-index: 5"
+                            data-transform_in="x:[-300%];opacity:0;s:500;">
+                            <img src="/Contents/appimg/slides/slide-title-border.png" alt="">
+                        </div>
+
+                        <div class="tp-caption top-label"
+                            data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="-95"
+                            data-start="500"
+                            style="z-index: 5"
+                            data-transform_in="y:[-300%];opacity:0;s:500;">
+                            DO YOU WANT TO
+                        </div>
+
+                        <div class="tp-caption"
+                            data-x="center" data-hoffset="150"
+                            data-y="center" data-voffset="-95"
+                            data-start="1000"
+                            style="z-index: 5"
+                            data-transform_in="x:[300%];opacity:0;s:500;">
+                            <img src="/Contents/appimg/slides/slide-title-border.png" alt="">
+                        </div>
+
+                        <div class="tp-caption main-label"
+                            data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="-45"
+                            data-start="1500"
+                            data-whitespace="nowrap"
+                            data-transform_in="y:[100%];s:500;"
+                            data-transform_out="opacity:0;s:500;"
+                            style="z-index: 5"
+                            data-mask_in="x:0px;y:0px;">
+                            Join With Us?
+                        </div>
+
+                        <div class="tp-caption bottom-label"
+                            data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="5"
+                            data-start="2000"
+                            style="z-index: 5"
+                            data-transform_in="y:[100%];opacity:0;s:500;">
+                            Product Survey and Review 
+                        </div>
+                        <div>
+                            <a class="tp-caption btn btn-lg btn-primary btn-slider-action"
+                                data-hash
+                                data-hash-offset="85"
+                                href="@Url.Action("UserSignUp", "Home")"
+                                data-x="left" data-hoffset="220"
+                                data-y="center" data-voffset="80"
+                                data-start="2200"
+                                data-whitespace="nowrap"
+                                data-transform_in="y:[100%];s:500;"
+                                data-transform_out="opacity:0;s:500;"
+                                style="z-index: 5"
+                                data-mask_in="x:0px;y:0px;">For User</a>
+                        </div>
+                        <div>
+                            <a class="tp-caption btn btn-lg btn-primary btn-slider-action"
+                                data-hash
+                                data-hash-offset="85"
+                                href="@Url.Action("CompanySignUp", "Home")"
+                                data-x="left" data-hoffset="380"
+                                data-y="center" data-voffset="80"
+                                data-start="2200"
+                                data-whitespace="nowrap"
+                                data-transform_in="y:[100%];s:500;"
+                                data-transform_out="opacity:0;s:500;"
+                                style="z-index: 5"
+                                data-mask_in="x:0px;y:0px;">For Company</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <hr class="tall">
+
+        <div class="container">
+            <div class="row center">
+                <div class="col-md-12">
+                    <h2 class="mb-none word-rotator-title mt-lg">We're not the only one who
+							
+                <strong class="inverted inverted-primary">
+                    <span class="word-rotate" data-plugin-options='{"delay": 3500, "animDelay": 400}'>
+                        <span class="word-rotate-items">
+                            <span>excited</span>
+                            <span>happy</span>
+                        </span>
+                    </span>
+                </strong>
+                        about Survey Pro...
+                    </h2>
+                    @* <p class="lead">25,000+ customers in more than 100 countries use Porto Template.</p>*@
+                </div>
+            </div>
+            <div class="row center mt-xl">
+                <div class="owl-carousel owl-theme" data-plugin-options='{"items": 6, "autoplay": true, "autoplayTimeout": 3000}'>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-6.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-2.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-4.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-1.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-7.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-8.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-3.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="/Contents/appimg/logos/logo-5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="tall">
+
+        <section class="parallax section section-text-light section-parallax section-center mt-none" data-plugin-parallax data-plugin-options='{"speed": 1.5}' data-image-src="/Contents/appimg/parallax-3.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="owl-carousel owl-theme nav-bottom rounded-nav" data-plugin-options='{"items": 1, "loop": false}'>
+                            <div>
+                                <div class="col-md-12">
+                                    <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                                        <div class="testimonial-author">
+                                            <img src="/Contents/appimg/clients/client-1.jpg" class="img-responsive img-circle" alt="">
+                                        </div>
+                                        <blockquote>
+                                            <p>A brand is no longer what we tell the consumer it is. - It is what consumer tell each other it is.</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <p><strong>Scott Cook</strong><span>Chairman, Director & Co-Founder - Intuit</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-12">
+                                    <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-none">
+                                        <div class="testimonial-author">
+                                            <img src="/Contents/appimg/clients/client-2.jfif" class="img-responsive img-circle" alt="">
+                                        </div>
+                                        <blockquote>
+                                            <p>Marketing is about values.It’s a complicated and noisy world, and we’re not going to get a chance to get people to remember much about us. No company is. So we have to be really clear about what we want them to know about us.</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <p><strong>Steve jobs</strong><span>Chairman, CEO & Co-Founder - Apple</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action call-to-action-default with-button-arrow call-to-action-in-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="call-to-action-content">
+                            <h3>Survey Pro is <strong>everything</strong> you need to Get an <strong>Accurate Review & Survey</strong> For Product!</h3>
+                            <p>The <strong>#1 Site</strong> For Product Survey and Review</p>
+                        </div>
+                        <div class="call-to-action-btn">
+                            <a href="@Url.Action("ReachUs", "Home")"
+                            class="btn btn-lg btn-primary mt-xl pull-right">Reach Us!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

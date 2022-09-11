@@ -1,0 +1,308 @@
+﻿@model ProjSurveyPro.ClientMst
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="fixed">
+
+<!-- Mirrored from preview.oklerthemes.com/porto-admin/1.2.0/pages-signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Oct 2014 05:18:06 GMT -->
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Survey Pro</title>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Contents/appimg/NewSortLogo.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/Contents/appimg/NewSortLogo.png">
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/morris/morris.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/select2/select2.css" />
+    <link rel="stylesheet" href="~/Contents/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/stylesheets/theme.css" />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="~/Contents/assets/stylesheets/theme-custom.css">
+
+    <!-- Head Libs -->
+    <script src="~/Contents/assets/vendor/modernizr/modernizr.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" lang="javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#CompanyImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- start: page -->
+    <section class="body-sign">
+        <div class="center-sign">
+            <a href="@Url.Action("Index", "Home")" class="logo pull-left">
+                <img src="~/Contents/assets/images/Logo.png"
+                    height="54"
+                    alt="Survey Pro"
+                    class="appear-animation bounceIn appear-animation-visible"
+                    data-appear-animation="bounceIn" />
+            </a>
+
+            <div class="panel panel-sign">
+                <div class="panel-title-sign mt-xl text-right">
+                    <h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i>Sign Up</h2>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("CompanySignUp", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.ValidationSummary(true)
+                        <div class="form-group">
+                            <div class="col-md-12" align="center">
+                                <div class="thumb-info mb-md">
+                                    <img id="CompanyImage" src="~/Contents/appimg/CompanyLogo.png" alt="Company Logo" class="img-responsive"
+                                         height="220px" width="220px" text-align="center" />
+                                </div>
+                            </div>
+                            <div class=".col-md-12" align="center">
+                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                    <div class="input-append">
+                                        <div class="uneditable-input">
+                                            @*<i class="fa fa-file fileupload-exists"></i>*@
+                                            <span class="fileupload-preview"></span>
+                                        </div>
+                                        <span class="btn btn-default btn-file">
+                                            <span class="fileupload-exists">Change</span>
+                                            <span class="fileupload-new">Select Logo</span>
+                                            <input type="file" name="CompanyLogo" onchange="readURL(this);" />
+                                        </span>
+                                    </div>
+                                    @if (Session["Image"] == "1")
+                                    {
+                                        <h6 style="color: red;">@ViewBag.ImageType</h6>                                            
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-lg">
+                            <label>Company Name</label>
+                            @Html.TextBoxFor(model => model.CompName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Company's Name"
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.CompName, null, new { style = "color:red;" })
+                        </div>      
+                        <div class="form-group mb-lg">
+                            <label>Owner Name</label>
+                            @Html.TextBoxFor(model => model.OwnerName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Company's Owner Name"
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.OwnerName, null, new { style = "color:red;" })
+                        </div>
+                        <div class="form-group mb-lg">
+                            <label>Email-Id</label>
+                            @Html.TextBoxFor(model => model.EmailID,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Company's Email-Id",
+                                                pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z]{2,4}$"
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.EmailID, null, new { style = "color:red;" })
+                            @if (Session["Email"] == "1")
+                            {
+                                <h6 style="color: red;">@ViewBag.Email</h6>
+                            }
+                        </div>
+                        <div class="form-group mb-lg">
+                            <label>Website Name</label>
+                            @Html.TextBoxFor(model => model.WebsiteName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Company's Website Name"
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.CompName, null, new { style = "color:red;" })
+                        </div>   
+                        <div class="form-group mb-lg">
+                            <label>Contact No</label>
+                            @Html.TextBoxFor(model => model.ContactNo,
+                                            new
+                                            {
+                                                type = "numver",
+                                                @class = "form-control",
+                                                placeholder = "Enter Company's Mobile No",
+                                                pattern = "^[0-9]*",
+                                                minlegth = 11,
+                                                style="text-align:right"
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.ContactNo, null, new { style = "color:red;" })
+                        </div>
+                        <div class="form-group mb-lg">
+                            <label>Mobile No</label>
+                            @Html.TextBoxFor(model => model.MobileNo,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter another Contact No(If Any)",
+                                                pattern = "^[0-9]*",
+                                                minlegth = 10,
+                                                style="text-align:right"
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.MobileNo, null, new { style = "color:red;" })
+                        </div>
+                        <div class="form-group mb-lg">
+                            <label>GST No</label>
+                            @Html.TextBoxFor(model => model.GSTNo,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Company's GST No",
+                                                minlegth = 10
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.MobileNo, null, new { style = "color:red;" })
+                        </div>
+                        <div class="form-group mb-lg">
+                            <label>Company Address</label>
+                            @Html.TextAreaFor(model => model.CompAddress,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "3"
+                                            }
+                                        )
+                            @Html.ValidationMessageFor(model => model.CompAddress, null, new { style = "color:red;" })
+                        </div>
+                        <div class="row">
+                            <div style="text-align: center;">
+                                <br />
+                                @Html.TextBox("btnSubmit", "Submit", new { type = "submit", @class = "btn btn-primary btn-lg" })
+                            </div>
+                        </div>
+                        <br />
+                        <p class="text-center">Already have an account? <a href="@Url.Action("SignIn", "Home")">Sign In!</a></p>
+                    }
+                </div>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end: page -->
+
+    <!-- Vendor -->
+    <script src="~/Contents/assets/vendor/jquery/jquery.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-cookie/jquery.cookie.js"></script>
+    <script src="~/Contents/assets/vendor/style-switcher/style.switcher.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="~/Contents/assets/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Contents/assets/vendor/magnific-popup/magnific-popup.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="~/Contents/assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-appear/jquery.appear.js"></script>
+    <script src="~/Contents/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.js"></script>
+    <script src="~/Contents/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.categories.js"></script>
+    <script src="~/Contents/assets/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="~/Contents/assets/vendor/raphael/raphael.js"></script>
+    <script src="~/Contents/assets/vendor/morris/morris.js"></script>
+    <script src="~/Contents/assets/vendor/gauge/gauge.js"></script>
+    <script src="~/Contents/assets/vendor/snap-svg/snap.svg.js"></script>
+    <script src="~/Contents/assets/vendor/liquid-meter/liquid.meter.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/jquery.vmap.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+    <script src="~/Contents/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+    <script src="~/Contents/assets/vendor/select2/select2.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+    <script src="~/Contents/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/Contents/assets/javascripts/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/Contents/assets/javascripts/theme.custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/Contents/assets/javascripts/theme.init.js"></script>
+    <!-- Analytics to Track Preview Website -->
+    <script>
+        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '../../../www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-42715764-8', 'auto'); ga('send', 'pageview');
+    </script>
+</body>
+
+<!-- Mirrored from preview.oklerthemes.com/porto-admin/1.2.0/pages-signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Oct 2014 05:18:06 GMT -->
+</html>

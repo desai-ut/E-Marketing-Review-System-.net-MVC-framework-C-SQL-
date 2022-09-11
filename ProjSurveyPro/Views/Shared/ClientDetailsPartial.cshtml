@@ -1,0 +1,115 @@
+﻿@model ProjSurveyPro.ClientMst
+
+
+<fieldset disabled>
+    <div class="form-group">
+        <div class="col-md-12" align="center">
+            <div class="thumb-info mb-md">
+                <img id="UserImage" src="@Url.Content(Model.CompanyLogo)" alt="User Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Name", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.CompName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Your Name"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.CompName, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Owner Name", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.OwnerName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.OwnerName, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Address", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextAreaFor(model => model.CompAddress,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "3"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.CompAddress, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Email-Id", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.EmailID,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Your Email-Id",
+                                                pattern = "^([a-zA-Z0-9_|-|.]+)@([a-zA-Z0-9_|-|.]+)|.([a-zA-Z]{2,5})$"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.EmailID, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("WebSite", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.WebsiteName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "3"
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.WebsiteName, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Mobile No", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.MobileNo,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Your Mobile No",
+                                                pattern = "^[0-9]*",
+                                                minlegth = 10
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.MobileNo, null, new { style = "color:red;" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("GST No", null, new { @class = "col-sm-3 control-label text-right" })
+        <div class="col-md-6">
+            @Html.TextBoxFor(model => model.GSTNo,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Your Mobile No",
+                                                pattern = "^[0-9]*",
+                                                minlegth = 10
+                                            }
+                                        )
+            @Html.ValidationMessageFor(model => model.GSTNo, null, new { style = "color:red;" })
+        </div>
+    </div>
+</fieldset>
+

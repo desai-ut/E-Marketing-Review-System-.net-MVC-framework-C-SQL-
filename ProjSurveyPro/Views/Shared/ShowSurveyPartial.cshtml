@@ -1,0 +1,189 @@
+﻿@model IEnumerable<ProjSurveyPro.SurveyAn>
+
+<div class="invoice">
+    <header class="clearfix">
+        <div class="row">
+            <div class="col-sm-6 mt-md">
+                <h2 class="h2 mt-none mb-sm text-dark text-bold">@ViewBag.UserName</h2>
+            </div>
+            <div class="col-sm-6 text-right mt-md mb-md">
+                <div class="ib">
+                    <img src="@Url.Content(@ViewBag.UserImage)" alt="UserImage" width="100" style="height:100px;"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    @if (Model.Any())
+    {
+        foreach (var item in Model)
+        {
+        @Html.Hidden("Category", item.CategoryMst.CategoryDisc)
+        @Html.Hidden("CategoryID", item.CategoryID)
+        @Html.Hidden("QuestionID", item.QuestionID)
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-none">
+                        <tr>
+                            <td class="actions-hover actions-fade">
+                                <p style="font-size: large; color: red; text-align: center;">Question</p>
+                                <h5><strong>@Html.Raw(item.SurveyQue.Question)</strong></h5>
+                                <div class="col-md-12">
+                                    <p style="font-size: large;">
+                                        Question Type:&nbsp;@Html.DisplayFor(modelitem => item.CategoryMst.CategoryDisc)<br />
+                                        User Selected:&nbsp;@Html.DisplayFor(modelitem => item.Answer)
+                                    </p>
+                                </div>
+                                <br />
+                                @if (item.CategoryMst.CategoryDisc == "Rating")
+                                {
+                                    <fieldset class="starability-slot">
+                                        @if (item.Answer == 5)
+                                        {
+                                            <input type="radio" id="rate5" name="Rating" value="5" checked />
+                                            <label for="rate5">5 stars, amazing.</label>
+                                        }
+                                        @if (item.Answer == 4)
+                                        {
+                                            <input type="radio" id="rate4" name="Rating" value="4" checked />
+                                            <label for="rate4">4 stars, very good.</label>
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" id="rate4" name="Rating" value="4" />
+                                            if (item.Answer > 4)
+                                            {
+                                            <label for="rate5">4 stars, amazing.</label>
+                                            }
+                                        }
+                                        @if (item.Answer == 3)
+                                        {
+                                            <input type="radio" id="rate3" name="Rating" value="3" checked />
+                                            <label for="rate3">3 stars, average.</label>
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" id="rate3" name="Rating" value="3" />
+                                            if (item.Answer > 3)
+                                            {
+                                            <label for="rate5">3 stars, amazing.</label>
+                                            }
+                                        }
+                                        @if (item.Answer == 2)
+                                        {
+                                            <input type="radio" id="rate2" name="Rating" value="2" checked />
+                                            <label for="rate2">2 stars, not good.</label>
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" id="rate2" name="Rating" value="2" />
+                                            if (item.Answer > 2)
+                                            {
+                                            <label for="rate5">2 stars, amazing.</label>
+                                            }
+                                        }
+                                        @if (item.Answer == 1)
+                                        {
+                                            <input type="radio" id="rate1" name="Rating" value="1" checked />
+                                            <label for="rate1">1 star, terrible.</label>
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" id="rate1" name="Rating" value="1" />
+                                            if (item.Answer > 1)
+                                            {
+                                            <label for="rate5">1 stars, amazing.</label>
+                                            }
+                                        }
+                                    </fieldset>
+                                }
+                                else
+                                {
+                                    if (item.Answer == 1)
+                                    {
+                                        if (item.CategoryMst.CategoryDisc == "Like-Dislike")
+                                        {
+                                    <div class="col-md-12">
+                                        <p style="font-size: large;">
+                                            You Have Selected:&nbsp;Like
+                                        </p>
+                                    </div>
+                                        }
+                                        else
+                                        {
+                                    <div class="col-md-12">
+                                        @Html.DisplayFor(modelitem => item.SurveyQue.Answer1)
+                                    </div>
+                                        }
+                                    }
+                                    if (item.Answer == 2)
+                                    {
+                                        if (item.CategoryMst.CategoryDisc == "Like-Dislike")
+                                        {
+                                    <div class="col-md-12">
+                                        <p style="font-size: large;">
+                                            You Have Selected:&nbsp;Like
+                                        </p>
+                                    </div>
+                                        }
+                                        else
+                                        {
+                                    <div class="col-md-12">
+                                        @Html.DisplayFor(modelitem => item.SurveyQue.Answer2)
+                                    </div>
+                                        }
+                                    }
+                                    if (item.Answer == 3)
+                                    {
+                                    <div class="col-md-12">
+                                        @Html.DisplayFor(modelitem => item.SurveyQue.Answer3)
+                                    </div>
+                                    }
+                                    if (item.Answer == 4)
+                                    {
+                                    <div class="col-md-12">
+                                        @Html.DisplayFor(modelitem => item.SurveyQue.Answer4)
+                                    </div>
+                                    }
+                                    if (item.Answer == 5)
+                                    {
+                                    <div class="col-md-12">
+                                        @Html.DisplayFor(modelitem => item.SurveyQue.Answer5)
+                                    </div>
+                                    }
+                                    if (item.Answer == 6)
+                                    {
+                                    <div class="col-md-12">
+                                        @Html.DisplayFor(modelitem => item.SurveyQue.Answer6)
+                                    </div>
+                                    }
+                                    if (item.Answer == 7)
+                                    {
+                                    <div class="col-md-12">
+                                        @Html.DisplayFor(modelitem => item.SurveyQue.Answer7)
+                                    </div>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        }
+    }
+    else
+    {
+        <div class="form-group">
+            <table class="table table-hover mb-none">
+                <tr>
+                    <td class="actions-hover actions-fade">
+                        <div class="col-md-12">
+                            <h6 style="color: red; text-align: center">User Not Attempted Any Question.</h6>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>

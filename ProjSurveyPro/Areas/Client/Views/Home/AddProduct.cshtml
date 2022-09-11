@@ -1,0 +1,365 @@
+﻿@model ProjSurveyPro.ProductMst
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" lang="javascript">
+        function readURLImg1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#ProductImage1').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function readURLImg2(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#ProductImage2').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function readURLImg3(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#ProductImage3').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function readURLImg14(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#ProductImage4').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>New Product</h2>
+        </header>
+
+        <!-- start: page -->
+        <div data-appear-animation="fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel" style="border: double;">
+                        <header class="panel-heading">
+                            <h2 class="panel-title" align="center">New Product</h2>
+                        </header>
+                        <div class="panel-body">
+                            @using (Html.BeginForm("AddProduct", "Home", new { area = "Client" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.ValidationSummary(true)
+                                <div class="form-group">
+                                    <div class="col-md-6" align="center">
+                                        <div class="thumb-info mb-md">
+                                            <img id="ProductImage1" src="~/Contents/appimg/Product.png" alt="Employee Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+                                        </div>
+                                        @*</div>
+                                <div class=".col-md-12" align="center">*@
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    @*<i class="fa fa-file fileupload-exists"></i>*@
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <span class="fileupload-new">Select Photo</span>
+                                                    <input type="file" name="ProductImage1" onchange="readURLImg1(this);" />
+                                                </span>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.ProductImage1, null, new { style = "color:red;" })
+                                            @if (Session["Image"] == "1")
+                                            {
+                                                <h6 style="color: red;">@ViewBag.Image1type</h6>   
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" align="center">
+                                        <div class="thumb-info mb-md">
+                                            <img id="ProductImage2" src="~/Contents/appimg/Product.png" alt="Employee Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+                                        </div>
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    @*<i class="fa fa-file fileupload-exists"></i>*@
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <span class="fileupload-new">Select Photo</span>
+                                                    <input type="file" name="ProductImage2" onchange="readURLImg2(this);" />
+                                                </span>
+                                            </div>
+                                            @if (Session["Image"] == "1")
+                                            {
+                                                <h6 style="color: red;">@ViewBag.Image2type</h6>   
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6" align="center">
+                                        <div class="thumb-info mb-md">
+                                            <img id="ProductImage3" src="~/Contents/appimg/Product.png" alt="Employee Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+                                        </div>
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    @*<i class="fa fa-file fileupload-exists"></i>*@
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <span class="fileupload-new">Select Photo</span>
+                                                    <input type="file" name="ProductImage3" onchange="readURLImg3(this);" />
+                                                </span>
+                                            </div>
+                                            @if (Session["Image"] == "1")
+                                            {
+                                                <h6 style="color: red;">@ViewBag.Image3type</h6>   
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" align="center">
+                                        <div class="thumb-info mb-md">
+                                            <img id="ProductImage4" src="~/Contents/appimg/Product.png" alt="Employee Image" class="img-responsive" height="220px" width="220px" text-align="center" />
+                                        </div>
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    @*<i class="fa fa-file fileupload-exists"></i>*@
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <span class="fileupload-new">Select Photo</span>
+                                                    <input type="file" name="ProductImage4" onchange="readURLImg4(this);" />
+                                                </span>
+                                            </div>
+                                            @if (Session["Image"] == "1")
+                                            {
+                                                <h6 style="color: red;">@ViewBag.Image4type</h6>   
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12" align="center">
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    @*<i class="fa fa-file fileupload-exists"></i>*@
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <span class="fileupload-new">Select Video</span>
+                                                    <input type="file" name="Video" onchange="readURL(this);" />
+                                                </span>
+                                            </div>
+                                            @if (Session["Image"] == "1")
+                                            {
+                                                <h6 style="color: red;">@ViewBag.Videotype</h6>   
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Product Name", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(model => model.ProductName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Product Name"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.ProductName, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Product Company", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(model => model.ProductCompany,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Product Company Name"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.ProductCompany, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Model Name", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(model => model.ModelName,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Model Name"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.ModelName, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Short Description", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-9">
+                                        <div class="summernote" data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'>
+                                            @Html.TextAreaFor(model => model.ShortDiscription,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                data_plugin_summernote = "Required"
+                                            }
+                                        )
+                                            @Html.ValidationMessageFor(model => model.ShortDiscription, null, new { style = "color:red;" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Brief Description", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-9">
+                                        <div class="summernote" data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'>
+                                            @Html.TextAreaFor(model => model.BriefDiscription,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                data_plugin_summernote = "Required"
+                                            }
+                                        )
+                                            @Html.ValidationMessageFor(model => model.BriefDiscription, null, new { style = "color:red;" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Specifications", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-9">
+                                        <div class="summernote" data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'>
+                                            @Html.TextAreaFor(model => model.Facility,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                data_plugin_summernote = "Required"
+                                            }
+                                        )
+                                            @Html.ValidationMessageFor(model => model.Facility, null, new { style = "color:red;" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Product Price", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-3 .col-md-offset-3">
+                                        @Html.TextBoxFor(model => model.Price,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "Product Price",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Price, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Total Survey Amount", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-3 .col-md-offset-3">
+                                        @Html.TextBoxFor(model => model.TotalSurveyAmt,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "Total Survey Amount",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.TotalSurveyAmt, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Per Survey Amount", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-3 .col-md-offset-3">
+                                        @Html.TextBoxFor(model => model.SurveyPerAmount,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "Enter Per Survey Amount",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.SurveyPerAmount, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("No of Survey", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-3 .col-md-offset-3">
+                                        @Html.TextBoxFor(model => model.NoOfSurvey,
+                                            new
+                                            {
+                                                type = "number",
+                                                @class = "form-control",
+                                                placeholder = "No. of Survey",
+                                                pattern = "^[0-9]*",
+                                                style="text-align:right"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.NoOfSurvey, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div style="text-align: center;">
+                                        <br />
+                                        @Html.TextBox("btnSubmit", "Submit", new { type = "submit", @class = "btn btn-primary btn-lg" })
+                                        <a href="@Url.Action("Product", "Home", new { area = "Client" })" class = "btn btn-primary btn-lg" }>Back</a>
+                                    </div>
+                                </div>
+                                <hr class="tell" />
+                                <div class="row">
+                                    <div class="header-logo">
+                                        <div style="text-align: center;">
+                                            <p>Powered By</p>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <img src="~/Contents/appimg/FullLogo.png"
+                                                width="120" height="80"
+                                                alt="Survey Pro" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

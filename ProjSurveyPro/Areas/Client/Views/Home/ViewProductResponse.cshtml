@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ProjSurveyPro.SurveyMst>
+@{
+    ViewBag.Title = "ViewProductResponse";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>View Product Responses</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Product Responses</h2>
+            </header>
+            <div class="panel-body">
+                @Html.Partial("ViewProductResponsePartial", Model)
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

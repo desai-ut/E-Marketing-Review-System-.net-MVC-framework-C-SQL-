@@ -1,0 +1,235 @@
+﻿@model ProjSurveyPro.SurveyQue
+@{
+    ViewBag.Title = "EditSurveyQues";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script type="text/javascript" lang="javascript">
+        function Apanal() {
+            var Category = $("#ddlCategory option:selected").text();
+            var A1 = document.getElementById("Ans1");
+            var A2 = document.getElementById("Ans2");
+            var A3 = document.getElementById("Ans3");
+            var A4 = document.getElementById("Ans4");
+            var A5 = document.getElementById("Ans5");
+            var A6 = document.getElementById("Ans6");
+            var A7 = document.getElementById("Ans7");
+            if (Category == "MCQ") {
+                A1.style.display = "block";
+                A2.style.display = "block";
+                A3.style.display = "block";
+                A4.style.display = "block";
+                A5.style.display = "block";
+                A6.style.display = "block";
+                A7.style.display = "block";
+            }
+            else {
+                A1.style.display = "none";
+                A2.style.display = "none";
+                A3.style.display = "none";
+                A4.style.display = "none";
+                A5.style.display = "none";
+                A6.style.display = "none";
+                A7.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Edit Survey Question</h2>
+        </header>
+
+        <!-- start: page -->
+        <div data-appear-animation="fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel" style="border: double;">
+                        <header class="panel-heading">
+                            <h2 class="panel-title" align="center">Edit Survey Question</h2>
+                        </header>
+                        <div class="panel-body">
+                            @using (Html.BeginForm("EditSurveyQues", "Home", new { area = "Client" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.ValidationSummary(true)
+                                @Html.HiddenFor(model => model.QuestionID)
+                                <div class="form-group">
+                                    @Html.Label("Question", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        <div class="summernote" data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'>
+                                            @Html.TextAreaFor(model => model.Question,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                data_plugin_summernote = "Required"
+                                            }
+                                        )
+                                            @Html.ValidationMessageFor(model => model.Question, null, new { style = "color:red;" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Category", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-sm-6">
+                                        <div class="mb-md">
+                                            @Html.DropDownListFor(model => model.CategoryID, (SelectList)ViewBag.CList, "- Select Category -", new { @class = "form-control mb-md", id = "ddlCategory", onchange = "Apanal();" })
+                                            @Html.ValidationMessageFor(model => model.CategoryID, null, new { style = "color:red;" })
+                                        </div>
+                                        @if (Session["CError"] == "1")
+                                        {
+                                            <h6 style="color: red;">@ViewBag.Error</h6> 
+                                        }
+                                    </div>
+                                </div>
+                                        if (Model.Answer1 != null)
+                                        {
+                                <div class="form-group" id="Ans1" style="display: block;">
+                                    @Html.Label("Answer", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.Answer1,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "2"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Answer1, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                        }
+                                        if (Model.Answer2 != null)
+                                        {
+                                <div class="form-group" id="Ans2" style="display: block;">
+                                    @Html.Label("Answer", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.Answer2,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "2"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Answer2, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                        }
+                                        if (Model.Answer3 != null)
+                                        {
+                                <div class="form-group" id="Ans3" style="display: block;">
+                                    @Html.Label("Answer", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.Answer3,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "2"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Answer3, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                        }
+                                        if (Model.Answer4 != null)
+                                        {
+                                <div class="form-group" id="Ans4" style="display: block;">
+                                    @Html.Label("Answer", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.Answer4,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "2"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Answer4, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                        }
+                                        if (Model.Answer5 != null)
+                                        {
+                                <div class="form-group" id="Ans5" style="display: block;">
+                                    @Html.Label("Answer", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.Answer5,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "2"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Answer5, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                        }
+                                        if (Model.Answer6 != null)
+                                        {
+                                <div class="form-group" id="Ans6" style="display: block;">
+                                    @Html.Label("Answer", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.Answer6,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "2"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Answer6, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                        }
+                                        if (Model.Answer7 != null)
+                                        {
+                                <div class="form-group" id="Ans7" style="display: block;">
+                                    @Html.Label("Answer", null, new { @class = "col-sm-3 control-label text-right" })
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.Answer7,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                rows = "2"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.Answer7, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                                        }
+                                <div class="row">
+                                    <div style="text-align: center;">
+                                        <br />
+                                        @Html.TextBox("btnSubmit", "Submit", new { type = "submit", @class = "btn btn-primary btn-lg" })
+                                    </div>
+                                </div>
+                                <hr class="tell" />
+                                <div class="row">
+                                    <div class="header-logo">
+                                        <div style="text-align: center;">
+                                            <p>Powered By</p>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <img src="~/Contents/appimg/FullLogo.png"
+                                                width="120" height="80"
+                                                alt="Survey Pro" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

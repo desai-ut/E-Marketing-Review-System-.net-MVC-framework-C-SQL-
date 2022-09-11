@@ -1,0 +1,127 @@
+﻿@model ProjSurveyPro.QueryMst
+@{
+    ViewBag.Title = "ReplyQuery";
+    Layout = "~/Views/Master/AdminLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Reply Query</h2>
+    </header>
+    <!-- start: page -->
+    <div class="row" data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2>Reply Query</h2>
+            </header>
+            <div class="panel-body">
+                <div class="form-body">
+                    <div class="form-horizontal form-bordered">
+                        @using (Html.BeginForm("Query", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.ValidationSummary(true)
+                            @Html.HiddenFor(model => model.EmailID)
+                            @Html.HiddenFor(model => model.QueryID)
+                            @Html.HiddenFor(model=>model.QueryDisc)
+                            <fieldset disabled>
+                                <div class="form-group">
+                                    <div data-appear-animation="fadeInLeft">
+                                        @Html.Label("Query", null, new { @class = "col-sm-3 control-label" })
+                                    </div>
+                                    <div data-appear-animation="fadeInRight">
+                                        <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.QueryDisc,
+                                        new
+                                        {
+                                            @class = "form-control"
+                                        }
+                                        )
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div data-appear-animation="fadeInLeft">
+                                        @Html.Label("To", null, new { @class = "col-sm-3 control-label" })
+                                    </div>
+                                    <div data-appear-animation="fadeInRight">
+                                        <div class="col-md-6">
+                                        @Html.TextBoxFor(model => model.EmailID,
+                                        new
+                                        {
+                                            @class = "form-control"
+                                        }
+                                        )
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <br />
+                            if (Session["Status"] == "Display")
+                            {
+                            <fieldset disabled>
+                                <div class="form-group">
+                                    <div data-appear-animation="fadeInLeft">
+                                        @Html.Label("Reply Message", null, new { @class = "col-sm-3 control-label" })
+                                    </div>
+                                    <div data-appear-animation="fadeInRight">
+                                        <div class="col-md-6">
+                                            @Html.TextAreaFor(model => model.ReplyDisc,
+                                                new
+                                               {
+                                                   type = "text",
+                                                   @class = "form-control",
+                                                   placeholder = "Reply to Query.."
+                                               })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            }
+                            else
+                            {
+                            <div class="form-group">
+                                <div data-appear-animation="fadeInLeft">
+                                    @Html.Label("Reply Message", null, new { @class = "col-sm-3 control-label" })
+                                </div>
+                                <div data-appear-animation="fadeInRight">
+                                    <div class="col-md-6">
+                                        @Html.TextAreaFor(model => model.ReplyDisc,
+                                                new
+                                               {
+                                                   type = "text",
+                                                   @class = "form-control",
+                                                   placeholder = "Reply to Query.."
+                                               })
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                            <div class="col-md-12" id="divSubmit" align="center">
+                                @if (Session["Status"] == "Entry")
+                                {
+                                    @Html.TextBox("Submit", "Submit",
+                                             new
+                                             {
+                                                 type = "submit",
+                                                 @class = "mb-xs mt-xs mr-xs btn btn-success"
+                                             })
+                                    @Html.TextBox("Submit", "Reset",
+                                             new
+                                             {
+                                                 type = "submit",
+                                                 @class = "btn btn-default"
+                                             })
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("Query", "Home", new { area = "Admin" })" id="btnSubmit" 
+                                                    class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

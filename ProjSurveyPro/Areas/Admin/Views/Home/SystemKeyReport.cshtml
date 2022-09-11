@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "SystemKeyReport";
+    Layout = "~/Views/Master/AdminLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>System Analysis Report</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">System Analysis</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    @Html.Partial("SurveyProKeyReportPartial")
+                    <div class="row">
+                        <div style="text-align: center;">
+                            <br />
+                            <a href="@Url.Action("Index", "Home", new { area = "Admin" })" id="btnSubmit" 
+                                class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <div class="row">
+                        <div class="header-logo">
+                            <div style="text-align: center;">
+                                <p>Powered By</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <img src="~/Contents/appimg/FullLogo.png"
+                                    width="120" height="80"
+                                    alt="Survey Pro" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: page -->
+            </div>
+        </section>
+    </div>
+</section>

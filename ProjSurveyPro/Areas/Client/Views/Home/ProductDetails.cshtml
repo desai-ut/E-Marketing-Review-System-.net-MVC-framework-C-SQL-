@@ -1,0 +1,48 @@
+﻿@model ProjSurveyPro.ProductMst
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Master/ClientLayout.cshtml";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/Contents/appcss/theme-elements.css" />
+</head>
+<body>
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Product Details</h2>
+        </header>
+        <div data-appear-animation="fadeInRight">
+            <section class="panel" style="border: double;">
+                <header class="panel-heading">
+                    <h2 class="panel-title" align="center">Product Details</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="row">
+                        @Html.Partial("ProductDetailsPartial",Model)
+                    <div class="row">
+                        <div style="text-align: center;">
+                            <br />
+                            <a href="@Url.Action("ProductPublishList", "Home", new { area = "Client" })" id="btnSubmit" 
+                                class="mb-xs mt-xs btn btn-primary" style="text-align: center;">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Vendor -->
+    <script src="~/Contents/appvendor/jquery/jquery.min.js"></script>
+    <script src="~/Contents/appvendor/jquery.appear/jquery.appear.min.js"></script>
+    <script src="~/Contents/appvendor/owl.carousel/owl.carousel.min.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/Contents/appjs/theme.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/Contents/appjs/theme.init.js"></script>
+</body>
+</html>
+

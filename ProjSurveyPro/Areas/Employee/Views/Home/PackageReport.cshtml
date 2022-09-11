@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "PackageReport";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Client Package Payment Report</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <section class="panel" style="border: double;">
+            <header class="panel-heading">
+                <h2 class="panel-title" align="center">Package Payment Report</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    @Html.Label("Client", null, new { @class = "col-sm-3 control-label text-right" })
+                    <div class="col-sm-6">
+                        <div class="mb-md">
+                            @using (Html.BeginForm("PackageReport", "Home", new { area = "Employee" }, FormMethod.Post))
+                            {
+                                @Html.DropDownList("ddlClient", (SelectList)ViewBag.ClientList, "- Select Client -",
+                            new { @class = "form-control mb-md", @onchange = "this.form.submit();" })
+                            }
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="~/Contents/assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Package</th>
+                            <th>Package Ending Date</th>
+                            <th class="center hidden-phone">Company Status</th>
+                            <th class="center hidden-phone">Package Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="State">
+                        @foreach (var item in ViewBag.PackageReport)
+                        {
+                            <tr class="gradeX">
+                                <td style="padding-top: 3.5mm;">
+                                    @item.CompName
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.PackageTitle
+                                </td>
+                                <td style="padding-top: 3.5mm;">
+                                    @item.PackageEndDate
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @{ var CStatus = item.IsActive;
+                                       if (CStatus == true)
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-success">Active</a>
+                                       }
+                                       else
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-danger">InActive</a>
+                                       }
+                                    }
+                                </td>
+                                <td style="padding-top: 3.5mm;" class="center hidden-phone">
+                                    @{ var Status = item.PaidStatus;
+                                       if (Status == true)
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-success">Active</a>
+                                       }
+                                       else
+                                       {
+                                        <a href="#" class="mb-xs mt-xs btn btn-danger">InActive</a>
+                                       }
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr class="tell" />
+                <div class="row">
+                    <div class="header-logo">
+                        <div style="text-align: center;">
+                            <p>Powered By</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="~/Contents/appimg/FullLogo.png"
+                                width="120" height="80"
+                                alt="Survey Pro" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: page -->
+</section>

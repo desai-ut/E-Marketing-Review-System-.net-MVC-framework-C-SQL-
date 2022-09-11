@@ -1,0 +1,1505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbEMRSModelStoreContainer" CdmEntityContainer="dbEMRSEntities">
+    <EntitySetMapping Name="CategoryMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.CategoryMst">
+        <MappingFragment StoreEntitySet="CategoryMst">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryDisc" ColumnName="CategoryDisc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.CityMst">
+        <MappingFragment StoreEntitySet="CityMst">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.ClientMst">
+        <MappingFragment StoreEntitySet="ClientMst">
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="CompAddress" ColumnName="CompAddress" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="GSTNo" ColumnName="GSTNo" />
+          <ScalarProperty Name="WebsiteName" ColumnName="WebsiteName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ActiveLeaveDt" ColumnName="ActiveLeaveDt" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+          <ScalarProperty Name="ApprovedEmpID" ColumnName="ApprovedEmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.EmployeeMst">
+        <MappingFragment StoreEntitySet="EmployeeMst">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmpAddress" ColumnName="EmpAddress" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="DtBirth" ColumnName="DtBirth" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ActiveLeaveDt" ColumnName="ActiveLeaveDt" />
+          <ScalarProperty Name="EmpImage" ColumnName="EmpImage" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedbackMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.FeedbackMst">
+        <MappingFragment StoreEntitySet="FeedbackMst">
+          <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="FeedbackDisc" ColumnName="FeedbackDisc" />
+          <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserContactNo" ColumnName="UserContactNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HelpingQues">
+      <EntityTypeMapping TypeName="dbEMRSModel.HelpingQue">
+        <MappingFragment StoreEntitySet="HelpingQues">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+          <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+          <ScalarProperty Name="Answer5" ColumnName="Answer5" />
+          <ScalarProperty Name="Answer6" ColumnName="Answer6" />
+          <ScalarProperty Name="Answer7" ColumnName="Answer7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.ProductMst">
+        <MappingFragment StoreEntitySet="ProductMst">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+          <ScalarProperty Name="BriefDiscription" ColumnName="BriefDiscription" />
+          <ScalarProperty Name="Facility" ColumnName="Facility" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="ProductImage2" ColumnName="ProductImage2" />
+          <ScalarProperty Name="ProductImage3" ColumnName="ProductImage3" />
+          <ScalarProperty Name="ProductImage4" ColumnName="ProductImage4" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="TotalSurveyAmt" ColumnName="TotalSurveyAmt" />
+          <ScalarProperty Name="SurveyPerAmount" ColumnName="SurveyPerAmount" />
+          <ScalarProperty Name="NoOfSurvey" ColumnName="NoOfSurvey" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SurveyRewardPoint" ColumnName="SurveyRewardPoint" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReviewAns">
+      <EntityTypeMapping TypeName="dbEMRSModel.ReviewAn">
+        <MappingFragment StoreEntitySet="ReviewAns">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReviewQues">
+      <EntityTypeMapping TypeName="dbEMRSModel.ReviewQue">
+        <MappingFragment StoreEntitySet="ReviewQues">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.StateMst">
+        <MappingFragment StoreEntitySet="StateMst">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurveyAns">
+      <EntityTypeMapping TypeName="dbEMRSModel.SurveyAn">
+        <MappingFragment StoreEntitySet="SurveyAns">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurveyMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.SurveyMst">
+        <MappingFragment StoreEntitySet="SurveyMst">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyDt" ColumnName="SurveyDt" />
+          <ScalarProperty Name="SurveyCnt" ColumnName="SurveyCnt" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurveyPayments">
+      <EntityTypeMapping TypeName="dbEMRSModel.SurveyPayment">
+        <MappingFragment StoreEntitySet="SurveyPayment">
+          <ScalarProperty Name="SPID" ColumnName="SPID" />
+          <ScalarProperty Name="SPDate" ColumnName="SPDate" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="TotalAmt" ColumnName="TotalAmt" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurveyQues">
+      <EntityTypeMapping TypeName="dbEMRSModel.SurveyQue">
+        <MappingFragment StoreEntitySet="SurveyQues">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+          <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+          <ScalarProperty Name="Answer5" ColumnName="Answer5" />
+          <ScalarProperty Name="Answer6" ColumnName="Answer6" />
+          <ScalarProperty Name="Answer7" ColumnName="Answer7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransferAmounts">
+      <EntityTypeMapping TypeName="dbEMRSModel.TransferAmount">
+        <MappingFragment StoreEntitySet="TransferAmount">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TAID" ColumnName="TAID" />
+          <ScalarProperty Name="TADate" ColumnName="TADate" />
+          <ScalarProperty Name="TotalTransferRewardPoint" ColumnName="TotalTransferRewardPoint" />
+          <ScalarProperty Name="TotalTransferAmount" ColumnName="TotalTransferAmount" />
+          <ScalarProperty Name="TransferTo" ColumnName="TransferTo" />
+          <ScalarProperty Name="TransferToUserName" ColumnName="TransferToUserName" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.UserMst">
+        <MappingFragment StoreEntitySet="UserMst">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="DtBirth" ColumnName="DtBirth" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ActiveLeaveDate" ColumnName="ActiveLeaveDate" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+          <ScalarProperty Name="RedeemRewardPoint" ColumnName="RedeemRewardPoint" />
+          <ScalarProperty Name="ApprovedEmpID" ColumnName="ApprovedEmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EwalletMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.EwalletMst">
+        <MappingFragment StoreEntitySet="EwalletMst">
+          <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="NoOfAttemptedReviewQues" ColumnName="NoOfAttemptedReviewQues" />
+          <ScalarProperty Name="NoOfAttemptedSurveyQues" ColumnName="NoOfAttemptedSurveyQues" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveClientMst" FunctionName="dbEMRSModel.Store.uspSaveClientMst" />
+    <FunctionImportMapping FunctionImportName="uspSaveEmployeeMst" FunctionName="dbEMRSModel.Store.uspSaveEmployeeMst" />
+    <FunctionImportMapping FunctionImportName="uspSaveUserMst" FunctionName="dbEMRSModel.Store.uspSaveUserMst" />
+    <EntitySetMapping Name="PackageMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.PackageMst">
+        <MappingFragment StoreEntitySet="PackageMst">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="NoOfResponse" ColumnName="NoOfResponse" />
+          <ScalarProperty Name="NoOfReviewQues" ColumnName="NoOfReviewQues" />
+          <ScalarProperty Name="NoOfSurveyQues" ColumnName="NoOfSurveyQues" />
+          <ScalarProperty Name="NoOfProduct" ColumnName="NoOfProduct" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="uspSavePackageMst" FunctionName="dbEMRSModel.Store.uspSavePackageMst" />
+    <FunctionImportMapping FunctionImportName="uspSaveCityMst" FunctionName="dbEMRSModel.Store.uspSaveCityMst">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspSaveCityMst_Result">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="City" FunctionName="dbEMRSModel.Store.uspSaveCityMst" />
+    <FunctionImportMapping FunctionImportName="uspSaveHelpingQues" FunctionName="dbEMRSModel.Store.uspSaveHelpingQues" />
+    <FunctionImportMapping FunctionImportName="uspGetCity" FunctionName="dbEMRSModel.Store.uspGetCity">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetCity_Result">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetHelpingQues" FunctionName="dbEMRSModel.Store.uspGetHelpingQues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetHelpingQues_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+          <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+          <ScalarProperty Name="Answer5" ColumnName="Answer5" />
+          <ScalarProperty Name="Answer6" ColumnName="Answer6" />
+          <ScalarProperty Name="Answer7" ColumnName="Answer7" />
+          <ScalarProperty Name="CategoryDisc" ColumnName="CategoryDisc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetPackage" FunctionName="dbEMRSModel.Store.uspGetPackage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetPackage_Result">
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="NoOfProduct" ColumnName="NoOfProduct" />
+          <ScalarProperty Name="NoOfSurveyQues" ColumnName="NoOfSurveyQues" />
+          <ScalarProperty Name="NoOfReviewQues" ColumnName="NoOfReviewQues" />
+          <ScalarProperty Name="NoOfResponse" ColumnName="NoOfResponse" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetProduct" FunctionName="dbEMRSModel.Store.uspGetProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetProduct_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+          <ScalarProperty Name="BriefDiscription" ColumnName="BriefDiscription" />
+          <ScalarProperty Name="Facility" ColumnName="Facility" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="ProductImage2" ColumnName="ProductImage2" />
+          <ScalarProperty Name="ProductImage3" ColumnName="ProductImage3" />
+          <ScalarProperty Name="ProductImage4" ColumnName="ProductImage4" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="TotalSurveyAmt" ColumnName="TotalSurveyAmt" />
+          <ScalarProperty Name="SurveyPerAmount" ColumnName="SurveyPerAmount" />
+          <ScalarProperty Name="NoOfSurvey" ColumnName="NoOfSurvey" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SurveyRewardPoint" ColumnName="SurveyRewardPoint" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetState" FunctionName="dbEMRSModel.Store.uspGetState">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetState_Result">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetCategory" FunctionName="dbEMRSModel.Store.uspGetCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetCategory_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryDisc" ColumnName="CategoryDisc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetState" FunctionName="dbEMRSModel.Store.uspGetState" />
+    <FunctionImportMapping FunctionImportName="GetCategory" FunctionName="dbEMRSModel.Store.uspGetCategory" />
+    <FunctionImportMapping FunctionImportName="GetHelpingQues" FunctionName="dbEMRSModel.Store.uspGetHelpingQues" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="dbEMRSModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="dbEMRSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="dbEMRSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="dbEMRSModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="dbEMRSModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="dbEMRSModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="dbEMRSModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="uspGetClient" FunctionName="dbEMRSModel.Store.uspGetClient" />
+    <FunctionImportMapping FunctionImportName="uspGetUser" FunctionName="dbEMRSModel.Store.uspGetUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUser_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="DtBirth" ColumnName="DtBirth" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ActiveLeaveDate" ColumnName="ActiveLeaveDate" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+          <ScalarProperty Name="RedeemRewardPoint" ColumnName="RedeemRewardPoint" />
+          <ScalarProperty Name="ApprovedEmpID" ColumnName="ApprovedEmpID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCity" FunctionName="dbEMRSModel.Store.uspGetCity" />
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedClient" FunctionName="dbEMRSModel.Store.uspSaveApprovedClient" />
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedUser" FunctionName="dbEMRSModel.Store.uspSaveApprovedUser" />
+    <FunctionImportMapping FunctionImportName="uspGetEmployee" FunctionName="dbEMRSModel.Store.uspGetEmployee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetEmployee_Result">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmpAddress" ColumnName="EmpAddress" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="DtBirth" ColumnName="DtBirth" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ActiveLeaveDt" ColumnName="ActiveLeaveDt" />
+          <ScalarProperty Name="EmpImage" ColumnName="EmpImage" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedEmployee" FunctionName="dbEMRSModel.Store.uspSaveApprovedEmployee" />
+    <FunctionImportMapping FunctionImportName="GetClient" FunctionName="dbEMRSModel.Store.uspGetClient" />
+    <FunctionImportMapping FunctionImportName="GetUser" FunctionName="dbEMRSModel.Store.uspGetUser" />
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedPackage" FunctionName="dbEMRSModel.Store.uspSaveApprovedPackage" />
+    <FunctionImportMapping FunctionImportName="GetPackage" FunctionName="dbEMRSModel.Store.uspGetPackage" />
+    <FunctionImportMapping FunctionImportName="uspGetPurchasePackage" FunctionName="dbEMRSModel.Store.uspGetPurchasePackage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetPurchasePackage_Result">
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="StartingDate" ColumnName="StartingDate" />
+          <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedPurchasePackage" FunctionName="dbEMRSModel.Store.uspSaveApprovedPurchasePackage" />
+    <FunctionImportMapping FunctionImportName="uspSaveReviewQues" FunctionName="dbEMRSModel.Store.uspSaveReviewQues" />
+    <FunctionImportMapping FunctionImportName="uspSaveSurveyQues" FunctionName="dbEMRSModel.Store.uspSaveSurveyQues" />
+    <FunctionImportMapping FunctionImportName="uspGetSurveyProduct" FunctionName="dbEMRSModel.Store.uspGetSurveyProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSurveyProduct_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyDt" ColumnName="SurveyDt" />
+          <ScalarProperty Name="SurveyCnt" ColumnName="SurveyCnt" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="TotalSurveyAmt" ColumnName="TotalSurveyAmt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedSurveyMst" FunctionName="dbEMRSModel.Store.uspSaveApprovedSurveyMst" />
+    <FunctionImportMapping FunctionImportName="uspGetPublishProduct" FunctionName="dbEMRSModel.Store.uspGetPublishProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetPublishProduct_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyDt" ColumnName="SurveyDt" />
+          <ScalarProperty Name="SurveyCnt" ColumnName="SurveyCnt" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="TotalSurveyAmt" ColumnName="TotalSurveyAmt" />
+          <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveActiveProduct" FunctionName="dbEMRSModel.Store.uspSaveActiveProduct" />
+    <FunctionImportMapping FunctionImportName="GetPublishProduct" FunctionName="dbEMRSModel.Store.uspGetPublishProduct" />
+    <FunctionImportMapping FunctionImportName="uspSaveUpdateImageClient" FunctionName="dbEMRSModel.Store.uspSaveUpdateImageClient" />
+    <FunctionImportMapping FunctionImportName="uspSaveUpdateImageEmployee" FunctionName="dbEMRSModel.Store.uspSaveUpdateImageEmployee" />
+    <FunctionImportMapping FunctionImportName="uspSaveUpdateImageUser" FunctionName="dbEMRSModel.Store.uspSaveUpdateImageUser" />
+    <FunctionImportMapping FunctionImportName="uspGetActiveProduct" FunctionName="dbEMRSModel.Store.uspGetActiveProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetActiveProduct_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+          <ScalarProperty Name="BriefDiscription" ColumnName="BriefDiscription" />
+          <ScalarProperty Name="Facility" ColumnName="Facility" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="ProductImage2" ColumnName="ProductImage2" />
+          <ScalarProperty Name="ProductImage3" ColumnName="ProductImage3" />
+          <ScalarProperty Name="ProductImage4" ColumnName="ProductImage4" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="TotalSurveyAmt" ColumnName="TotalSurveyAmt" />
+          <ScalarProperty Name="SurveyPerAmount" ColumnName="SurveyPerAmount" />
+          <ScalarProperty Name="NoOfSurvey" ColumnName="NoOfSurvey" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SurveyRewardPoint" ColumnName="SurveyRewardPoint" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetActiveProduct" FunctionName="dbEMRSModel.Store.uspGetActiveProduct" />
+    <FunctionImportMapping FunctionImportName="uspSaveUpdateImageProduct" FunctionName="dbEMRSModel.Store.uspSaveUpdateImageProduct" />
+    <FunctionImportMapping FunctionImportName="uspSaveChangePasswdClient" FunctionName="dbEMRSModel.Store.uspSaveChangePasswdClient" />
+    <FunctionImportMapping FunctionImportName="uspSaveChangePasswdEmployee" FunctionName="dbEMRSModel.Store.uspSaveChangePasswdEmployee" />
+    <FunctionImportMapping FunctionImportName="uspSaveChangePasswdUser" FunctionName="dbEMRSModel.Store.uspSaveChangePasswdUser" />
+    <FunctionImportMapping FunctionImportName="GetEmployee" FunctionName="dbEMRSModel.Store.uspGetEmployee" />
+    <FunctionImportMapping FunctionImportName="uspGetReviewQuesForAns" FunctionName="dbEMRSModel.Store.uspGetReviewQuesForAns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetReviewQuesForAns_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="CategoryDisc" ColumnName="CategoryDisc" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetSurveyQuesForAns" FunctionName="dbEMRSModel.Store.uspGetSurveyQuesForAns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSurveyQuesForAns_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+          <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+          <ScalarProperty Name="Answer5" ColumnName="Answer5" />
+          <ScalarProperty Name="Answer6" ColumnName="Answer6" />
+          <ScalarProperty Name="Answer7" ColumnName="Answer7" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="CategoryDisc" ColumnName="CategoryDisc" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuesForAns" FunctionName="dbEMRSModel.Store.uspGetSurveyQuesForAns" />
+    <FunctionImportMapping FunctionImportName="uspGetReviewQues" FunctionName="dbEMRSModel.Store.uspGetReviewQues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetReviewQues_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetSurveyQues" FunctionName="dbEMRSModel.Store.uspGetSurveyQues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSurveyQues_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+          <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+          <ScalarProperty Name="Answer5" ColumnName="Answer5" />
+          <ScalarProperty Name="Answer6" ColumnName="Answer6" />
+          <ScalarProperty Name="Answer7" ColumnName="Answer7" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQues" FunctionName="dbEMRSModel.Store.uspGetSurveyQues" />
+    <FunctionImportMapping FunctionImportName="GetReviewQues" FunctionName="dbEMRSModel.Store.uspGetReviewQues" />
+    <FunctionImportMapping FunctionImportName="uspSaveReviewAns" FunctionName="dbEMRSModel.Store.uspSaveReviewAns" />
+    <FunctionImportMapping FunctionImportName="uspSaveSurveyAns" FunctionName="dbEMRSModel.Store.uspSaveSurveyAns" />
+    <FunctionImportMapping FunctionImportName="uspGetReviewAnsForUser" FunctionName="dbEMRSModel.Store.uspGetReviewAnsForUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetReviewAnsForUser_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetSurveyAnsForUser" FunctionName="dbEMRSModel.Store.uspGetSurveyAnsForUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSurveyAnsForUser_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+          <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+          <ScalarProperty Name="Answer5" ColumnName="Answer5" />
+          <ScalarProperty Name="Answer6" ColumnName="Answer6" />
+          <ScalarProperty Name="Answer7" ColumnName="Answer7" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReviewAnsForUser" FunctionName="dbEMRSModel.Store.uspGetReviewAnsForUser" />
+    <FunctionImportMapping FunctionImportName="GetSurveyAnsForUser" FunctionName="dbEMRSModel.Store.uspGetSurveyAnsForUser" />
+    <FunctionImportMapping FunctionImportName="GetProduct" FunctionName="dbEMRSModel.Store.uspGetProduct" />
+    <FunctionImportMapping FunctionImportName="uspSaveSurveyPayment" FunctionName="dbEMRSModel.Store.uspSaveSurveyPayment" />
+    <FunctionImportMapping FunctionImportName="GetSurveyProduct" FunctionName="dbEMRSModel.Store.uspGetSurveyProduct" />
+    <FunctionImportMapping FunctionImportName="uspSaveSurveyCntIncrement" FunctionName="dbEMRSModel.Store.uspSaveSurveyCntIncrement" />
+    <FunctionImportMapping FunctionImportName="uspGetProductResponse" FunctionName="dbEMRSModel.Store.uspGetProductResponse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetProductResponse_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyDt" ColumnName="SurveyDt" />
+          <ScalarProperty Name="SurveyCnt" ColumnName="SurveyCnt" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+          <ScalarProperty Name="ProductID1" ColumnName="ProductID1" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="SurveyRewardPoint" ColumnName="SurveyRewardPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProductResponse" FunctionName="dbEMRSModel.Store.uspGetProductResponse" />
+    <FunctionImportMapping FunctionImportName="uspSaveEwalletMst" FunctionName="dbEMRSModel.Store.uspSaveEwalletMst" />
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedEwallet" FunctionName="dbEMRSModel.Store.uspSaveApprovedEwallet" />
+    <FunctionImportMapping FunctionImportName="uspSaveQueryMst" FunctionName="dbEMRSModel.Store.uspSaveQueryMst" />
+    <FunctionImportMapping FunctionImportName="uspSaveFeedbackMst" FunctionName="dbEMRSModel.Store.uspSaveFeedbackMst" />
+    <FunctionImportMapping FunctionImportName="uspSaveApprovedQuery" FunctionName="dbEMRSModel.Store.uspSaveApprovedQuery" />
+    <FunctionImportMapping FunctionImportName="uspGetUserEwalletList" FunctionName="dbEMRSModel.Store.uspGetUserEwalletList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserEwalletList_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductCompany" ColumnName="ProductCompany" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+          <ScalarProperty Name="BriefDiscription" ColumnName="BriefDiscription" />
+          <ScalarProperty Name="Facility" ColumnName="Facility" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="ProductImage2" ColumnName="ProductImage2" />
+          <ScalarProperty Name="ProductImage3" ColumnName="ProductImage3" />
+          <ScalarProperty Name="ProductImage4" ColumnName="ProductImage4" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="TotalSurveyAmt" ColumnName="TotalSurveyAmt" />
+          <ScalarProperty Name="SurveyPerAmount" ColumnName="SurveyPerAmount" />
+          <ScalarProperty Name="NoOfSurvey" ColumnName="NoOfSurvey" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SurveyRewardPoint" ColumnName="SurveyRewardPoint" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserEwalletList" FunctionName="dbEMRSModel.Store.uspGetUserEwalletList" />
+    <FunctionImportMapping FunctionImportName="uspGetInActiveEmployee" FunctionName="dbEMRSModel.Store.uspGetInActiveEmployee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetInActiveEmployee_Result">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmpAddress" ColumnName="EmpAddress" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="DtBirth" ColumnName="DtBirth" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ActiveLeaveDt" ColumnName="ActiveLeaveDt" />
+          <ScalarProperty Name="EmpImage" ColumnName="EmpImage" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetInActiveEmployee" FunctionName="dbEMRSModel.Store.uspGetInActiveEmployee" />
+    <FunctionImportMapping FunctionImportName="uspGetEmployeePackage" FunctionName="dbEMRSModel.Store.uspGetEmployeePackage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetEmployeePackage_Result">
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="NoOfProduct" ColumnName="NoOfProduct" />
+          <ScalarProperty Name="NoOfSurveyQues" ColumnName="NoOfSurveyQues" />
+          <ScalarProperty Name="NoOfReviewQues" ColumnName="NoOfReviewQues" />
+          <ScalarProperty Name="NoOfResponse" ColumnName="NoOfResponse" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeePackage" FunctionName="dbEMRSModel.Store.uspGetEmployeePackage" />
+    <FunctionImportMapping FunctionImportName="uspSaveTransferAmount" FunctionName="dbEMRSModel.Store.uspSaveTransferAmount" />
+    <EntitySetMapping Name="PurchasePackages">
+      <EntityTypeMapping TypeName="dbEMRSModel.PurchasePackage">
+        <MappingFragment StoreEntitySet="PurchasePackage">
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+          <ScalarProperty Name="StartingDate" ColumnName="StartingDate" />
+          <ScalarProperty Name="ProductCnt" ColumnName="ProductCnt" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="dbEMRSModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="uspGetEIDAndPWD" FunctionName="dbEMRSModel.Store.uspGetEIDAndPWD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetEIDAndPWD_Result">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmpEIDAndPWD" FunctionName="dbEMRSModel.Store.uspGetEIDAndPWD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetEIDAndPWD_Result">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientEIDAndPWD" FunctionName="dbEMRSModel.Store.uspGetClientEIDAndPWD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientEIDAndPWD_Result">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetUserEIDAndPWD" FunctionName="dbEMRSModel.Store.uspGetUserEIDAndPWD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserEIDAndPWD_Result">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserEIDAndPWD" FunctionName="dbEMRSModel.Store.uspGetUserEIDAndPWD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserEIDAndPWD_Result">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetClientEIDAndPWD" FunctionName="dbEMRSModel.Store.uspGetClientEIDAndPWD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientEIDAndPWD_Result">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetRecoverPasswd" FunctionName="dbEMRSModel.Store.uspGetRecoverPasswd" />
+    <FunctionImportMapping FunctionImportName="GetPurchasePackage" FunctionName="dbEMRSModel.Store.uspGetPurchasePackage" />
+    <FunctionImportMapping FunctionImportName="SurveyCntIncrement" FunctionName="dbEMRSModel.Store.uspSaveSurveyCntIncrement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspSaveSurveyCntIncrement_Result">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReviewQuesForAns" FunctionName="dbEMRSModel.Store.uspGetReviewQuesForAns" />
+    <FunctionImportMapping FunctionImportName="uspGetProductResponseForEmployee" FunctionName="dbEMRSModel.Store.uspGetProductResponseForEmployee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetProductResponseForEmployee_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyDt" ColumnName="SurveyDt" />
+          <ScalarProperty Name="SurveyCnt" ColumnName="SurveyCnt" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+          <ScalarProperty Name="ProductID1" ColumnName="ProductID1" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="SurveyPerAmount" ColumnName="SurveyPerAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProductResponseForEmployee" FunctionName="dbEMRSModel.Store.uspGetProductResponseForEmployee" />
+    <FunctionImportMapping FunctionImportName="uspCheckLogin" FunctionName="dbEMRSModel.Store.uspCheckLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspCheckLogin_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Imag" ColumnName="Imag" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CheckLogin" FunctionName="dbEMRSModel.Store.uspCheckLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspCheckLogin_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Imag" ColumnName="Imag" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastLoginDt" ColumnName="LastLoginDt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetEmployeeReport" FunctionName="dbEMRSModel.Store.uspGetEmployeeReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetEmployeeReport_Result">
+          <ScalarProperty Name="AClient" ColumnName="AClient" />
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="Package" ColumnName="Package" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="NewClient" ColumnName="NewClient" />
+          <ScalarProperty Name="NewUser" ColumnName="NewUser" />
+          <ScalarProperty Name="ApproveResponse" ColumnName="ApproveResponse" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspUpdateLastLoginDate" FunctionName="dbEMRSModel.Store.uspUpdateLastLoginDate" />
+    <FunctionImportMapping FunctionImportName="uspGetClientReport" FunctionName="dbEMRSModel.Store.uspGetClientReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientReport_Result">
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="AProduct" ColumnName="AProduct" />
+          <ScalarProperty Name="TotalResponse" ColumnName="TotalResponse" />
+          <ScalarProperty Name="PackageEndDate" ColumnName="PackageEndDate" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="NoofProduct" ColumnName="NoofProduct" />
+          <ScalarProperty Name="AttemptedSurvey" ColumnName="AttemptedSurvey" />
+          <ScalarProperty Name="AttemptedReview" ColumnName="AttemptedReview" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetClientReport" FunctionName="dbEMRSModel.Store.uspGetClientReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientReport_Result">
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="AProduct" ColumnName="AProduct" />
+          <ScalarProperty Name="TotalResponse" ColumnName="TotalResponse" />
+          <ScalarProperty Name="PackageEndDate" ColumnName="PackageEndDate" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="NoofProduct" ColumnName="NoofProduct" />
+          <ScalarProperty Name="AttemptedSurvey" ColumnName="AttemptedSurvey" />
+          <ScalarProperty Name="AttemptedReview" ColumnName="AttemptedReview" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeeReport" FunctionName="dbEMRSModel.Store.uspGetEmployeeReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetEmployeeReport_Result">
+          <ScalarProperty Name="AClient" ColumnName="AClient" />
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="Package" ColumnName="Package" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="NewClient" ColumnName="NewClient" />
+          <ScalarProperty Name="NewUser" ColumnName="NewUser" />
+          <ScalarProperty Name="ApproveResponse" ColumnName="ApproveResponse" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateLastLoginDate" FunctionName="dbEMRSModel.Store.uspUpdateLastLoginDate" />
+    <FunctionImportMapping FunctionImportName="uspGetUserReport" FunctionName="dbEMRSModel.Store.uspGetUserReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserReport_Result">
+          <ScalarProperty Name="AClient" ColumnName="AClient" />
+          <ScalarProperty Name="AttemptedSurvey" ColumnName="AttemptedSurvey" />
+          <ScalarProperty Name="AttemptedReview" ColumnName="AttemptedReview" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="RedeemRewardPoint" ColumnName="RedeemRewardPoint" />
+          <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserReport" FunctionName="dbEMRSModel.Store.uspGetUserReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserReport_Result">
+          <ScalarProperty Name="AClient" ColumnName="AClient" />
+          <ScalarProperty Name="AttemptedSurvey" ColumnName="AttemptedSurvey" />
+          <ScalarProperty Name="AttemptedReview" ColumnName="AttemptedReview" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="RedeemRewardPoint" ColumnName="RedeemRewardPoint" />
+          <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetResponse" FunctionName="dbEMRSModel.Store.uspGetResponse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetResponse_Result">
+          <ScalarProperty Name="NoOfAttemptedSurveyQues" ColumnName="NoOfAttemptedSurveyQues" />
+          <ScalarProperty Name="NoOfAttemptedReviewQues" ColumnName="NoOfAttemptedReviewQues" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="SQuestion" ColumnName="SQuestion" />
+          <ScalarProperty Name="RQuestion" ColumnName="RQuestion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetResponse" FunctionName="dbEMRSModel.Store.uspGetResponse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetResponse_Result">
+          <ScalarProperty Name="NoOfAttemptedSurveyQues" ColumnName="NoOfAttemptedSurveyQues" />
+          <ScalarProperty Name="NoOfAttemptedReviewQues" ColumnName="NoOfAttemptedReviewQues" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="SQuestion" ColumnName="SQuestion" />
+          <ScalarProperty Name="RQuestion" ColumnName="RQuestion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetAdminReport" FunctionName="dbEMRSModel.Store.uspGetAdminReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetAdminReport_Result">
+          <ScalarProperty Name="AClient" ColumnName="AClient" />
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="AEmployee" ColumnName="AEmployee" />
+          <ScalarProperty Name="APackage" ColumnName="APackage" />
+          <ScalarProperty Name="NPackage" ColumnName="NPackage" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="TotalResponse" ColumnName="TotalResponse" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+          <ScalarProperty Name="AProduct" ColumnName="AProduct" />
+          <ScalarProperty Name="NewEmployee" ColumnName="NewEmployee" />
+          <ScalarProperty Name="PurchasePackage" ColumnName="PurchasePackage" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAdminReport" FunctionName="dbEMRSModel.Store.uspGetAdminReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetAdminReport_Result">
+          <ScalarProperty Name="AClient" ColumnName="AClient" />
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="AEmployee" ColumnName="AEmployee" />
+          <ScalarProperty Name="APackage" ColumnName="APackage" />
+          <ScalarProperty Name="NPackage" ColumnName="NPackage" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="TotalResponse" ColumnName="TotalResponse" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+          <ScalarProperty Name="AProduct" ColumnName="AProduct" />
+          <ScalarProperty Name="NewEmployee" ColumnName="NewEmployee" />
+          <ScalarProperty Name="PurchasePackage" ColumnName="PurchasePackage" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientFeedBackReport" FunctionName="dbEMRSModel.Store.uspGetClientFeedBackReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientFeedBackReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+          <ScalarProperty Name="FeedbackDisc" ColumnName="FeedbackDisc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetFeedbackReport" FunctionName="dbEMRSModel.Store.uspGetClientFeedBackReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientFeedBackReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+          <ScalarProperty Name="FeedbackDisc" ColumnName="FeedbackDisc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientSurveyReport" FunctionName="dbEMRSModel.Store.uspGetClientSurveyReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientSurveyReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyDt" ColumnName="SurveyDt" />
+          <ScalarProperty Name="SurveyCnt" ColumnName="SurveyCnt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyReport" FunctionName="dbEMRSModel.Store.uspGetClientSurveyReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientSurveyReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="SurveyDt" ColumnName="SurveyDt" />
+          <ScalarProperty Name="SurveyCnt" ColumnName="SurveyCnt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientReviewQuestionReport" FunctionName="dbEMRSModel.Store.uspGetClientReviewQuestionReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientReviewQuestionReport_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReviewQuesReport" FunctionName="dbEMRSModel.Store.uspGetClientReviewQuestionReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientReviewQuestionReport_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetSurveyPieChartReport" FunctionName="dbEMRSModel.Store.uspGetSurveyPieChartReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSurveyPieChartReport_Result">
+          <ScalarProperty Name="ApprovedSurvey" ColumnName="ApprovedSurvey" />
+          <ScalarProperty Name="NotApprovedSurvey" ColumnName="NotApprovedSurvey" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SurveyPieChartReport" FunctionName="dbEMRSModel.Store.uspGetSurveyPieChartReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSurveyPieChartReport_Result">
+          <ScalarProperty Name="ApprovedSurvey" ColumnName="ApprovedSurvey" />
+          <ScalarProperty Name="NotApprovedSurvey" ColumnName="NotApprovedSurvey" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetSystemReport" FunctionName="dbEMRSModel.Store.uspGetSystemReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSystemReport_Result">
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="Package" ColumnName="Package" />
+          <ScalarProperty Name="PurchasePackage" ColumnName="PurchasePackage" />
+          <ScalarProperty Name="AProduct" ColumnName="AProduct" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="TotalResponse" ColumnName="TotalResponse" />
+          <ScalarProperty Name="AttemptedSurveyQues" ColumnName="AttemptedSurveyQues" />
+          <ScalarProperty Name="AttemptedReviewQues" ColumnName="AttemptedReviewQues" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+          <ScalarProperty Name="ApprovedSurveyResponse" ColumnName="ApprovedSurveyResponse" />
+          <ScalarProperty Name="NotApprovedSurveyResponse" ColumnName="NotApprovedSurveyResponse" />
+          <ScalarProperty Name="AState" ColumnName="AState" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SystemReport" FunctionName="dbEMRSModel.Store.uspGetSystemReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetSystemReport_Result">
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="AUser" ColumnName="AUser" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="Package" ColumnName="Package" />
+          <ScalarProperty Name="PurchasePackage" ColumnName="PurchasePackage" />
+          <ScalarProperty Name="AProduct" ColumnName="AProduct" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="TotalResponse" ColumnName="TotalResponse" />
+          <ScalarProperty Name="AttemptedSurveyQues" ColumnName="AttemptedSurveyQues" />
+          <ScalarProperty Name="AttemptedReviewQues" ColumnName="AttemptedReviewQues" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+          <ScalarProperty Name="ApprovedSurveyResponse" ColumnName="ApprovedSurveyResponse" />
+          <ScalarProperty Name="NotApprovedSurveyResponse" ColumnName="NotApprovedSurveyResponse" />
+          <ScalarProperty Name="AState" ColumnName="AState" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientReviewAnswerReport" FunctionName="dbEMRSModel.Store.uspGetClientReviewAnswerReport" />
+    <FunctionImportMapping FunctionImportName="GetReviewAnsReport" FunctionName="dbEMRSModel.Store.uspGetClientReviewAnswerReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientReviewAnswerReport_Result">
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientSurveyQuestionReport" FunctionName="dbEMRSModel.Store.uspGetClientSurveyQuestionReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientSurveyQuestionReport_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="CategoryDisc" ColumnName="CategoryDisc" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuesReport" FunctionName="dbEMRSModel.Store.uspGetClientSurveyQuestionReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientSurveyQuestionReport_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="CategoryDisc" ColumnName="CategoryDisc" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetUserTrasferAmountReport" FunctionName="dbEMRSModel.Store.uspGetUserTrasferAmountReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserTrasferAmountReport_Result">
+          <ScalarProperty Name="TransferRewardPoint" ColumnName="TransferRewardPoint" />
+          <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetUserViseEwalletReport" FunctionName="dbEMRSModel.Store.uspGetUserViseEwalletReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserViseEwalletReport_Result">
+          <ScalarProperty Name="ApprovedSurvey" ColumnName="ApprovedSurvey" />
+          <ScalarProperty Name="NotApprovedSurvey" ColumnName="NotApprovedSurvey" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserWiseEwalletReport" FunctionName="dbEMRSModel.Store.uspGetUserViseEwalletReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserViseEwalletReport_Result">
+          <ScalarProperty Name="ApprovedSurvey" ColumnName="ApprovedSurvey" />
+          <ScalarProperty Name="NotApprovedSurvey" ColumnName="NotApprovedSurvey" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserTransferAmountReport" FunctionName="dbEMRSModel.Store.uspGetUserTrasferAmountReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserTrasferAmountReport_Result">
+          <ScalarProperty Name="TransferRewardPoint" ColumnName="TransferRewardPoint" />
+          <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveProductMst" FunctionName="dbEMRSModel.Store.uspSaveProductMst">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspSaveProductMst_Result">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveSurveyMst" FunctionName="dbEMRSModel.Store.uspSaveSurveyMst" />
+    <FunctionImportMapping FunctionImportName="uspGetDateWiseUserTransferAmountReport" FunctionName="dbEMRSModel.Store.uspGetDateWiseUserTransferAmountReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetDateWiseUserTransferAmountReport_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="TotalTransferRewardPoint" ColumnName="TotalTransferRewardPoint" />
+          <ScalarProperty Name="TotalTransferAmount" ColumnName="TotalTransferAmount" />
+          <ScalarProperty Name="TransferDate" ColumnName="TransferDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DateWiseTransferAmountReport" FunctionName="dbEMRSModel.Store.uspGetDateWiseUserTransferAmountReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetDateWiseUserTransferAmountReport_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="TotalTransferRewardPoint" ColumnName="TotalTransferRewardPoint" />
+          <ScalarProperty Name="TotalTransferAmount" ColumnName="TotalTransferAmount" />
+          <ScalarProperty Name="TransferDate" ColumnName="TransferDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetDateWiseSurveyPaymentReport" FunctionName="dbEMRSModel.Store.uspGetDateWiseSurveyPaymentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetDateWiseSurveyPaymentReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="TotalAmt" ColumnName="TotalAmt" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="SurveyPaymentDate" ColumnName="SurveyPaymentDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DateWiseSurveyPaymentReport" FunctionName="dbEMRSModel.Store.uspGetDateWiseSurveyPaymentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetDateWiseSurveyPaymentReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="TotalAmt" ColumnName="TotalAmt" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="SurveyPaymentDate" ColumnName="SurveyPaymentDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientWisePurchasePackageReport" FunctionName="dbEMRSModel.Store.uspGetClientWisePurchasePackageReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientWisePurchasePackageReport_Result">
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PackageEndDate" ColumnName="PackageEndDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ClientPackageReport" FunctionName="dbEMRSModel.Store.uspGetClientWisePurchasePackageReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientWisePurchasePackageReport_Result">
+          <ScalarProperty Name="PackageTitle" ColumnName="PackageTitle" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PackageEndDate" ColumnName="PackageEndDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetClientWiseSurveyPaymentReport" FunctionName="dbEMRSModel.Store.uspGetClientWiseSurveyPaymentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientWiseSurveyPaymentReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SurveyPaymentDate" ColumnName="SurveyPaymentDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ClientSurveyReport" FunctionName="dbEMRSModel.Store.uspGetClientWiseSurveyPaymentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientWiseSurveyPaymentReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SurveyPaymentDate" ColumnName="SurveyPaymentDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetStateWiseUserReport" FunctionName="dbEMRSModel.Store.uspGetStateWiseUserReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetStateWiseUserReport_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StateWiseUserReport" FunctionName="dbEMRSModel.Store.uspGetStateWiseUserReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetStateWiseUserReport_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetCityWiseUserReport" FunctionName="dbEMRSModel.Store.uspGetCityWiseUserReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetCityWiseUserReport_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CityWiseUserReport" FunctionName="dbEMRSModel.Store.uspGetCityWiseUserReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetCityWiseUserReport_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspCheckPackage" FunctionName="dbEMRSModel.Store.uspCheckPackage" />
+    <FunctionImportMapping FunctionImportName="CheckPackage" FunctionName="dbEMRSModel.Store.uspCheckPackage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspCheckPackage_Result">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="QueryMsts">
+      <EntityTypeMapping TypeName="dbEMRSModel.QueryMst">
+        <MappingFragment StoreEntitySet="QueryMst">
+          <ScalarProperty Name="ReplyStatus" ColumnName="ReplyStatus" />
+          <ScalarProperty Name="ReplyDisc" ColumnName="ReplyDisc" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="QueryDisc" ColumnName="QueryDisc" />
+          <ScalarProperty Name="QueryID" ColumnName="QueryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="uspSavePackageProductCnt" FunctionName="dbEMRSModel.Store.uspSavePackageProductCnt" />
+    <FunctionImportMapping FunctionImportName="SavePackageProductCnt" FunctionName="dbEMRSModel.Store.uspSavePackageProductCnt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspSavePackageProductCnt_Result">
+          <ScalarProperty Name="Cnt" ColumnName="Cnt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SaveApprovedSurveyMst" FunctionName="dbEMRSModel.Store.uspSaveApprovedSurveyMst">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.SaveApprovedSurveyMst_Result">
+          <ScalarProperty Name="AStatus" ColumnName="AStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetQuery" FunctionName="dbEMRSModel.Store.uspGetQuery">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetQuery_Result">
+          <ScalarProperty Name="QueryID" ColumnName="QueryID" />
+          <ScalarProperty Name="QueryDisc" ColumnName="QueryDisc" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="ReplyDisc" ColumnName="ReplyDisc" />
+          <ScalarProperty Name="ReplyStatus" ColumnName="ReplyStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetQuery" FunctionName="dbEMRSModel.Store.uspGetQuery" />
+    <FunctionImportMapping FunctionImportName="uspGetDateWiseAddProductReport" FunctionName="dbEMRSModel.Store.uspGetDateWiseAddProductReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetDateWiseAddProductReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="PIsActive" ColumnName="PIsActive" />
+          <ScalarProperty Name="CIsActive" ColumnName="CIsActive" />
+          <ScalarProperty Name="ProductPublishDate" ColumnName="ProductPublishDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DateWiseProductReport" FunctionName="dbEMRSModel.Store.uspGetDateWiseAddProductReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.DateWiseProductReport_Result">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="PIsActive" ColumnName="PIsActive" />
+          <ScalarProperty Name="CIsActive" ColumnName="CIsActive" />
+          <ScalarProperty Name="ProductPublishDate" ColumnName="ProductPublishDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSavePurchasePackage" FunctionName="dbEMRSModel.Store.uspSavePurchasePackage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspSavePurchasePackage_Result">
+          <ScalarProperty Name="PStatus" ColumnName="PStatus" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SavePurchasePackage" FunctionName="dbEMRSModel.Store.uspSavePurchasePackage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspSavePurchasePackage_Result">
+          <ScalarProperty Name="PStatus" ColumnName="PStatus" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetUserEwallet" FunctionName="dbEMRSModel.Store.uspGetUserEwallet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserEwallet_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="NoOfAttemptedSurveyQues" ColumnName="NoOfAttemptedSurveyQues" />
+          <ScalarProperty Name="NoOfAttemptedReviewQues" ColumnName="NoOfAttemptedReviewQues" />
+          <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserEwallet" FunctionName="dbEMRSModel.Store.uspGetUserEwallet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetUserEwallet_Result">
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="NoOfAttemptedSurveyQues" ColumnName="NoOfAttemptedSurveyQues" />
+          <ScalarProperty Name="NoOfAttemptedReviewQues" ColumnName="NoOfAttemptedReviewQues" />
+          <ScalarProperty Name="RewardPoint" ColumnName="RewardPoint" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveRedeemReward" FunctionName="dbEMRSModel.Store.uspSaveRedeemReward" />
+    <FunctionImportMapping FunctionImportName="uspGetClientSurveyAnswerReport" FunctionName="dbEMRSModel.Store.uspGetClientSurveyAnswerReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientSurveyAnswerReport_Result">
+          <ScalarProperty Name="TotalCount" ColumnName="TotalCount" />
+          <ScalarProperty Name="CntAns1" ColumnName="CntAns1" />
+          <ScalarProperty Name="CntAns2" ColumnName="CntAns2" />
+          <ScalarProperty Name="CntAns3" ColumnName="CntAns3" />
+          <ScalarProperty Name="CntAns4" ColumnName="CntAns4" />
+          <ScalarProperty Name="CntAns5" ColumnName="CntAns5" />
+          <ScalarProperty Name="CntAns6" ColumnName="CntAns6" />
+          <ScalarProperty Name="CntAns7" ColumnName="CntAns7" />
+          <ScalarProperty Name="AvgAns1" ColumnName="AvgAns1" />
+          <ScalarProperty Name="AvgAns2" ColumnName="AvgAns2" />
+          <ScalarProperty Name="AvgAns3" ColumnName="AvgAns3" />
+          <ScalarProperty Name="AvgAns4" ColumnName="AvgAns4" />
+          <ScalarProperty Name="AvgAns5" ColumnName="AvgAns5" />
+          <ScalarProperty Name="AvgAns6" ColumnName="AvgAns6" />
+          <ScalarProperty Name="AvgAns7" ColumnName="AvgAns7" />
+          <ScalarProperty Name="TotalSum" ColumnName="TotalSum" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyAnsReport" FunctionName="dbEMRSModel.Store.uspGetClientSurveyAnswerReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbEMRSModel.uspGetClientSurveyAnswerReport_Result">
+          <ScalarProperty Name="TotalCount" ColumnName="TotalCount" />
+          <ScalarProperty Name="CntAns1" ColumnName="CntAns1" />
+          <ScalarProperty Name="CntAns2" ColumnName="CntAns2" />
+          <ScalarProperty Name="CntAns3" ColumnName="CntAns3" />
+          <ScalarProperty Name="CntAns4" ColumnName="CntAns4" />
+          <ScalarProperty Name="CntAns5" ColumnName="CntAns5" />
+          <ScalarProperty Name="CntAns6" ColumnName="CntAns6" />
+          <ScalarProperty Name="CntAns7" ColumnName="CntAns7" />
+          <ScalarProperty Name="AvgAns1" ColumnName="AvgAns1" />
+          <ScalarProperty Name="AvgAns2" ColumnName="AvgAns2" />
+          <ScalarProperty Name="AvgAns3" ColumnName="AvgAns3" />
+          <ScalarProperty Name="AvgAns4" ColumnName="AvgAns4" />
+          <ScalarProperty Name="AvgAns5" ColumnName="AvgAns5" />
+          <ScalarProperty Name="AvgAns6" ColumnName="AvgAns6" />
+          <ScalarProperty Name="AvgAns7" ColumnName="AvgAns7" />
+          <ScalarProperty Name="TotalSum" ColumnName="TotalSum" />
+          <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

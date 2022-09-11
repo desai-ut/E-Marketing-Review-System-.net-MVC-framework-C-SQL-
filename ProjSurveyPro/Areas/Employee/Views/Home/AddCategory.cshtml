@@ -1,0 +1,77 @@
+﻿@model ProjSurveyPro.CategoryMst
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Master/EmployeeLayout.cshtml";
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Category</h2>
+    </header>
+
+    <!-- start: page -->
+    <div data-appear-animation="fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title" align="center">Category</h2>
+                    </header>
+                    <div class="panel-body" style="border: double;">
+                        @using (Html.BeginForm("AddCategory", "Home", new { area = "Employee" }, FormMethod.Post))
+                        {
+                            @Html.ValidationSummary(true)
+                            if (Session["Status"] == "Edit")
+                            {
+                            @Html.HiddenFor(model => model.CategoryID)
+                            }
+                            <div class="form-group">
+                                @Html.Label("Category", null, new { @class = "col-sm-3 control-label text-right" })
+                                <div class="col-md-6">
+                                    <div class="editer-field">
+                                        @Html.TextBoxFor(model => model.CategoryDisc,
+                                            new
+                                            {
+                                                type = "text",
+                                                @class = "form-control",
+                                                placeholder = "Enter Category Name",
+                                                pattern = "^[^- ][A-Za-z |&|/]+$"
+                                            }
+                                        )
+                                        @Html.ValidationMessageFor(model => model.CategoryDisc, null, new { style = "color:red;" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div style="text-align: center;">
+                                        <br />
+                                        @Html.TextBox("btnSubmit", "Save", new { type = "submit", @class = "btn btn-primary btn-lg" })
+                                    <a href="@Url.Action("Category", "Home", new { area = "Employee" })" class = "btn btn-primary btn-lg" }>Back</a>
+                                    </div>
+                                </div>
+                            </div>
+                               
+                            <hr class="tell" />
+                            <div class="row">
+                                <div class="header-logo">
+                                    <div style="text-align: center;">
+                                        <p>Powered By</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <img src="~/Contents/appimg/FullLogo.png"
+                                            width="120" height="80"
+                                            alt="Survey Pro" />
+                                    </div>
+                                </div>
+                            </div>				
+                        }
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- end: page -->
+</section>
+
